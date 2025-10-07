@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using testForms.pkgInterfaz;
+using testForms.pkgLogica;
 
 namespace testForms
 {
@@ -25,17 +27,24 @@ namespace testForms
             frmReg.Show();
         }
 
-        protected override void OnPaintBackground(PaintEventArgs e)
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            Color color1 = ColorTranslator.FromHtml("#000000");
-            Color color2 = ColorTranslator.FromHtml("#5C69F5");
+            string usuario = txtUsuario.Text;
+            string clave = txtClave.Text;
+            int resultado = 0;
 
-            using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle,
-                                                                       color1,
-                                                                       color2,
-                                                                       45f))
+            Usuario u = new Usuario();
+            resultado = u.fnc_loginUsuario(usuario, clave);
+
+            if (resultado != 0)
             {
-                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+                formHome frmHome = new formHome(resultado);
+                this.Hide();
+                frmHome.Show();
+            }
+            else if (resultado == 0)
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos");
             }
         }
     }

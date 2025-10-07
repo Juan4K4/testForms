@@ -11,8 +11,8 @@ namespace testForms.pkgBaseDatos
 {
     internal class Datos
     {
-        private string connectionString = "User Id=C##TEST;Password=oracle;Data Source=locahost:1521/xe";
-        public int fncEjecutarDML(string prmConsulta)
+        private const string connectionString = "User Id=C##TEST;Password=oracle;Data Source=localhost:1521/xe";
+        public int fnc_dml(string prmConsulta)
         {
             OracleConnection oracleConexion = new OracleConnection(connectionString);
             OracleCommand cmd = new OracleCommand(prmConsulta, oracleConexion);
@@ -28,10 +28,62 @@ namespace testForms.pkgBaseDatos
             }
             catch (Exception ex)
             {
+                //Error de la BD
                 MessageBox.Show(ex.Message);
             }
 
             return filasAlteradas;
+        }
+
+        public object fnc_escalar(string prmConsulta)
+        {
+            OracleConnection oracleConexion = new OracleConnection(connectionString);
+            OracleCommand cmd = new OracleCommand(prmConsulta, oracleConexion);
+            object resultado = null;
+
+            try
+            {
+                oracleConexion.Open();
+                resultado = cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error BD Oracle: "+ ex.Message);
+            }
+
+            return resultado;
+        }
+
+        public (string outPrm_nombre, int outPrm_numeroCuenta, decimal outPrm_saldoCuenta) fnc_obtenerInfoCuenta(int prm_idUsuario)
+        {
+            OracleConnection oracleConexion = new OracleConnection(connectionString);
+            OracleCommand cmd = new OracleCommand("prc_infoCuenta", oracleConexion);
+
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            //  Parametro de entrada prm_id
+            cmd.Parameters.Add("prm_id", OracleDbType.Int32).Value = prm_idUsuario;
+
+            //  Parametros de salida nombre, numero cuenta, saldo
+            cmd.Parameters.Add("p_nombre", OracleDbType.Varchar2, 50).Direction = System.Data.ParameterDirection.Output;
+            cmd.Parameters.Add("p_cuentaNum", OracleDbType.Int32).Direction = System.Data.ParameterDirection.Output;
+            cmd.Parameters.Add("p_cuentaSaldo", OracleDbType.Decimal).Direction = System.Data.ParameterDirection.Output;
+            try
+            {
+
+                oracleConexion.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error BD: " +  ex.Message);
+            }
+            //  Recuperar parametros
+            string nombre = cmd.Parameters["p_nombre"].Value.ToString();
+            int numeroCuenta = Convert.ToInt32(cmd.Parameters["p_cuentaNum"].Value.ToString());
+            decimal saldoCuenta = Convert.ToDecimal(cmd.Parameters["p_cuentaSaldo"].Value.ToString());
+
+            return (nombre, numeroCuenta, saldoCuenta);
         }
     }
 }

@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
             this.lblEntrar = new System.Windows.Forms.Label();
             this.lblNoRegistrado = new System.Windows.Forms.Label();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
-            this.txtContraseña = new testForms.pkgInterfaz.phTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
+            this.txtClave = new testForms.pkgInterfaz.phTextBox();
             this.txtUsuario = new testForms.pkgInterfaz.phTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEntrar
@@ -41,7 +45,8 @@
             this.lblEntrar.AutoSize = true;
             this.lblEntrar.BackColor = System.Drawing.Color.Transparent;
             this.lblEntrar.Font = new System.Drawing.Font("Codec Pro Bold", 40F);
-            this.lblEntrar.Location = new System.Drawing.Point(151, 144);
+            this.lblEntrar.ForeColor = System.Drawing.Color.Black;
+            this.lblEntrar.Location = new System.Drawing.Point(151, 223);
             this.lblEntrar.Name = "lblEntrar";
             this.lblEntrar.Size = new System.Drawing.Size(234, 82);
             this.lblEntrar.TabIndex = 0;
@@ -52,6 +57,7 @@
             this.lblNoRegistrado.AutoSize = true;
             this.lblNoRegistrado.BackColor = System.Drawing.Color.Transparent;
             this.lblNoRegistrado.Font = new System.Drawing.Font("Codec Pro Bold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoRegistrado.ForeColor = System.Drawing.Color.Black;
             this.lblNoRegistrado.Location = new System.Drawing.Point(205, 511);
             this.lblNoRegistrado.Name = "lblNoRegistrado";
             this.lblNoRegistrado.Size = new System.Drawing.Size(126, 16);
@@ -60,6 +66,7 @@
             // 
             // btnRegistrarse
             // 
+            this.btnRegistrarse.AutoSize = true;
             this.btnRegistrarse.BackColor = System.Drawing.Color.Orange;
             this.btnRegistrarse.Font = new System.Drawing.Font("Codec Pro Bold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarse.Location = new System.Drawing.Point(218, 530);
@@ -72,32 +79,55 @@
             // 
             // btnIniciarSesion
             // 
+            this.btnIniciarSesion.AutoSize = true;
             this.btnIniciarSesion.BackColor = System.Drawing.Color.Orange;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Codec Pro Bold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(218, 348);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(218, 427);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(100, 43);
             this.btnIniciarSesion.TabIndex = 5;
             this.btnIniciarSesion.Text = "Iniciar Sesion";
             this.btnIniciarSesion.UseVisualStyleBackColor = false;
+            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // txtContraseña
+            // pictureBox1
             // 
-            this.txtContraseña.Font = new System.Drawing.Font("Codec Pro", 8F);
-            this.txtContraseña.ForeColor = System.Drawing.Color.DimGray;
-            this.txtContraseña.Location = new System.Drawing.Point(143, 301);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.PlaceHolder = "Contraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(250, 19);
-            this.txtContraseña.TabIndex = 7;
-            this.txtContraseña.Text = "Contraseña";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(218, 149);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(113, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pDegradado1
+            // 
+            this.pDegradado1.Angle = 45F;
+            this.pDegradado1.AutoSize = true;
+            this.pDegradado1.HexColor1 = "#000000";
+            this.pDegradado1.HexColor2 = "#5C69F5";
+            this.pDegradado1.Location = new System.Drawing.Point(-3, -1);
+            this.pDegradado1.Name = "pDegradado1";
+            this.pDegradado1.Size = new System.Drawing.Size(549, 104);
+            this.pDegradado1.TabIndex = 8;
+            // 
+            // txtClave
+            // 
+            this.txtClave.Font = new System.Drawing.Font("Codec Pro", 8F);
+            this.txtClave.ForeColor = System.Drawing.Color.DimGray;
+            this.txtClave.Location = new System.Drawing.Point(143, 380);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.PlaceHolder = "Contraseña";
+            this.txtClave.Size = new System.Drawing.Size(250, 19);
+            this.txtClave.TabIndex = 7;
+            this.txtClave.Text = "Contraseña";
             // 
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Codec Pro", 8F);
             this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsuario.Location = new System.Drawing.Point(143, 254);
+            this.txtUsuario.Location = new System.Drawing.Point(143, 333);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.PlaceHolder = "Usuario";
             this.txtUsuario.Size = new System.Drawing.Size(250, 19);
@@ -108,18 +138,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(546, 723);
-            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pDegradado1);
+            this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.lblNoRegistrado);
             this.Controls.Add(this.lblEntrar);
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "formLogin";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,7 +167,9 @@
         private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.Button btnIniciarSesion;
         private pkgInterfaz.phTextBox txtUsuario;
-        private pkgInterfaz.phTextBox txtContraseña;
+        private pkgInterfaz.phTextBox txtClave;
+        private pkgInterfaz.pDegradado pDegradado1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

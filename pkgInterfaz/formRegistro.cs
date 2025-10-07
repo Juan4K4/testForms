@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using testForms.pkgLogica;
 
 namespace testForms
 {
@@ -36,17 +37,26 @@ namespace testForms
         {
 
         }
-        protected override void OnPaintBackground(PaintEventArgs e)
-        {
-            Color color1 = ColorTranslator.FromHtml("#000000");
-            Color color2 = ColorTranslator.FromHtml("#5C69F5");
 
-            using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle,
-                                                                       color1,
-                                                                       color2,
-                                                                       45f))
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            string v_nombre = txtNombre.Text;
+            string v_mail = txtCorreo.Text;
+            int v_id = int.Parse(txtId.Text);
+            string v_usuario = txtUsuario.Text;
+            string v_clave = txtClave.Text;
+            string v_fechaNac = dtpFechaNac.Value.Date.ToString("dd/MM/yyyy");
+
+            Usuario u = new Usuario();  
+            int resultadoDml = u.fnc_registrarUsuario(v_nombre, v_mail, v_id, v_usuario, v_clave, v_fechaNac);
+
+            if (resultadoDml == 0)
             {
-                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+                MessageBox.Show("No se ha podido completar el registro");
+            }
+            else
+            {
+                MessageBox.Show("Registro completado correctamente");
             }
         }
     }
