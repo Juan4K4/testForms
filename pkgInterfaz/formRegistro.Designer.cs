@@ -40,8 +40,8 @@
             this.txtCorreo = new testForms.pkgInterfaz.phTextBox();
             this.txtNombre = new testForms.pkgInterfaz.phTextBox();
             this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRegistroCliente
@@ -50,7 +50,7 @@
             this.lblRegistroCliente.BackColor = System.Drawing.Color.Transparent;
             this.lblRegistroCliente.Font = new System.Drawing.Font("Codec Pro Bold", 40F);
             this.lblRegistroCliente.ForeColor = System.Drawing.Color.Black;
-            this.lblRegistroCliente.Location = new System.Drawing.Point(125, 238);
+            this.lblRegistroCliente.Location = new System.Drawing.Point(122, 238);
             this.lblRegistroCliente.Name = "lblRegistroCliente";
             this.lblRegistroCliente.Size = new System.Drawing.Size(543, 82);
             this.lblRegistroCliente.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             this.btnLoginBack.AutoSize = true;
             this.btnLoginBack.BackColor = System.Drawing.Color.Orange;
-            this.btnLoginBack.Location = new System.Drawing.Point(349, 658);
+            this.btnLoginBack.Location = new System.Drawing.Point(346, 658);
             this.btnLoginBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLoginBack.Name = "btnLoginBack";
             this.btnLoginBack.Size = new System.Drawing.Size(95, 34);
@@ -76,7 +76,7 @@
             this.dtpFechaNac.CustomFormat = "\'Fecha de nacimiento\'  dd MMM yyyy";
             this.dtpFechaNac.Font = new System.Drawing.Font("Codec Pro", 8F);
             this.dtpFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaNac.Location = new System.Drawing.Point(269, 543);
+            this.dtpFechaNac.Location = new System.Drawing.Point(266, 543);
             this.dtpFechaNac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFechaNac.Name = "dtpFechaNac";
             this.dtpFechaNac.Size = new System.Drawing.Size(255, 19);
@@ -89,7 +89,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Codec Pro Bold", 12F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(293, 622);
+            this.label1.Location = new System.Drawing.Point(290, 622);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 25);
             this.label1.TabIndex = 2;
@@ -100,7 +100,7 @@
             // 
             this.btnRegistrar.AutoSize = true;
             this.btnRegistrar.BackColor = System.Drawing.Color.Orange;
-            this.btnRegistrar.Location = new System.Drawing.Point(349, 583);
+            this.btnRegistrar.Location = new System.Drawing.Point(347, 583);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(93, 34);
@@ -113,7 +113,7 @@
             // 
             this.txtClave.Font = new System.Drawing.Font("Codec Pro", 8F);
             this.txtClave.ForeColor = System.Drawing.Color.DimGray;
-            this.txtClave.Location = new System.Drawing.Point(271, 498);
+            this.txtClave.Location = new System.Drawing.Point(269, 498);
             this.txtClave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtClave.Name = "txtClave";
             this.txtClave.PlaceHolder = "Contraseña";
@@ -125,7 +125,7 @@
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Codec Pro", 8F);
             this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsuario.Location = new System.Drawing.Point(271, 455);
+            this.txtUsuario.Location = new System.Drawing.Point(269, 455);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.PlaceHolder = "Usuario";
@@ -137,7 +137,7 @@
             // 
             this.txtId.Font = new System.Drawing.Font("Codec Pro", 8F);
             this.txtId.ForeColor = System.Drawing.Color.DimGray;
-            this.txtId.Location = new System.Drawing.Point(271, 411);
+            this.txtId.Location = new System.Drawing.Point(269, 411);
             this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId.Name = "txtId";
             this.txtId.PlaceHolder = "Identificacion";
@@ -149,7 +149,7 @@
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Codec Pro", 8F);
             this.txtCorreo.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCorreo.Location = new System.Drawing.Point(271, 367);
+            this.txtCorreo.Location = new System.Drawing.Point(269, 367);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.PlaceHolder = "Correo electronico";
@@ -161,7 +161,7 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Codec Pro", 8F);
             this.txtNombre.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNombre.Location = new System.Drawing.Point(271, 322);
+            this.txtNombre.Location = new System.Drawing.Point(269, 322);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PlaceHolder = "Nombre";
@@ -180,16 +180,16 @@
             this.pDegradado1.Size = new System.Drawing.Size(803, 100);
             this.pDegradado1.TabIndex = 17;
             // 
-            // pictureBox1
+            // pictureBox2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(340, 164);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(319, 123);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(148, 128);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
             // 
             // formRegistro
             // 
@@ -199,7 +199,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 709);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pDegradado1);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtClave);
@@ -216,7 +216,7 @@
             this.Name = "formRegistro";
             this.Text = "formRegistro";
             this.Load += new System.EventHandler(this.formRegistro_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,6 +235,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRegistrar;
         private pkgInterfaz.pDegradado pDegradado1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

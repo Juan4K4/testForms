@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formHome));
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCuentaNum = new System.Windows.Forms.Label();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -42,7 +48,7 @@
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
             this.lblNombre.Font = new System.Drawing.Font("Codec Pro Bold", 10F, System.Drawing.FontStyle.Bold);
             this.lblNombre.ForeColor = System.Drawing.Color.Black;
-            this.lblNombre.Location = new System.Drawing.Point(12, 285);
+            this.lblNombre.Location = new System.Drawing.Point(12, 232);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(75, 21);
             this.lblNombre.TabIndex = 2;
@@ -54,7 +60,7 @@
             this.lblCuentaNum.BackColor = System.Drawing.Color.Transparent;
             this.lblCuentaNum.Font = new System.Drawing.Font("Codec Pro Bold", 10F, System.Drawing.FontStyle.Bold);
             this.lblCuentaNum.ForeColor = System.Drawing.Color.Black;
-            this.lblCuentaNum.Location = new System.Drawing.Point(12, 306);
+            this.lblCuentaNum.Location = new System.Drawing.Point(12, 253);
             this.lblCuentaNum.Name = "lblCuentaNum";
             this.lblCuentaNum.Size = new System.Drawing.Size(71, 21);
             this.lblCuentaNum.TabIndex = 4;
@@ -66,7 +72,7 @@
             this.lblSaldo.BackColor = System.Drawing.Color.Transparent;
             this.lblSaldo.Font = new System.Drawing.Font("Codec Pro Bold", 10F, System.Drawing.FontStyle.Bold);
             this.lblSaldo.ForeColor = System.Drawing.Color.Black;
-            this.lblSaldo.Location = new System.Drawing.Point(12, 327);
+            this.lblSaldo.Location = new System.Drawing.Point(12, 274);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(97, 21);
             this.lblSaldo.TabIndex = 5;
@@ -78,7 +84,7 @@
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
             this.button1.Font = new System.Drawing.Font("Codec Pro", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 371);
+            this.button1.Location = new System.Drawing.Point(12, 317);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 55);
             this.button1.TabIndex = 6;
@@ -91,7 +97,7 @@
             this.button2.BackColor = System.Drawing.Color.RoyalBlue;
             this.button2.Font = new System.Drawing.Font("Codec Pro", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(135, 371);
+            this.button2.Location = new System.Drawing.Point(135, 317);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(138, 55);
             this.button2.TabIndex = 7;
@@ -104,19 +110,57 @@
             this.button3.BackColor = System.Drawing.Color.RoyalBlue;
             this.button3.Font = new System.Drawing.Font("Codec Pro", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(279, 371);
+            this.button3.Location = new System.Drawing.Point(279, 317);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(138, 55);
             this.button3.TabIndex = 8;
             this.button3.Text = "Solicitudes";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(487, 102);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(148, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 102);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(113, 128);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pDegradado1
+            // 
+            this.pDegradado1.Angle = 45F;
+            this.pDegradado1.HexColor1 = "#00000";
+            this.pDegradado1.HexColor2 = "#5C69F5";
+            this.pDegradado1.Location = new System.Drawing.Point(-78, -8);
+            this.pDegradado1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pDegradado1.Name = "pDegradado1";
+            this.pDegradado1.Size = new System.Drawing.Size(803, 93);
+            this.pDegradado1.TabIndex = 21;
+            // 
             // formHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(647, 391);
+            this.Controls.Add(this.pDegradado1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -126,6 +170,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "formHome";
             this.Text = "formHome";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,7 +184,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-
-        
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private pDegradado pDegradado1;
     }
 }

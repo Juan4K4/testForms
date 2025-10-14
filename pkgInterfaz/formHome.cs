@@ -14,9 +14,10 @@ namespace testForms.pkgInterfaz
 {
     public partial class formHome : Form
     {
-
+        int id_usuarioActual = 0;
         public formHome(int prm_idUsuarioActual)
         {
+            id_usuarioActual = prm_idUsuarioActual;
             InitializeComponent();
             var Datos = new Datos();
             var infoCuenta = Datos.fnc_obtenerInfoCuenta(prm_idUsuarioActual);
@@ -25,6 +26,13 @@ namespace testForms.pkgInterfaz
             lblCuentaNum.Text = $"Numero de cuenta:     {infoCuenta.outPrm_numeroCuenta}";
             decimal saldo = infoCuenta.outPrm_saldoCuenta;
             lblSaldo.Text = $"Disponible:   {saldo.ToString("C2")}";
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            formActualizarCliente formAct = new formActualizarCliente(id_usuarioActual);
+            this.Close();
+            formAct.Show();
         }
     }
 }

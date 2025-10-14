@@ -83,6 +83,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="pkgInterfaz\formActualizarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pkgInterfaz\formActualizarCliente.Designer.cs">
+      <DependentUpon>formActualizarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="pkgInterfaz\formHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     <Compile Include="pkgLogica\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="pkgInterfaz\formActualizarCliente.resx">
+      <DependentUpon>formActualizarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pkgInterfaz\formHome.resx">
       <DependentUpon>formHome.cs</DependentUpon>
     </EmbeddedResource>
