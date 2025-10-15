@@ -10,12 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using testForms.pkgLogica;
+using testForms.pkgInterfaz;
 
 namespace testForms
 {
     public partial class formRegistro : Form
     {
         formLogin frmLogin = new formLogin();
+        bool camposObligatorios;
         public formRegistro()
         {
             InitializeComponent();
@@ -36,6 +38,21 @@ namespace testForms
         private void formRegistro_Load(object sender, EventArgs e)
         {
 
+            /** Diseño **/
+            lblDatosObligatorios.Hide();
+
+            /** Logica  **/
+
+            DateTime fechaMaxima = DateTime.Today.AddYears(-18);
+            dtpFechaNac.MaxDate = fechaMaxima;
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is placeHolderBox txt)
+                {
+                    txt.TextChanged += fnc_validarCampos;
+                }
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -47,7 +64,7 @@ namespace testForms
             string v_clave = txtClave.Text;
             string v_fechaNac = dtpFechaNac.Value.Date.ToString("dd/MM/yyyy");
 
-            Usuario u = new Usuario();  
+            Usuario u = new Usuario();
             int resultadoDml = u.fnc_registrarUsuario(v_nombre, v_mail, v_id, v_usuario, v_clave, v_fechaNac);
 
             if (resultadoDml == 0)
@@ -57,6 +74,32 @@ namespace testForms
             else
             {
                 MessageBox.Show("Registro completado correctamente");
+            }
+        }
+        private void fnc_validarCampos(object sender, EventArgs e)
+        {
+            formRegistro frm = new formRegistro();
+            bool campos = true;
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is placeHolderBox ph) 
+                {
+                    if (string.IsNullOrEmpty(ph.Text))
+                    {
+                        campos = false;
+                        break;
+                    }
+                }
+            }
+
+            if (campos)
+            {
+                btnRegistrar.Enabled = campos;
+                btnRegistrar.BackColor = Color.Orange;
+
+                lblDatosObligatorios.Show();
+                lblDatosObligatorios.Enabled = !campos;
             }
         }
     }

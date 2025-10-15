@@ -34,9 +34,9 @@
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
-            this.txtClave = new testForms.pkgInterfaz.phTextBox();
-            this.txtUsuario = new testForms.pkgInterfaz.phTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtUsuario = new testForms.pkgInterfaz.placeHolderBox();
+            this.txtClave = new testForms.pkgInterfaz.placeHolderBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,28 +102,6 @@
             this.pDegradado1.Size = new System.Drawing.Size(549, 104);
             this.pDegradado1.TabIndex = 8;
             // 
-            // txtClave
-            // 
-            this.txtClave.Font = new System.Drawing.Font("Codec Pro", 8F);
-            this.txtClave.ForeColor = System.Drawing.Color.DimGray;
-            this.txtClave.Location = new System.Drawing.Point(146, 380);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.PlaceHolder = "Contraseña";
-            this.txtClave.Size = new System.Drawing.Size(250, 19);
-            this.txtClave.TabIndex = 7;
-            this.txtClave.Text = "Contraseña";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Font = new System.Drawing.Font("Codec Pro", 8F);
-            this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsuario.Location = new System.Drawing.Point(146, 333);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.PlaceHolder = "Usuario";
-            this.txtUsuario.Size = new System.Drawing.Size(250, 19);
-            this.txtUsuario.TabIndex = 6;
-            this.txtUsuario.Text = "Usuario";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -135,6 +113,24 @@
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
             // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Font = new System.Drawing.Font("Codec Pro", 8F);
+            this.txtUsuario.Location = new System.Drawing.Point(146, 342);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.PlaceHolder = "Usuario";
+            this.txtUsuario.Size = new System.Drawing.Size(250, 19);
+            this.txtUsuario.TabIndex = 22;
+            // 
+            // txtClave
+            // 
+            this.txtClave.Font = new System.Drawing.Font("Codec Pro", 8F);
+            this.txtClave.Location = new System.Drawing.Point(146, 383);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.PlaceHolder = "Contraseña";
+            this.txtClave.Size = new System.Drawing.Size(250, 19);
+            this.txtClave.TabIndex = 23;
+            // 
             // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -143,10 +139,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(546, 723);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pDegradado1);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pDegradado1);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.lblNoRegistrado);
@@ -167,10 +163,10 @@
         private System.Windows.Forms.Label lblNoRegistrado;
         private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.Button btnIniciarSesion;
-        private pkgInterfaz.phTextBox txtUsuario;
-        private pkgInterfaz.phTextBox txtClave;
         private pkgInterfaz.pDegradado pDegradado1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private pkgInterfaz.placeHolderBox txtUsuario;
+        private pkgInterfaz.placeHolderBox txtClave;
     }
 }
 
