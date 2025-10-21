@@ -29,16 +29,31 @@ namespace testForms.pkgLogica
         {
             string sql = $"SELECT fnc_login('{prm_usuario}', '{prm_clave}') FROM dual";
 
-            object result = data.fnc_escalar(sql);
+            object resultado = data.fnc_escalar(sql);
 
-            if (result != null)
+            if (resultado != null)
             {
-                int valor = Convert.ToInt32(result);
-                return valor; // 1 = login válido, 0 = inválido
+                return Convert.ToInt32(resultado); // 1 = login válido, 0 = inválido
             }
             else
             {
                 return 0;
+            }
+        }
+
+        public string fnc_verificarAdmin(int prm_idUsuario)
+        {
+            string consultaAdmin =
+                    $"SELECT usu_tipo FROM Usuarios WHERE usu_id = {prm_idUsuario}";
+            object resultado = data.fnc_escalar(consultaAdmin);
+
+            if (resultado != null)
+            {
+                return resultado.ToString();
+            }
+            else
+            {
+                return "cliente";
             }
         }
     }

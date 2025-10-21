@@ -1,6 +1,6 @@
 ﻿namespace testForms.pkgInterfaz
 {
-    partial class formHome
+    partial class formHomeCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formHome));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formHomeCliente));
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCuentaNum = new System.Windows.Forms.Label();
             this.lblSaldo = new System.Windows.Forms.Label();

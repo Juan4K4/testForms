@@ -33,11 +33,17 @@
             this.lblNoRegistrado = new System.Windows.Forms.Label();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
-            this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtUsuario = new testForms.pkgInterfaz.placeHolderBox();
+            this.lblErrorUsuario = new System.Windows.Forms.Label();
+            this.lblErrorClave = new System.Windows.Forms.Label();
             this.txtClave = new testForms.pkgInterfaz.placeHolderBox();
+            this.txtUsuario = new testForms.pkgInterfaz.placeHolderBox();
+            this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
+            this.picMostrarClave = new System.Windows.Forms.PictureBox();
+            this.picOcultarClave = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMostrarClave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOcultarClave)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEntrar
@@ -91,17 +97,6 @@
             this.btnIniciarSesion.UseVisualStyleBackColor = false;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // pDegradado1
-            // 
-            this.pDegradado1.Angle = 45F;
-            this.pDegradado1.AutoSize = true;
-            this.pDegradado1.HexColor1 = "#000000";
-            this.pDegradado1.HexColor2 = "#5C69F5";
-            this.pDegradado1.Location = new System.Drawing.Point(-3, -1);
-            this.pDegradado1.Name = "pDegradado1";
-            this.pDegradado1.Size = new System.Drawing.Size(549, 104);
-            this.pDegradado1.TabIndex = 8;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -113,6 +108,39 @@
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
             // 
+            // lblErrorUsuario
+            // 
+            this.lblErrorUsuario.AutoSize = true;
+            this.lblErrorUsuario.CausesValidation = false;
+            this.lblErrorUsuario.Font = new System.Drawing.Font("Codec Pro", 7F);
+            this.lblErrorUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblErrorUsuario.Location = new System.Drawing.Point(143, 364);
+            this.lblErrorUsuario.Name = "lblErrorUsuario";
+            this.lblErrorUsuario.Size = new System.Drawing.Size(151, 14);
+            this.lblErrorUsuario.TabIndex = 24;
+            this.lblErrorUsuario.Text = "Ingrese un usuario valido";
+            // 
+            // lblErrorClave
+            // 
+            this.lblErrorClave.AutoSize = true;
+            this.lblErrorClave.CausesValidation = false;
+            this.lblErrorClave.Font = new System.Drawing.Font("Codec Pro", 7F);
+            this.lblErrorClave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblErrorClave.Location = new System.Drawing.Point(143, 405);
+            this.lblErrorClave.Name = "lblErrorClave";
+            this.lblErrorClave.Size = new System.Drawing.Size(145, 14);
+            this.lblErrorClave.TabIndex = 25;
+            this.lblErrorClave.Text = "Ingrese una contraseña";
+            // 
+            // txtClave
+            // 
+            this.txtClave.Font = new System.Drawing.Font("Codec Pro", 8F);
+            this.txtClave.Location = new System.Drawing.Point(146, 383);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.PlaceHolder = "Contraseña";
+            this.txtClave.Size = new System.Drawing.Size(213, 19);
+            this.txtClave.TabIndex = 23;
+            // 
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Codec Pro", 8F);
@@ -122,14 +150,40 @@
             this.txtUsuario.Size = new System.Drawing.Size(250, 19);
             this.txtUsuario.TabIndex = 22;
             // 
-            // txtClave
+            // pDegradado1
             // 
-            this.txtClave.Font = new System.Drawing.Font("Codec Pro", 8F);
-            this.txtClave.Location = new System.Drawing.Point(146, 383);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.PlaceHolder = "Contraseña";
-            this.txtClave.Size = new System.Drawing.Size(250, 19);
-            this.txtClave.TabIndex = 23;
+            this.pDegradado1.Angle = 45F;
+            this.pDegradado1.AutoSize = true;
+            this.pDegradado1.HexColor1 = "#000000";
+            this.pDegradado1.HexColor2 = "#5C69F5";
+            this.pDegradado1.Location = new System.Drawing.Point(-3, -1);
+            this.pDegradado1.Name = "pDegradado1";
+            this.pDegradado1.Size = new System.Drawing.Size(549, 104);
+            this.pDegradado1.TabIndex = 8;
+            // 
+            // picMostrarClave
+            // 
+            this.picMostrarClave.Image = ((System.Drawing.Image)(resources.GetObject("picMostrarClave.Image")));
+            this.picMostrarClave.Location = new System.Drawing.Point(365, 383);
+            this.picMostrarClave.Name = "picMostrarClave";
+            this.picMostrarClave.Size = new System.Drawing.Size(31, 19);
+            this.picMostrarClave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMostrarClave.TabIndex = 28;
+            this.picMostrarClave.TabStop = false;
+            this.picMostrarClave.Click += new System.EventHandler(this.picMostrarClave_Click);
+            // 
+            // picOcultarClave
+            // 
+            this.picOcultarClave.Enabled = false;
+            this.picOcultarClave.Image = ((System.Drawing.Image)(resources.GetObject("picOcultarClave.Image")));
+            this.picOcultarClave.Location = new System.Drawing.Point(365, 383);
+            this.picOcultarClave.Name = "picOcultarClave";
+            this.picOcultarClave.Size = new System.Drawing.Size(31, 19);
+            this.picOcultarClave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picOcultarClave.TabIndex = 29;
+            this.picOcultarClave.TabStop = false;
+            this.picOcultarClave.Visible = false;
+            this.picOcultarClave.Click += new System.EventHandler(this.picOcultarClave_Click);
             // 
             // formLogin
             // 
@@ -139,6 +193,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(546, 723);
+            this.Controls.Add(this.picOcultarClave);
+            this.Controls.Add(this.picMostrarClave);
+            this.Controls.Add(this.lblErrorClave);
+            this.Controls.Add(this.lblErrorUsuario);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.pictureBox2);
@@ -151,7 +209,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "formLogin";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.formLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMostrarClave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOcultarClave)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,6 +228,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private pkgInterfaz.placeHolderBox txtUsuario;
         private pkgInterfaz.placeHolderBox txtClave;
+        private System.Windows.Forms.Label lblErrorUsuario;
+        private System.Windows.Forms.Label lblErrorClave;
+        private System.Windows.Forms.PictureBox picMostrarClave;
+        private System.Windows.Forms.PictureBox picOcultarClave;
     }
 }
 

@@ -8,44 +8,130 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using testForms.pkgBaseDatos;
 using testForms.pkgInterfaz;
 using testForms.pkgLogica;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace testForms
 {
     public partial class formLogin : Form
     {
+        Datos data = new Datos();
         public formLogin()
         {
             InitializeComponent();
         }
 
+        private void formLogin_Load(object sender, EventArgs e)
+        {
+            lblErrorClave.Hide();
+            lblErrorUsuario.Hide();
+            txtClave.UseSystemPasswordChar = true;
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is placeHolderBox txt)
+                {
+                    txt.TextChanged += fnc_validarCampos;
+                }
+            }
+
+            btnIniciarSesion.Click += fnc_validarCampos;
+        }
+        private void fnc_validarCampos(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "")
+            {
+                lblErrorUsuario.Show();
+            }
+            else
+            {
+                lblErrorUsuario.Hide();
+            }
+
+            if (txtClave.Text == "")
+            {
+                lblErrorClave.Show();
+            }
+            else
+            {
+                lblErrorClave.Hide();
+            }
+        }
+
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            formRegistro frmReg = new formRegistro(this);
             this.Hide();
-            frmReg.Show();
+
+            using (formRegistro frmReg = new formRegistro(this))
+            {
+                frmReg.ShowDialog();
+            }
+
+            this.Show();
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             string usuario = txtUsuario.Text;
             string clave = txtClave.Text;
-            int resultado = 0;
+            int idUsuario = 0;
 
             Usuario u = new Usuario();
-            resultado = u.fnc_loginUsuario(usuario, clave);
+            idUsuario = u.fnc_loginUsuario(usuario, clave);
 
-            if (resultado != 0)
+            if (idUsuario > 0)
             {
-                formHome frmHome = new formHome(resultado);
-                this.Hide();
-                frmHome.Show();
+                if(u.fnc_verificarAdmin(idUsuario) == "admin")
+                {
+                    this.Hide();
+                    using (var frmHomeAdmin = new formHomeAdmin())
+                    {
+                        frmHomeAdmin.ShowDialog();
+                    }
+                    this.Show();
+                }
+                else
+                {
+                    this.Hide();
+                    using (var frmHome = new formHomeCliente(idUsuario))
+                    {
+                        frmHome.ShowDialog();
+                    }
+                    this.Show();
+                }
+                     
             }
-            else if (resultado == 0)
+            else
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
+                MessageBox.Show("Usuario o contraseña incorrectos.",
+                        "Error de autenticación",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
             }
+        }
+
+        private void picMostrarClave_Click(object sender, EventArgs e)
+        {
+            txtClave.UseSystemPasswordChar = false;
+
+            picMostrarClave.Hide();
+            picMostrarClave.Enabled = false;
+
+            picOcultarClave.Show();
+            picOcultarClave.Enabled = true;
+        }
+
+        private void picOcultarClave_Click(object sender, EventArgs e)
+        {
+            txtClave.UseSystemPasswordChar = true;
+
+            picOcultarClave.Hide();
+            picOcultarClave.Enabled = false;
+
+            picMostrarClave.Show();
+            picMostrarClave.Enabled = true;
         }
     }
 }

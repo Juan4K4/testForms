@@ -36,6 +36,8 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblDatosObligatorios = new System.Windows.Forms.Label();
+            this.picMostrarClave = new System.Windows.Forms.PictureBox();
+            this.picOcultarClave = new System.Windows.Forms.PictureBox();
             this.txtClave = new testForms.pkgInterfaz.placeHolderBox();
             this.txtUsuario = new testForms.pkgInterfaz.placeHolderBox();
             this.txtId = new testForms.pkgInterfaz.placeHolderBox();
@@ -43,6 +45,8 @@
             this.txtNombre = new testForms.pkgInterfaz.placeHolderBox();
             this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMostrarClave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOcultarClave)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRegistroCliente
@@ -138,14 +142,38 @@
             this.lblDatosObligatorios.TabIndex = 21;
             this.lblDatosObligatorios.Text = "Ingrese todos los campos obligatorios para continuar";
             // 
+            // picMostrarClave
+            // 
+            this.picMostrarClave.Image = ((System.Drawing.Image)(resources.GetObject("picMostrarClave.Image")));
+            this.picMostrarClave.Location = new System.Drawing.Point(487, 500);
+            this.picMostrarClave.Name = "picMostrarClave";
+            this.picMostrarClave.Size = new System.Drawing.Size(31, 19);
+            this.picMostrarClave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMostrarClave.TabIndex = 27;
+            this.picMostrarClave.TabStop = false;
+            this.picMostrarClave.Click += new System.EventHandler(this.picMostrarClave_Click);
+            // 
+            // picOcultarClave
+            // 
+            this.picOcultarClave.Enabled = false;
+            this.picOcultarClave.Image = ((System.Drawing.Image)(resources.GetObject("picOcultarClave.Image")));
+            this.picOcultarClave.Location = new System.Drawing.Point(487, 500);
+            this.picOcultarClave.Name = "picOcultarClave";
+            this.picOcultarClave.Size = new System.Drawing.Size(31, 19);
+            this.picOcultarClave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picOcultarClave.TabIndex = 28;
+            this.picOcultarClave.TabStop = false;
+            this.picOcultarClave.Visible = false;
+            this.picOcultarClave.Click += new System.EventHandler(this.picOcultarClave_Click);
+            // 
             // txtClave
             // 
             this.txtClave.Font = new System.Drawing.Font("Codec Pro", 8F);
             this.txtClave.ForeColor = System.Drawing.Color.Black;
-            this.txtClave.Location = new System.Drawing.Point(269, 499);
+            this.txtClave.Location = new System.Drawing.Point(269, 500);
             this.txtClave.Name = "txtClave";
             this.txtClave.PlaceHolder = "Contraseña";
-            this.txtClave.Size = new System.Drawing.Size(250, 19);
+            this.txtClave.Size = new System.Drawing.Size(212, 19);
             this.txtClave.TabIndex = 26;
             // 
             // txtUsuario
@@ -207,6 +235,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 709);
+            this.Controls.Add(this.picOcultarClave);
+            this.Controls.Add(this.picMostrarClave);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtId);
@@ -226,6 +256,8 @@
             this.Text = "formRegistro";
             this.Load += new System.EventHandler(this.formRegistro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMostrarClave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOcultarClave)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +278,7 @@
         private pkgInterfaz.placeHolderBox txtId;
         private pkgInterfaz.placeHolderBox txtUsuario;
         private pkgInterfaz.placeHolderBox txtClave;
+        private System.Windows.Forms.PictureBox picMostrarClave;
+        private System.Windows.Forms.PictureBox picOcultarClave;
     }
 }

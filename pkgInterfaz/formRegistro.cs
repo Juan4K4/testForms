@@ -17,7 +17,6 @@ namespace testForms
     public partial class formRegistro : Form
     {
         formLogin frmLogin = new formLogin();
-        bool camposObligatorios;
         public formRegistro()
         {
             InitializeComponent();
@@ -32,19 +31,15 @@ namespace testForms
         private void btnLoginBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            frmLogin.Show();
         }
 
         private void formRegistro_Load(object sender, EventArgs e)
         {
-
-            /** Diseño **/
             lblDatosObligatorios.Hide();
-
-            /** Logica  **/
 
             DateTime fechaMaxima = DateTime.Today.AddYears(-18);
             dtpFechaNac.MaxDate = fechaMaxima;
+            txtClave.UseSystemPasswordChar = true;
 
             foreach (Control ctrl in this.Controls)
             {
@@ -52,6 +47,33 @@ namespace testForms
                 {
                     txt.TextChanged += fnc_validarCampos;
                 }
+            }
+        }
+        private void fnc_validarCampos(object sender, EventArgs e)
+        {
+            bool campos = true;
+            lblDatosObligatorios.Enabled = true;
+            lblDatosObligatorios.Show();
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is placeHolderBox ph)
+                {
+                    if (string.IsNullOrEmpty(ph.Text))
+                    {
+                        campos = false;
+                        break;
+                    }
+                }
+            }
+
+            if (campos)
+            {
+                btnRegistrar.Enabled = campos;
+                btnRegistrar.BackColor = Color.Orange;
+
+                lblDatosObligatorios.Hide();
+                lblDatosObligatorios.Enabled = !campos;
             }
         }
 
@@ -69,38 +91,37 @@ namespace testForms
 
             if (resultadoDml == 0)
             {
-                MessageBox.Show("No se ha podido completar el registro");
+                MessageBox.Show("Los datos ingresados son invalidos, o ya existe una cuenta registrada",
+                                "Error de registro",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
             }
             else
             {
                 MessageBox.Show("Registro completado correctamente");
             }
         }
-        private void fnc_validarCampos(object sender, EventArgs e)
+
+        private void picMostrarClave_Click(object sender, EventArgs e)
         {
-            formRegistro frm = new formRegistro();
-            bool campos = true;
+            txtClave.UseSystemPasswordChar = false;
 
-            foreach (Control ctrl in this.Controls)
-            {
-                if (ctrl is placeHolderBox ph) 
-                {
-                    if (string.IsNullOrEmpty(ph.Text))
-                    {
-                        campos = false;
-                        break;
-                    }
-                }
-            }
+            picMostrarClave.Hide();
+            picMostrarClave.Enabled = false;
 
-            if (campos)
-            {
-                btnRegistrar.Enabled = campos;
-                btnRegistrar.BackColor = Color.Orange;
+            picOcultarClave.Show();
+            picOcultarClave.Enabled = true;
+        }
 
-                lblDatosObligatorios.Show();
-                lblDatosObligatorios.Enabled = !campos;
-            }
+        private void picOcultarClave_Click(object sender, EventArgs e)
+        {
+            txtClave.UseSystemPasswordChar = true;
+
+            picOcultarClave.Hide();
+            picOcultarClave.Enabled = false;
+
+            picMostrarClave.Show();
+            picMostrarClave.Enabled = true;
         }
     }
 }

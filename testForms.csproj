@@ -89,11 +89,17 @@
     <Compile Include="pkgInterfaz\formActualizarCliente.Designer.cs">
       <DependentUpon>formActualizarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="pkgInterfaz\formHome.cs">
+    <Compile Include="pkgInterfaz\formHomeAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pkgInterfaz\formHome.Designer.cs">
-      <DependentUpon>formHome.cs</DependentUpon>
+    <Compile Include="pkgInterfaz\formHomeAdmin.Designer.cs">
+      <DependentUpon>formHomeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pkgInterfaz\formHomeCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pkgInterfaz\formHomeCliente.Designer.cs">
+      <DependentUpon>formHomeCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="pkgInterfaz\formLogin.cs">
       <SubType>Form</SubType>
@@ -111,9 +117,6 @@
     <Compile Include="pkgInterfaz\pDegradado.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="pkgInterfaz\phTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="pkgInterfaz\placeHolder.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -123,8 +126,11 @@
     <EmbeddedResource Include="pkgInterfaz\formActualizarCliente.resx">
       <DependentUpon>formActualizarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pkgInterfaz\formHome.resx">
-      <DependentUpon>formHome.cs</DependentUpon>
+    <EmbeddedResource Include="pkgInterfaz\formHomeAdmin.resx">
+      <DependentUpon>formHomeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pkgInterfaz\formHomeCliente.resx">
+      <DependentUpon>formHomeCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pkgInterfaz\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
