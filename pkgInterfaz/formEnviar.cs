@@ -25,7 +25,7 @@ namespace testForms.pkgInterfaz
             {
                 if (ctrl is placeHolderBox ph)
                 {
-                    ph.TextChanged += fnc_validarCampo;
+                    ph.TextChanged += fnc_validarCampos;
                 }
             }
         }
@@ -35,7 +35,7 @@ namespace testForms.pkgInterfaz
 
         }
 
-        private void fnc_validarCampo(object sender, EventArgs e)
+        private void fnc_validarCampos(object sender, EventArgs e)
         {
             bool campos = false;
             foreach (Control ctrl in this.Controls)
@@ -44,7 +44,8 @@ namespace testForms.pkgInterfaz
                 {
                     if (string.IsNullOrEmpty(ph.Text) || ph.Text == "")
                     {
-                        campos = false;
+                        campos = false; 
+                        break;
                     }
                     else if (Convert.ToDecimal(txtMonto.Text) <= saldo)
                     {
@@ -64,10 +65,18 @@ namespace testForms.pkgInterfaz
                 btnEnviar.Hide();
                 btnEnviar.Enabled = false;
                 lblErrorMonto.Show();
-            }
+            }   
         }
 
         private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNumeroCuenta_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {

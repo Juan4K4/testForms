@@ -105,6 +105,7 @@
             this.txtNumeroCuenta.PlaceHolder = "Numero de cuenta";
             this.txtNumeroCuenta.Size = new System.Drawing.Size(200, 17);
             this.txtNumeroCuenta.TabIndex = 25;
+            this.txtNumeroCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroCuenta_KeyPress);
             // 
             // formEnviar
             // 
