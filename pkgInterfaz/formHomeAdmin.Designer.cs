@@ -30,15 +30,15 @@
         {
             this.tbcAdmin = new System.Windows.Forms.TabControl();
             this.tabActualizar = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
+            this.placeHolderBox1 = new testForms.pkgInterfaz.placeHolderBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabSolicitudes = new System.Windows.Forms.TabPage();
-            this.placeHolderBox1 = new testForms.pkgInterfaz.placeHolderBox();
             this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
             this.tbcAdmin.SuspendLayout();
             this.tabActualizar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // tbcAdmin
@@ -51,10 +51,11 @@
             this.tbcAdmin.SelectedIndex = 0;
             this.tbcAdmin.Size = new System.Drawing.Size(1174, 611);
             this.tbcAdmin.TabIndex = 23;
+            this.tbcAdmin.Enter += new System.EventHandler(this.tbcAdmin_Enter);
             // 
             // tabActualizar
             // 
-            this.tabActualizar.Controls.Add(this.dataGridView1);
+            this.tabActualizar.Controls.Add(this.dgvUsuarios);
             this.tabActualizar.Controls.Add(this.btnConsultar);
             this.tabActualizar.Controls.Add(this.placeHolderBox1);
             this.tabActualizar.Controls.Add(this.label1);
@@ -67,15 +68,15 @@
             this.tabActualizar.Text = "Actualizacion de datos";
             this.tabActualizar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvUsuarios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 123);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1133, 436);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Location = new System.Drawing.Point(14, 123);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.RowHeadersWidth = 51;
+            this.dgvUsuarios.RowTemplate.Height = 24;
+            this.dgvUsuarios.Size = new System.Drawing.Size(1133, 436);
+            this.dgvUsuarios.TabIndex = 3;
             // 
             // btnConsultar
             // 
@@ -90,6 +91,19 @@
             this.btnConsultar.TabIndex = 2;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // placeHolderBox1
+            // 
+            this.placeHolderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.placeHolderBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.placeHolderBox1.Font = new System.Drawing.Font("Codec Pro", 15F);
+            this.placeHolderBox1.Location = new System.Drawing.Point(14, 81);
+            this.placeHolderBox1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 40);
+            this.placeHolderBox1.Name = "placeHolderBox1";
+            this.placeHolderBox1.PlaceHolder = "ID del cliente";
+            this.placeHolderBox1.Size = new System.Drawing.Size(248, 29);
+            this.placeHolderBox1.TabIndex = 1;
             // 
             // label1
             // 
@@ -110,18 +124,6 @@
             this.tabSolicitudes.TabIndex = 1;
             this.tabSolicitudes.Text = "Consulta de solicitudes";
             this.tabSolicitudes.UseVisualStyleBackColor = true;
-            // 
-            // placeHolderBox1
-            // 
-            this.placeHolderBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.placeHolderBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.placeHolderBox1.Font = new System.Drawing.Font("Codec Pro", 15F);
-            this.placeHolderBox1.Location = new System.Drawing.Point(14, 81);
-            this.placeHolderBox1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 40);
-            this.placeHolderBox1.Name = "placeHolderBox1";
-            this.placeHolderBox1.PlaceHolder = "ID del cliente";
-            this.placeHolderBox1.Size = new System.Drawing.Size(248, 29);
-            this.placeHolderBox1.TabIndex = 1;
             // 
             // pDegradado1
             // 
@@ -147,7 +149,7 @@
             this.tbcAdmin.ResumeLayout(false);
             this.tabActualizar.ResumeLayout(false);
             this.tabActualizar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -161,6 +163,6 @@
         private placeHolderBox placeHolderBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
     }
 }

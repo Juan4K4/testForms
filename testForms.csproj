@@ -89,6 +89,12 @@
     <Compile Include="pkgInterfaz\formActualizarCliente.Designer.cs">
       <DependentUpon>formActualizarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="pkgInterfaz\formEnviar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pkgInterfaz\formEnviar.Designer.cs">
+      <DependentUpon>formEnviar.cs</DependentUpon>
+    </Compile>
     <Compile Include="pkgInterfaz\formHomeAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="pkgInterfaz\formActualizarCliente.resx">
       <DependentUpon>formActualizarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pkgInterfaz\formEnviar.resx">
+      <DependentUpon>formEnviar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pkgInterfaz\formHomeAdmin.resx">
       <DependentUpon>formHomeAdmin.cs</DependentUpon>

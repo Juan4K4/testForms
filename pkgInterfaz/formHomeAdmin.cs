@@ -7,14 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using testForms.pkgLogica;
 
 namespace testForms.pkgInterfaz
 {
     public partial class formHomeAdmin : Form
     {
+        Usuario user = new Usuario();
+
         public formHomeAdmin()
         {
             InitializeComponent();
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbcAdmin_Enter(object sender, EventArgs e)
+        {
+            dgvUsuarios.Enabled = true;
+            dgvUsuarios.DataSource = user.fnc_consultarUsuarios();
         }
     }
 }

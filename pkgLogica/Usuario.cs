@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,11 @@ namespace testForms.pkgLogica
             {
                 return "cliente";
             }
+        }
+
+        public DataTable fnc_consultarUsuarios ()
+        {
+            return data.fnc_select("Usuarios");
         }
     }
 }

@@ -156,5 +156,23 @@ namespace testForms.pkgBaseDatos
             }
         }
 
+        public DataTable fnc_select(string prm_tabla)
+        {
+            using (OracleConnection conn = new OracleConnection(connectionString))
+            {
+                string sql = $"SELECT * FROM {prm_tabla}";
+                using (OracleCommand cmd = new OracleCommand(sql, conn))
+                {
+                    cmd.CommandType = CommandType.Text;
+
+                    using (OracleDataAdapter sqlDataAdapter = new OracleDataAdapter(cmd))
+                    {
+                        DataTable tabla = new DataTable();
+                        sqlDataAdapter.Fill(tabla);
+                        return tabla;
+                    }
+                }
+            }
+        }
     }
 }

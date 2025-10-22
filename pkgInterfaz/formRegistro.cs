@@ -59,7 +59,7 @@ namespace testForms
             {
                 if (ctrl is placeHolderBox ph)
                 {
-                    if (string.IsNullOrEmpty(ph.Text))
+                    if (string.IsNullOrEmpty(ph.Text) || ph.Text == "")
                     {
                         campos = false;
                         break;
@@ -75,30 +75,50 @@ namespace testForms
                 lblDatosObligatorios.Hide();
                 lblDatosObligatorios.Enabled = !campos;
             }
+            else
+            {
+                btnRegistrar.Enabled = campos;
+                btnRegistrar.BackColor = Color.DimGray;
+
+                lblDatosObligatorios.Show();
+                lblDatosObligatorios.Enabled = !campos;
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            string v_nombre = txtNombre.Text;
-            string v_mail = txtCorreo.Text;
-            int v_id = int.Parse(txtId.Text);
-            string v_usuario = txtUsuario.Text;
-            string v_clave = txtClave.Text;
-            string v_fechaNac = dtpFechaNac.Value.Date.ToString("dd/MM/yyyy");
-
-            Usuario u = new Usuario();
-            int resultadoDml = u.fnc_registrarUsuario(v_nombre, v_mail, v_id, v_usuario, v_clave, v_fechaNac);
-
-            if (resultadoDml == 0)
+            try
             {
-                MessageBox.Show("Los datos ingresados son invalidos, o ya existe una cuenta registrada",
-                                "Error de registro",
+                string v_nombre = txtNombre.Text;
+                string v_mail = txtCorreo.Text;
+                int v_id = int.Parse(txtId.Text);
+                string v_usuario = txtUsuario.Text;
+                string v_clave = txtClave.Text;
+                string v_fechaNac = dtpFechaNac.Value.Date.ToString("dd/MM/yyyy");
+
+                Usuario u = new Usuario();
+                int resultadoDml = u.fnc_registrarUsuario(v_nombre, v_mail, v_id, v_usuario, v_clave, v_fechaNac);
+
+                if (resultadoDml == 0)
+                {
+                    MessageBox.Show("Los datos ingresados son invalidos, o ya existe una cuenta registrada",
+                                    "Error de registro",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Registro completado correctamente");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Los campos requeridos contienen datos invalidos",
+                                "Error al registrarse",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
-            }
-            else
-            {
-                MessageBox.Show("Registro completado correctamente");
+
+                MessageBox.Show("Excepcion: " + ex);
             }
         }
 
