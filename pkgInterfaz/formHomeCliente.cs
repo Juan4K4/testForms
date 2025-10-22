@@ -15,6 +15,7 @@ namespace testForms.pkgInterfaz
     public partial class formHomeCliente : Form
     {
         int id_usuarioActual = 0;
+        decimal saldo = 0;
 
         public formHomeCliente(int prm_idUsuarioActual)
         {
@@ -41,7 +42,7 @@ namespace testForms.pkgInterfaz
         {
             this.Hide();
 
-            using (formEnviar formEnv = new formEnviar())
+            using (formEnviar formEnv = new formEnviar(id_usuarioActual, saldo))
             {
                 formEnv.ShowDialog();
             }
@@ -55,7 +56,7 @@ namespace testForms.pkgInterfaz
             var infoCuenta = data.fnc_obtenerInfoCuenta(prm_idUsuarioActual);
             lblNombre.Text = $"Bienvenido,  {infoCuenta.Value.outPrm_nombre}";
             lblCuentaNum.Text = $"Numero de cuenta:     {infoCuenta.Value.outPrm_numeroCuenta}";
-            decimal saldo = infoCuenta.Value.outPrm_saldoCuenta;
+            saldo = infoCuenta.Value.outPrm_saldoCuenta;
             lblSaldo.Text = $"Disponible:   {saldo.ToString("C2")}";    //C2 formato de moneda   
         }
     }
