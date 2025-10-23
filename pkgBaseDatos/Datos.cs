@@ -174,5 +174,36 @@ namespace testForms.pkgBaseDatos
                 }
             }
         }
+
+        public (DateTime prmOut_fecha, int prmOut_referencia)? fnc_transferencia(int prm_idUsuario, int prm_destinatario, int prm_monto)
+        {
+            using (OracleConnection oracleConexion = new OracleConnection(connectionString))
+            using (OracleCommand cmd = new OracleCommand("prc_transferencia", oracleConexion))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("prm_idUsuario", OracleDbType.Int32).Value = prm_idUsuario;
+                cmd.Parameters.Add("prm_cuenta_destinatario", OracleDbType.Int32).Value = prm_destinatario;
+                cmd.Parameters.Add("prm_monto", OracleDbType.Int32).Value = prm_monto;
+                cmd.Parameters.Add("prm_fecha", OracleDbType.Date).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("prm_referencia", OracleDbType.Int32).Direction = ParameterDirection.Output;
+
+                try
+                {
+                    oracleConexion.Open();
+                    cmd.ExecuteNonQuery();
+
+                    DateTime fecha_movimiento = Convert.ToDateTime(cmd.Parameters["prm_fecha"].Value.ToString());
+                    int referencia = int.Parse(cmd.Parameters["prm_referencia"].Value.ToString());
+
+                    return (fecha_movimiento, referencia);
+                }
+                catch (Oracle.ManagedDataAccess.Client.OracleException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return null;
+                }
+            }
+        }
     }
 }

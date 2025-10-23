@@ -47,6 +47,7 @@ namespace testForms.pkgInterfaz
                 formEnv.ShowDialog();
             }
 
+            fnc_cargarDatosCuenta(id_usuarioActual);
             this.Show();
         }
 
@@ -57,7 +58,7 @@ namespace testForms.pkgInterfaz
             lblNombre.Text = $"Bienvenido,  {infoCuenta.Value.outPrm_nombre}";
             lblCuentaNum.Text = $"Numero de cuenta:     {infoCuenta.Value.outPrm_numeroCuenta}";
             saldo = infoCuenta.Value.outPrm_saldoCuenta;
-            lblSaldo.Text = $"Disponible:   {saldo.ToString("C2")}";    //C2 formato de moneda   
+            lblSaldo.Text = $"Disponible:   {saldo.ToString("C2")}";  
         }
     }
 }
