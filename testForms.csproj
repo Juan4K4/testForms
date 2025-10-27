@@ -126,6 +126,12 @@
       <DependentUpon>formRegistro.cs</DependentUpon>
     </Compile>
     <Compile Include="pkgBaseDatos\Datos.cs" />
+    <Compile Include="pkgInterfaz\formMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pkgInterfaz\formMovimientos.Designer.cs">
+      <DependentUpon>formMovimientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="pkgInterfaz\pDegradado.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pkgInterfaz\formRegistro.resx">
       <DependentUpon>formRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pkgInterfaz\formMovimientos.resx">
+      <DependentUpon>formMovimientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

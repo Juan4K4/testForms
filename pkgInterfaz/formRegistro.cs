@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using testForms.pkgLogica;
 using testForms.pkgInterfaz;
+using testForms.pkgBaseDatos;
 
 namespace testForms
 {
@@ -36,6 +37,7 @@ namespace testForms
         private void formRegistro_Load(object sender, EventArgs e)
         {
             lblDatosObligatorios.Hide();
+            lblClaveUsuario.Hide();
 
             DateTime fechaMaxima = DateTime.Today.AddYears(-18);
             dtpFechaNac.MaxDate = fechaMaxima;
@@ -51,39 +53,42 @@ namespace testForms
         }
         private void fnc_validarCampos(object sender, EventArgs e)
         {
-            bool campos = true;
-            lblDatosObligatorios.Enabled = true;
+            bool camposCompletos = true;
+
             lblDatosObligatorios.Show();
 
             foreach (Control ctrl in this.Controls)
             {
                 if (ctrl is placeHolderBox ph)
                 {
-                    if (string.IsNullOrEmpty(ph.Text) || ph.Text == "")
+                    if (string.IsNullOrWhiteSpace(ph.Text))
                     {
-                        campos = false;
+                        camposCompletos = false;
                         break;
                     }
                 }
             }
 
-            if (campos)
+            bool claveValida = !string.Equals(txtClave.Text, txtUsuario.Text, StringComparison.OrdinalIgnoreCase);
+
+            if (camposCompletos && claveValida)
             {
-                btnRegistrar.Enabled = campos;
+                btnRegistrar.Enabled = true;
                 btnRegistrar.BackColor = Color.Orange;
 
                 lblDatosObligatorios.Hide();
-                lblDatosObligatorios.Enabled = !campos;
+                lblClaveUsuario.Hide();
             }
             else
             {
-                btnRegistrar.Enabled = campos;
+                btnRegistrar.Enabled = false;
                 btnRegistrar.BackColor = Color.DimGray;
 
-                lblDatosObligatorios.Show();
-                lblDatosObligatorios.Enabled = !campos;
+                lblDatosObligatorios.Visible = !camposCompletos;
+                lblClaveUsuario.Visible = !claveValida;
             }
         }
+
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -96,19 +101,29 @@ namespace testForms
                 string v_clave = txtClave.Text;
                 string v_fechaNac = dtpFechaNac.Value.Date.ToString("dd/MM/yyyy");
 
-                Usuario u = new Usuario();
-                int resultadoDml = u.fnc_registrarUsuario(v_nombre, v_mail, v_id, v_usuario, v_clave, v_fechaNac);
+                Datos data = new Datos();
+                int resultadoDml = data.fnc_registrarUsuario(v_nombre, v_mail, v_id, v_usuario, v_clave, v_fechaNac);
 
-                if (resultadoDml == 0)
+                switch (resultadoDml)
                 {
-                    MessageBox.Show("Los datos ingresados son invalidos, o ya existe una cuenta registrada",
-                                    "Error de registro",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    MessageBox.Show("Registro completado correctamente");
+                    case 1:
+                        MessageBox.Show("Registro completado correctamente");
+                        break;
+
+                    case -1:
+                        MessageBox.Show("Ya existe una cuenta registrada con el ID que ingreso");
+                        break;
+
+                    case -2:
+                        MessageBox.Show("Ya existe una cuenta registrada con el correo que ingreso");
+                        break;
+
+                    case -3:
+                        MessageBox.Show("Ya existe una cuenta registrada con el usuario que ingreso");
+                        break;
+                    default:
+                        MessageBox.Show("No se pudo completar el registro");
+                        break;
                 }
             }
             catch (Exception ex)
@@ -142,6 +157,14 @@ namespace testForms
 
             picMostrarClave.Show();
             picMostrarClave.Enabled = true;
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

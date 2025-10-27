@@ -60,5 +60,18 @@ namespace testForms.pkgInterfaz
             saldo = infoCuenta.Value.outPrm_saldoCuenta;
             lblSaldo.Text = $"Disponible:   {saldo.ToString("C2")}";  
         }
+
+        private void btnMovimientos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            using (formMovimientos frmMov = new formMovimientos(id_usuarioActual))
+            {
+                frmMov.ShowDialog();
+            }
+
+            fnc_cargarDatosCuenta(id_usuarioActual);
+            this.Show();
+        }
     }
 }

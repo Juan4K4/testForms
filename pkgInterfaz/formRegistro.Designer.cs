@@ -44,6 +44,7 @@
             this.txtCorreo = new testForms.pkgInterfaz.placeHolderBox();
             this.txtNombre = new testForms.pkgInterfaz.placeHolderBox();
             this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
+            this.lblClaveUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMostrarClave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOcultarClave)).BeginInit();
@@ -133,7 +134,6 @@
             // 
             this.lblDatosObligatorios.AutoSize = true;
             this.lblDatosObligatorios.CausesValidation = false;
-            this.lblDatosObligatorios.Enabled = false;
             this.lblDatosObligatorios.Font = new System.Drawing.Font("Codec Pro", 7F);
             this.lblDatosObligatorios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblDatosObligatorios.Location = new System.Drawing.Point(237, 609);
@@ -175,6 +175,7 @@
             this.txtClave.PlaceHolder = "Contraseña";
             this.txtClave.Size = new System.Drawing.Size(212, 19);
             this.txtClave.TabIndex = 26;
+            this.txtClave.Text = "juan";
             // 
             // txtUsuario
             // 
@@ -185,6 +186,7 @@
             this.txtUsuario.PlaceHolder = "Usuario";
             this.txtUsuario.Size = new System.Drawing.Size(250, 19);
             this.txtUsuario.TabIndex = 25;
+            this.txtUsuario.Text = "juan";
             // 
             // txtId
             // 
@@ -195,6 +197,7 @@
             this.txtId.PlaceHolder = "Numero de Identificacion";
             this.txtId.Size = new System.Drawing.Size(250, 19);
             this.txtId.TabIndex = 24;
+            this.txtId.Text = "1058932766";
             // 
             // txtCorreo
             // 
@@ -205,6 +208,7 @@
             this.txtCorreo.PlaceHolder = "Correo Electronico";
             this.txtCorreo.Size = new System.Drawing.Size(250, 19);
             this.txtCorreo.TabIndex = 23;
+            this.txtCorreo.Text = "juan@gmail.com";
             // 
             // txtNombre
             // 
@@ -215,6 +219,8 @@
             this.txtNombre.PlaceHolder = "Nombre";
             this.txtNombre.Size = new System.Drawing.Size(250, 19);
             this.txtNombre.TabIndex = 22;
+            this.txtNombre.Text = "juan";
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // pDegradado1
             // 
@@ -227,6 +233,17 @@
             this.pDegradado1.Size = new System.Drawing.Size(803, 100);
             this.pDegradado1.TabIndex = 17;
             // 
+            // lblClaveUsuario
+            // 
+            this.lblClaveUsuario.CausesValidation = false;
+            this.lblClaveUsuario.Font = new System.Drawing.Font("Codec Pro", 7F);
+            this.lblClaveUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblClaveUsuario.Location = new System.Drawing.Point(524, 491);
+            this.lblClaveUsuario.Name = "lblClaveUsuario";
+            this.lblClaveUsuario.Size = new System.Drawing.Size(195, 40);
+            this.lblClaveUsuario.TabIndex = 29;
+            this.lblClaveUsuario.Text = "La contraseña no puede ser igual al nombre de usuario";
+            // 
             // formRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -235,6 +252,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 709);
+            this.Controls.Add(this.lblClaveUsuario);
             this.Controls.Add(this.picOcultarClave);
             this.Controls.Add(this.picMostrarClave);
             this.Controls.Add(this.txtClave);
@@ -280,5 +298,6 @@
         private pkgInterfaz.placeHolderBox txtClave;
         private System.Windows.Forms.PictureBox picMostrarClave;
         private System.Windows.Forms.PictureBox picOcultarClave;
+        private System.Windows.Forms.Label lblClaveUsuario;
     }
 }

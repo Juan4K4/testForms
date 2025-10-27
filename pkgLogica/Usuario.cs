@@ -21,9 +21,10 @@ namespace testForms.pkgLogica
             )
         {
             string sqlRegistroUsuario =
-                "INSERT INTO Usuarios (usu_nombre, usu_mail, usu_id, usu_user, usu_clave, usu_fechaNac)" +
-                "VALUES ('" + prm_nombre + "', '" + prm_mail + "', " + prm_id + ", '" + prm_usuario + "', '" + prm_clave + "', '" + prm_fechaNac + "')";
-            return data.fnc_dml(sqlRegistroUsuario);
+                $"SELECT fnc_registrar('{prm_nombre}', '{prm_mail}', {prm_id}, '{prm_usuario}', '{prm_clave}', TO_DATE('{prm_fechaNac}', 'dd-mm-yyyy')) FROM dual";
+            object resultado = data.fnc_escalar(sqlRegistroUsuario);
+
+            return Convert.ToInt32( resultado );    
         }
 
         public int fnc_loginUsuario (string prm_usuario, string prm_clave)
