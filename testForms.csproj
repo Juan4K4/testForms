@@ -132,6 +132,12 @@
     <Compile Include="pkgInterfaz\formMovimientos.Designer.cs">
       <DependentUpon>formMovimientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="pkgInterfaz\formSolicitudes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pkgInterfaz\formSolicitudes.Designer.cs">
+      <DependentUpon>formSolicitudes.cs</DependentUpon>
+    </Compile>
     <Compile Include="pkgInterfaz\pDegradado.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pkgInterfaz\formMovimientos.resx">
       <DependentUpon>formMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pkgInterfaz\formSolicitudes.resx">
+      <DependentUpon>formSolicitudes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pkgInterfaz\pLineaTextBox.resx">
       <DependentUpon>pLineaTextBox.cs</DependentUpon>

@@ -73,5 +73,17 @@ namespace testForms.pkgInterfaz
             fnc_cargarDatosCuenta(id_usuarioActual);
             this.Show();
         }
+
+        private void btnSolicitudes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            using (formSolicitudes frmSolicitudes = new formSolicitudes(id_usuarioActual))
+            {
+                frmSolicitudes.ShowDialog();
+            }
+
+            this.Show();
+        }
     }
 }

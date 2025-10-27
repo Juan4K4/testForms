@@ -127,6 +127,7 @@
             this.btnSolicitudes.TabIndex = 8;
             this.btnSolicitudes.Text = "Solicitudes";
             this.btnSolicitudes.UseVisualStyleBackColor = false;
+            this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
             // 
             // pictureBox1
             // 

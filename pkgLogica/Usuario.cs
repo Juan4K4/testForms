@@ -59,6 +59,25 @@ namespace testForms.pkgLogica
             }
         }
 
+        public DateTime fnc_verificarFechaCreacion(int prm_idUsuario)
+        {
+            string consultaFecha =
+                $"SELECT usu_fechacreacion FROM usuarios WHERE usu_id = {prm_idUsuario}";
+            object resultado = data.fnc_escalar(consultaFecha);
+
+            if (resultado != null)
+            {
+                string fechaString = resultado.ToString();
+                if (DateTime.TryParse(fechaString, out DateTime fecha))
+                {
+                    return fecha;
+                }
+            }
+            {
+                return DateTime.MinValue;
+            }
+        }
+
         public DataTable fnc_consultarUsuarios ()
         {
             return data.fnc_select("Usuarios");
