@@ -40,7 +40,10 @@ namespace testForms
             lblClaveUsuario.Hide();
 
             DateTime fechaMaxima = DateTime.Today.AddYears(-18);
+            DateTime fechaMinima = DateTime.Today.AddYears(-90);
             dtpFechaNac.MaxDate = fechaMaxima;
+            dtpFechaNac.MinDate = fechaMinima;
+
             txtClave.UseSystemPasswordChar = true;
 
             foreach (Control ctrl in this.Controls)
@@ -50,6 +53,15 @@ namespace testForms
                     txt.TextChanged += fnc_validarCampos;
                 }
             }
+
+            txtPrimerNombre.KeyPress += fnc_validarCampoLetra;
+            txtPrimerApellido.KeyPress += fnc_validarCampoLetra;
+
+            txtCorreo.KeyPress += fnc_validarCampoEspecial;
+            txtClave.KeyPress += fnc_validarCampoEspecial;
+            txtUsuario.KeyPress += fnc_validarCampoEspecial;
+
+            txtId.KeyPress += fnc_validarCampoNumerico;
         }
         private void fnc_validarCampos(object sender, EventArgs e)
         {
@@ -94,7 +106,8 @@ namespace testForms
         {
             try
             {
-                string v_nombre = txtNombre.Text;
+                string v_nombre =
+                    txtPrimerNombre.Text + " " + txtPrimerApellido.Text;
                 string v_mail = txtCorreo.Text;
                 int v_id = int.Parse(txtId.Text);
                 string v_usuario = txtUsuario.Text;
@@ -159,9 +172,31 @@ namespace testForms
             picMostrarClave.Enabled = true;
         }
 
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        private void fnc_validarCampoLetra(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsSeparator(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void fnc_validarCampoEspecial(object sender, KeyPressEventArgs e)
+        {
+            if (
+                !char.IsLetter(e.KeyChar) 
+                && !char.IsControl(e.KeyChar) 
+                && !char.IsNumber(e.KeyChar) 
+                && !e.KeyChar.Equals('@') 
+                && !e.KeyChar.Equals('.')
+                && !e.KeyChar.Equals('#')
+               )
+            {
+                e.Handled = true;
+            }
+        }
+        private void fnc_validarCampoNumerico(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
