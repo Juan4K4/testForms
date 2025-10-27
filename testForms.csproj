@@ -138,6 +138,12 @@
     <Compile Include="pkgInterfaz\placeHolder.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="pkgInterfaz\pLineaTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pkgInterfaz\pLineaTextBox.Designer.cs">
+      <DependentUpon>pLineaTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="pkgLogica\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pkgInterfaz\formMovimientos.resx">
       <DependentUpon>formMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pkgInterfaz\pLineaTextBox.resx">
+      <DependentUpon>pLineaTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

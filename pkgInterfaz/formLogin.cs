@@ -27,7 +27,7 @@ namespace testForms
         {
             lblErrorClave.Hide();
             lblErrorUsuario.Hide();
-            txtClave.UseSystemPasswordChar = true;
+            txtClave.esClave = true;
 
             foreach (Control ctrl in this.Controls)
             {
@@ -41,7 +41,7 @@ namespace testForms
         }
         private void fnc_validarCampos(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "")
+            if (txtUsuario.TextBoxInterno.Text == "")
             {
                 lblErrorUsuario.Show();
             }
@@ -50,7 +50,7 @@ namespace testForms
                 lblErrorUsuario.Hide();
             }
 
-            if (txtClave.Text == "")
+            if (txtClave.TextBoxInterno.Text == "")
             {
                 lblErrorClave.Show();
             }
@@ -74,8 +74,8 @@ namespace testForms
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;
-            string clave = txtClave.Text;
+            string usuario = txtUsuario.TextBoxInterno.Text;
+            string clave = txtClave.TextBoxInterno.Text;
             int idUsuario = 0;
 
             Usuario u = new Usuario();
@@ -114,7 +114,7 @@ namespace testForms
 
         private void picMostrarClave_Click(object sender, EventArgs e)
         {
-            txtClave.UseSystemPasswordChar = false;
+            txtClave.esClave = false;
 
             picMostrarClave.Hide();
             picMostrarClave.Enabled = false;
@@ -125,7 +125,7 @@ namespace testForms
 
         private void picOcultarClave_Click(object sender, EventArgs e)
         {
-            txtClave.UseSystemPasswordChar = true;
+            txtClave.esClave = true;
 
             picOcultarClave.Hide();
             picOcultarClave.Enabled = false;

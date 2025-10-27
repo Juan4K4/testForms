@@ -44,24 +44,15 @@ namespace testForms
             dtpFechaNac.MaxDate = fechaMaxima;
             dtpFechaNac.MinDate = fechaMinima;
 
-            txtClave.UseSystemPasswordChar = true;
+            txtClave.esClave = true;
 
             foreach (Control ctrl in this.Controls)
             {
-                if (ctrl is placeHolderBox txt)
+                if (ctrl is pLineaTextBox linea)
                 {
-                    txt.TextChanged += fnc_validarCampos;
+                    linea.TextBoxInterno.TextChanged += fnc_validarCampos;
                 }
             }
-
-            txtPrimerNombre.KeyPress += fnc_validarCampoLetra;
-            txtPrimerApellido.KeyPress += fnc_validarCampoLetra;
-
-            txtCorreo.KeyPress += fnc_validarCampoEspecial;
-            txtClave.KeyPress += fnc_validarCampoEspecial;
-            txtUsuario.KeyPress += fnc_validarCampoEspecial;
-
-            txtId.KeyPress += fnc_validarCampoNumerico;
         }
         private void fnc_validarCampos(object sender, EventArgs e)
         {
@@ -71,9 +62,9 @@ namespace testForms
 
             foreach (Control ctrl in this.Controls)
             {
-                if (ctrl is placeHolderBox ph)
+                if (ctrl is pLineaTextBox linea)
                 {
-                    if (string.IsNullOrWhiteSpace(ph.Text))
+                    if (string.IsNullOrWhiteSpace(linea.TextBoxInterno.Text))
                     {
                         camposCompletos = false;
                         break;
@@ -81,7 +72,7 @@ namespace testForms
                 }
             }
 
-            bool claveValida = !string.Equals(txtClave.Text, txtUsuario.Text, StringComparison.OrdinalIgnoreCase);
+            bool claveValida = !string.Equals(txtClave.TextBoxInterno.Text, txtUsuario.TextBoxInterno.Text, StringComparison.OrdinalIgnoreCase);
 
             if (camposCompletos && claveValida)
             {
@@ -107,11 +98,11 @@ namespace testForms
             try
             {
                 string v_nombre =
-                    txtPrimerNombre.Text + " " + txtPrimerApellido.Text;
-                string v_mail = txtCorreo.Text;
-                int v_id = int.Parse(txtId.Text);
-                string v_usuario = txtUsuario.Text;
-                string v_clave = txtClave.Text;
+                    txtPrimerNombre.TextBoxInterno.Text + " " + txtPrimerApellido.TextBoxInterno.Text;
+                string v_mail = txtCorreo.TextBoxInterno.Text;
+                long v_id = long.Parse(txtId.TextBoxInterno.Text);
+                string v_usuario = txtUsuario.TextBoxInterno.Text;
+                string v_clave = txtClave.TextBoxInterno.Text;
                 string v_fechaNac = dtpFechaNac.Value.Date.ToString("dd/MM/yyyy");
 
                 Datos data = new Datos();
@@ -152,7 +143,7 @@ namespace testForms
 
         private void picMostrarClave_Click(object sender, EventArgs e)
         {
-            txtClave.UseSystemPasswordChar = false;
+            txtClave.esClave = false;
 
             picMostrarClave.Hide();
             picMostrarClave.Enabled = false;
@@ -163,43 +154,13 @@ namespace testForms
 
         private void picOcultarClave_Click(object sender, EventArgs e)
         {
-            txtClave.UseSystemPasswordChar = true;
+            txtClave.esClave = true;
 
             picOcultarClave.Hide();
             picOcultarClave.Enabled = false;
 
             picMostrarClave.Show();
             picMostrarClave.Enabled = true;
-        }
-
-        private void fnc_validarCampoLetra(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void fnc_validarCampoEspecial(object sender, KeyPressEventArgs e)
-        {
-            if (
-                !char.IsLetter(e.KeyChar) 
-                && !char.IsControl(e.KeyChar) 
-                && !char.IsNumber(e.KeyChar) 
-                && !e.KeyChar.Equals('@') 
-                && !e.KeyChar.Equals('.')
-                && !e.KeyChar.Equals('#')
-               )
-            {
-                e.Handled = true;
-            }
-        }
-        private void fnc_validarCampoNumerico(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
         }
     }
 }

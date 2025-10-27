@@ -46,11 +46,12 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombre.Font = new System.Drawing.Font("Codec Pro Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNombre.Font = new System.Drawing.Font("Codec Pro Bold", 25F, System.Drawing.FontStyle.Bold);
             this.lblNombre.ForeColor = System.Drawing.Color.Black;
-            this.lblNombre.Location = new System.Drawing.Point(12, 231);
+            this.lblNombre.Location = new System.Drawing.Point(11, 189);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(75, 21);
+            this.lblNombre.Size = new System.Drawing.Size(145, 42);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "nombre";
             // 
@@ -58,11 +59,12 @@
             // 
             this.lblCuentaNum.AutoSize = true;
             this.lblCuentaNum.BackColor = System.Drawing.Color.Transparent;
-            this.lblCuentaNum.Font = new System.Drawing.Font("Codec Pro Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblCuentaNum.Font = new System.Drawing.Font("Codec Pro", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCuentaNum.ForeColor = System.Drawing.Color.Black;
-            this.lblCuentaNum.Location = new System.Drawing.Point(12, 254);
+            this.lblCuentaNum.Location = new System.Drawing.Point(15, 231);
+            this.lblCuentaNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCuentaNum.Name = "lblCuentaNum";
-            this.lblCuentaNum.Size = new System.Drawing.Size(71, 21);
+            this.lblCuentaNum.Size = new System.Drawing.Size(53, 16);
             this.lblCuentaNum.TabIndex = 4;
             this.lblCuentaNum.Text = "Cuenta";
             // 
@@ -70,11 +72,12 @@
             // 
             this.lblSaldo.AutoSize = true;
             this.lblSaldo.BackColor = System.Drawing.Color.Transparent;
-            this.lblSaldo.Font = new System.Drawing.Font("Codec Pro Bold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblSaldo.Font = new System.Drawing.Font("Codec Pro", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaldo.ForeColor = System.Drawing.Color.Black;
-            this.lblSaldo.Location = new System.Drawing.Point(12, 274);
+            this.lblSaldo.Location = new System.Drawing.Point(15, 249);
+            this.lblSaldo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(97, 21);
+            this.lblSaldo.Size = new System.Drawing.Size(70, 16);
             this.lblSaldo.TabIndex = 5;
             this.lblSaldo.Text = "Disponible";
             // 
@@ -82,12 +85,13 @@
             // 
             this.btnEnviar.AutoSize = true;
             this.btnEnviar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEnviar.Font = new System.Drawing.Font("Codec Pro", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviar.ForeColor = System.Drawing.Color.White;
-            this.btnEnviar.Location = new System.Drawing.Point(12, 318);
-            this.btnEnviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviar.Font = new System.Drawing.Font("Codec Pro", 12F);
+            this.btnEnviar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnEnviar.Location = new System.Drawing.Point(9, 309);
+            this.btnEnviar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(117, 55);
+            this.btnEnviar.Size = new System.Drawing.Size(122, 31);
             this.btnEnviar.TabIndex = 6;
             this.btnEnviar.Text = "Enviar Dinero";
             this.btnEnviar.UseVisualStyleBackColor = false;
@@ -97,12 +101,13 @@
             // 
             this.btnMovimientos.AutoSize = true;
             this.btnMovimientos.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnMovimientos.Font = new System.Drawing.Font("Codec Pro", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMovimientos.ForeColor = System.Drawing.Color.White;
-            this.btnMovimientos.Location = new System.Drawing.Point(135, 318);
-            this.btnMovimientos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMovimientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMovimientos.Font = new System.Drawing.Font("Codec Pro", 12F);
+            this.btnMovimientos.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMovimientos.Location = new System.Drawing.Point(135, 309);
+            this.btnMovimientos.Margin = new System.Windows.Forms.Padding(2);
             this.btnMovimientos.Name = "btnMovimientos";
-            this.btnMovimientos.Size = new System.Drawing.Size(139, 55);
+            this.btnMovimientos.Size = new System.Drawing.Size(149, 31);
             this.btnMovimientos.TabIndex = 7;
             this.btnMovimientos.Text = "Ver movimientos";
             this.btnMovimientos.UseVisualStyleBackColor = false;
@@ -112,12 +117,13 @@
             // 
             this.btnSolicitudes.AutoSize = true;
             this.btnSolicitudes.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSolicitudes.Font = new System.Drawing.Font("Codec Pro", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSolicitudes.ForeColor = System.Drawing.Color.White;
-            this.btnSolicitudes.Location = new System.Drawing.Point(279, 318);
-            this.btnSolicitudes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSolicitudes.Font = new System.Drawing.Font("Codec Pro", 12F);
+            this.btnSolicitudes.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSolicitudes.Location = new System.Drawing.Point(288, 309);
+            this.btnSolicitudes.Margin = new System.Windows.Forms.Padding(2);
             this.btnSolicitudes.Name = "btnSolicitudes";
-            this.btnSolicitudes.Size = new System.Drawing.Size(139, 55);
+            this.btnSolicitudes.Size = new System.Drawing.Size(104, 31);
             this.btnSolicitudes.TabIndex = 8;
             this.btnSolicitudes.Text = "Solicitudes";
             this.btnSolicitudes.UseVisualStyleBackColor = false;
@@ -125,10 +131,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(487, 102);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(566, 83);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 128);
+            this.pictureBox1.Size = new System.Drawing.Size(111, 104);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
@@ -136,10 +142,10 @@
             // picFotoCliente
             // 
             this.picFotoCliente.Image = ((System.Drawing.Image)(resources.GetObject("picFotoCliente.Image")));
-            this.picFotoCliente.Location = new System.Drawing.Point(12, 102);
-            this.picFotoCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picFotoCliente.Location = new System.Drawing.Point(9, 83);
+            this.picFotoCliente.Margin = new System.Windows.Forms.Padding(2);
             this.picFotoCliente.Name = "picFotoCliente";
-            this.picFotoCliente.Size = new System.Drawing.Size(113, 128);
+            this.picFotoCliente.Size = new System.Drawing.Size(147, 104);
             this.picFotoCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFotoCliente.TabIndex = 20;
             this.picFotoCliente.TabStop = false;
@@ -148,21 +154,22 @@
             // pDegradado1
             // 
             this.pDegradado1.Angle = 45F;
+            this.pDegradado1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pDegradado1.HexColor1 = "#00000";
             this.pDegradado1.HexColor2 = "#5C69F5";
-            this.pDegradado1.Location = new System.Drawing.Point(-77, -7);
-            this.pDegradado1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pDegradado1.Location = new System.Drawing.Point(0, 0);
+            this.pDegradado1.Margin = new System.Windows.Forms.Padding(2);
             this.pDegradado1.Name = "pDegradado1";
-            this.pDegradado1.Size = new System.Drawing.Size(803, 94);
+            this.pDegradado1.Size = new System.Drawing.Size(688, 76);
             this.pDegradado1.TabIndex = 21;
             // 
             // formHomeCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(647, 391);
+            this.ClientSize = new System.Drawing.Size(688, 353);
             this.Controls.Add(this.pDegradado1);
             this.Controls.Add(this.picFotoCliente);
             this.Controls.Add(this.pictureBox1);
@@ -173,7 +180,7 @@
             this.Controls.Add(this.lblCuentaNum);
             this.Controls.Add(this.lblNombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formHomeCliente";
             this.Text = "formHome";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

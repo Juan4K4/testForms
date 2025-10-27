@@ -24,16 +24,16 @@ namespace testForms.pkgInterfaz
 
             var infoCliente = data.fnc_obtenerInfoCliente(prm_usuarioActual);
 
-            txtCorreo.PlaceHolder = infoCliente.Value.outPrm_correo;
-            txtUsuario.PlaceHolder = infoCliente.Value.outPrm_usuario;
+            txtCorreo.placeholder = infoCliente.Value.outPrm_correo;
+            txtUsuario.placeholder = infoCliente.Value.outPrm_usuario;
             clave = infoCliente.Value.outPrm_clave;
 
-            txtClaveActual.TextChanged += fnc_validarClave;
+            txtClaveActual.TextBoxInterno.TextChanged += fnc_validarClave;
 
             txtClaveNueva.Hide();
 
-            txtClaveActual.UseSystemPasswordChar = true;
-            txtClaveNueva.UseSystemPasswordChar = true;
+            txtClaveActual.esClave = true;
+            txtClaveNueva.esClave = true;
 
             picMostrarClaveNueva.Hide();
             picOcultarClaveNueva.Hide();
@@ -41,7 +41,7 @@ namespace testForms.pkgInterfaz
 
         private void fnc_validarClave (object sender, EventArgs e)
         {
-            if (txtClaveActual.Text == clave && !string.IsNullOrEmpty(txtClaveActual.Text))
+            if (txtClaveActual.TextBoxInterno.Text == clave && !string.IsNullOrEmpty(txtClaveActual.TextBoxInterno.Text))
             {
                 txtClaveNueva.Show();
                 txtClaveNueva.Enabled = true;
@@ -63,7 +63,7 @@ namespace testForms.pkgInterfaz
 
         private void picOcultarClaveActual_Click(object sender, EventArgs e)
         {
-            txtClaveActual.UseSystemPasswordChar = true;
+            txtClaveActual.esClave = true;
 
             picOcultarClaveActual.Hide();
             picOcultarClaveActual.Enabled = false;
@@ -74,7 +74,7 @@ namespace testForms.pkgInterfaz
 
         private void picMostrarClaveActual_Click(object sender, EventArgs e)
         {
-            txtClaveActual.UseSystemPasswordChar = false;
+            txtClaveActual.esClave = false;
 
             picMostrarClaveActual.Hide();
             picMostrarClaveActual.Enabled = false;
@@ -85,7 +85,7 @@ namespace testForms.pkgInterfaz
 
         private void picOcultarClaveNueva_Click(object sender, EventArgs e)
         {
-            txtClaveNueva.UseSystemPasswordChar = true;
+            txtClaveNueva.esClave = true;
 
             picOcultarClaveNueva.Hide();
             picOcultarClaveNueva.Enabled = false;
@@ -96,7 +96,7 @@ namespace testForms.pkgInterfaz
 
         private void picMostrarClaveNueva_Click(object sender, EventArgs e)
         {
-            txtClaveNueva.UseSystemPasswordChar = false;
+            txtClaveNueva.esClave = false;
 
             picMostrarClaveNueva.Hide();
             picMostrarClaveNueva.Enabled = false;
@@ -107,14 +107,14 @@ namespace testForms.pkgInterfaz
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;
-            string correo = txtCorreo.Text;
-            string clave = txtClaveNueva.Text;
+            string usuario = txtUsuario.TextBoxInterno.Text;
+            string correo = txtCorreo.TextBoxInterno.Text;
+            string clave = txtClaveNueva.TextBoxInterno.Text;
             int resultado = data.fnc_actualizarInfoCliente(id_usuarioActual, correo, usuario, clave);
 
             if (resultado == 0)
             {
-                MessageBox.Show("No se han podido actualizar los datos.",
+                MessageBox.Show("Los datos ya se encuentran asociados a una cuenta existente",
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
@@ -126,6 +126,11 @@ namespace testForms.pkgInterfaz
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
             }
+        }
+
+        private void txtClaveNueva_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

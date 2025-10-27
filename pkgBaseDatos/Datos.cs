@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -65,7 +66,7 @@ namespace testForms.pkgBaseDatos
         public int fnc_registrarUsuario(
             string prm_nombre,
             string prm_mail,
-            int prm_id,
+            long prm_id,
             string prm_usuario,
             string prm_clave,
             string prm_fechaNac
@@ -80,7 +81,7 @@ namespace testForms.pkgBaseDatos
 
                     cmd.Parameters.Add("prm_nombre", OracleDbType.Varchar2).Value = prm_nombre;
                     cmd.Parameters.Add("prm_correo", OracleDbType.Varchar2).Value = prm_mail;
-                    cmd.Parameters.Add("prm_id", OracleDbType.Int32).Value = prm_id;
+                    cmd.Parameters.Add("prm_id", OracleDbType.Int64).Value = prm_id;
                     cmd.Parameters.Add("prm_usuario", OracleDbType.Varchar2).Value = prm_usuario;
                     cmd.Parameters.Add("prm_clave", OracleDbType.Varchar2).Value = prm_clave;
                     cmd.Parameters.Add("prm_fechaNac", OracleDbType.Date).Value = DateTime.Parse(prm_fechaNac);
@@ -194,7 +195,7 @@ namespace testForms.pkgBaseDatos
                 }
                 catch (Oracle.ManagedDataAccess.Client.OracleException ex)
                 {
-                    MessageBox.Show(ex.Message, "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(ex.Message, "Error al actualizar datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
                 return resultado;

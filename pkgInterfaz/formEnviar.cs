@@ -26,9 +26,9 @@ namespace testForms.pkgInterfaz
 
             foreach (Control ctrl in this.Controls)
             {
-                if (ctrl is placeHolderBox ph)
+                if (ctrl is pLineaTextBox linea)
                 {
-                    ph.TextChanged += fnc_validarCampos;
+                    linea.TextBoxInterno.TextChanged += fnc_validarCampos;
                 }
             }
         }
@@ -37,7 +37,7 @@ namespace testForms.pkgInterfaz
         {
             Datos data = new Datos();
 
-            var transferencia = data.fnc_transferencia(idUsuario, int.Parse(txtNumeroCuenta.Text), int.Parse(txtMonto.Text));
+            var transferencia = data.fnc_transferencia(idUsuario, int.Parse(txtNumeroCuenta.TextBoxInterno.Text), int.Parse(txtMonto.TextBoxInterno.Text));
 
             if (transferencia == null)
             {
@@ -52,8 +52,8 @@ namespace testForms.pkgInterfaz
                 int referencia = int.Parse(transferencia.Value.prmOut_referencia.ToString());
 
                 formComprobante comprobante = new formComprobante(
-                    int.Parse(txtNumeroCuenta.Text),
-                    int.Parse(txtMonto.Text),
+                    int.Parse(txtNumeroCuenta.TextBoxInterno.Text),
+                    int.Parse(txtMonto.TextBoxInterno.Text),
                     fecha,
                     referencia
                     );
@@ -65,51 +65,46 @@ namespace testForms.pkgInterfaz
 
         private void fnc_validarCampos(object sender, EventArgs e)
         {
-            bool campos = false;
+            bool campos = true;
             foreach (Control ctrl in this.Controls)
             {
-                if (ctrl is placeHolderBox ph)
+                if (ctrl is pLineaTextBox linea)
                 {
-                    if (string.IsNullOrEmpty(ph.Text) || ph.Text == "")
+                    if (string.IsNullOrEmpty(linea.TextBoxInterno.Text) || linea.TextBoxInterno.Text == "")
                     {
                         campos = false; 
                         break;
                     }
-                    else if (Convert.ToDecimal(txtMonto.Text) <= saldo)
-                    {
-                        campos = true;
-                    }
                 }
             }
 
-            if (campos)
+            bool montoValido = false;
+            bool cuentaValida = false;
+
+
+            if (decimal.TryParse(txtMonto.TextBoxInterno.Text, out decimal monto))
+            {
+                montoValido = monto > 0 && monto <= saldo;
+            }
+
+            cuentaValida = (txtNumeroCuenta.TextBoxInterno.Text.Length == 6);
+
+            if (campos && montoValido && cuentaValida)
             {
                 btnEnviar.Show();
                 btnEnviar.Enabled = true;
+
                 lblErrorMonto.Hide();
+                lblErrorCuenta.Hide();
             }
             else
             {
                 btnEnviar.Hide();
                 btnEnviar.Enabled = false;
-                lblErrorMonto.Show();
+
+                lblErrorMonto.Visible = !montoValido;
+                lblErrorCuenta.Visible = !cuentaValida;
             }   
-        }
-
-        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtNumeroCuenta_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
         }
     }
 }
