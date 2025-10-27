@@ -40,7 +40,32 @@ namespace testForms.pkgInterfaz
                 dgvMovimientos.DataSource = tabla;
                 dgvMovimientos.AutoResizeRows();
                 dgvMovimientos.AutoResizeColumns();
+                this.dgvMovimientos.Columns["Monto"].DefaultCellStyle.Format = "C";
+
+                if (dgvMovimientos.Columns.Contains("TipoMovimiento"))
+                {
+                    foreach (DataGridViewRow row in dgvMovimientos.Rows)
+                    {
+                        DataGridViewCell cell = row.Cells["TipoMovimiento"];
+
+                        string estado = cell.Value.ToString();
+
+                        if (estado == "Enviado")
+                        {
+                            cell.Style.BackColor = ColorTranslator.FromHtml("#630000");
+                            cell.Style.ForeColor = Color.White;
+                        }
+                        else if (estado == "Recibido")
+                        {
+                            cell.Style.BackColor = ColorTranslator.FromHtml("#1a6300");
+                            cell.Style.ForeColor = Color.White;
+                        }
+                    }
+                }
+
                 dgvMovimientos.Show();
+
+
             }
         }
     }
