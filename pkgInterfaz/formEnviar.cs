@@ -15,8 +15,8 @@ namespace testForms.pkgInterfaz
     public partial class formEnviar : Form
     {
         decimal saldo = 0;
-        int idUsuario = 0;
-        public formEnviar(int prm_usuarioActual, decimal prm_saldo)
+        long idUsuario = 0;
+        public formEnviar(long prm_usuarioActual, decimal prm_saldo)
         {
             InitializeComponent();
             lblSaldo.Text = $"Tu saldo disponible: {prm_saldo.ToString("C2")}";
@@ -48,7 +48,7 @@ namespace testForms.pkgInterfaz
             }
             else
             {
-                DateTime fecha = Convert.ToDateTime(transferencia.Value.prmOut_fecha.ToString());
+                DateTime fecha = Convert.ToDateTime(transferencia.Value.prmOut_fecha.ToString("G"));
                 int referencia = int.Parse(transferencia.Value.prmOut_referencia.ToString());
 
                 formComprobante comprobante = new formComprobante(
@@ -87,7 +87,7 @@ namespace testForms.pkgInterfaz
                 montoValido = monto > 0 && monto <= saldo;
             }
 
-            cuentaValida = (txtNumeroCuenta.TextBoxInterno.Text.Length == 6);
+            cuentaValida = (txtNumeroCuenta.TextBoxInterno.Text.Length == txtNumeroCuenta.limiteCaracteres);
 
             if (campos && montoValido && cuentaValida)
             {

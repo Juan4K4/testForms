@@ -27,7 +27,7 @@ namespace testForms.pkgLogica
             return Convert.ToInt32( resultado );    
         }
 
-        public int fnc_loginUsuario (string prm_usuario, string prm_clave)
+        public long fnc_loginUsuario (string prm_usuario, string prm_clave)
         {
             string sql = $"SELECT fnc_login('{prm_usuario}', '{prm_clave}') FROM dual";
 
@@ -35,7 +35,7 @@ namespace testForms.pkgLogica
 
             if (resultado != null)
             {
-                return Convert.ToInt32(resultado); // 1 = login válido, 0 = inválido
+                return Convert.ToInt64(resultado); // id Usuario = login válido, 0 = inválido
             }
             else
             {
@@ -43,7 +43,7 @@ namespace testForms.pkgLogica
             }
         }
 
-        public string fnc_verificarAdmin(int prm_idUsuario)
+        public string fnc_verificarAdmin(long prm_idUsuario)
         {
             string consultaAdmin =
                     $"SELECT usu_tipo FROM Usuarios WHERE usu_id = {prm_idUsuario}";
@@ -59,7 +59,7 @@ namespace testForms.pkgLogica
             }
         }
 
-        public DateTime fnc_verificarFechaCreacion(int prm_idUsuario)
+        public DateTime fnc_verificarFechaCreacion(long prm_idUsuario)
         {
             string consultaFecha =
                 $"SELECT usu_fechacreacion FROM usuarios WHERE usu_id = {prm_idUsuario}";

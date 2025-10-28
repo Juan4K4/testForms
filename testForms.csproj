@@ -101,6 +101,12 @@
     <Compile Include="pkgInterfaz\formEnviar.Designer.cs">
       <DependentUpon>formEnviar.cs</DependentUpon>
     </Compile>
+    <Compile Include="pkgInterfaz\formExtracto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pkgInterfaz\formExtracto.Designer.cs">
+      <DependentUpon>formExtracto.cs</DependentUpon>
+    </Compile>
     <Compile Include="pkgInterfaz\formHomeAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pkgInterfaz\formEnviar.resx">
       <DependentUpon>formEnviar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pkgInterfaz\formExtracto.resx">
+      <DependentUpon>formExtracto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pkgInterfaz\formHomeAdmin.resx">
       <DependentUpon>formHomeAdmin.cs</DependentUpon>

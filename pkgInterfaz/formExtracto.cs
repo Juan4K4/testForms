@@ -8,30 +8,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using testForms.pkgBaseDatos;
-using testForms.pkgLogica;
 
 namespace testForms.pkgInterfaz
 {
-    public partial class formMovimientos : Form
+    public partial class formExtracto : Form
     {
         Datos data = new Datos();
         long id_usuarioActual = 0;
-        public formMovimientos(long prm_idUsuario)
+        DateTime fechaInicio, fechaFin;
+        public formExtracto(DateTime fechaInicio, DateTime fechaFin, decimal saldoInicio, decimal ingresos, decimal egresos, decimal saldoFin, string titular, int numeroCuenta, long prm_idUsuario)
         {
             InitializeComponent();
-            dgvMovimientos.Enabled = false;
-            dgvMovimientos.Hide();
-            dgvMovimientos.AutoSize = true;
-
+            lblPeriodo.Text = $"Periodo: {fechaInicio.ToString("dd/MM/yyyy")} - {fechaFin.ToString("dd/MM/yyyy")}";
+            lblSaldoInicio.Text = $"Tu saldo al inicio del mes: {saldoInicio.ToString("C")}";
+            lblIngresos.Text = $"Lo que ingreso a tu cuenta: {ingresos.ToString("C")}";
+            lblEgresos.Text = $"Lo que salio de tu cuenta: {egresos.ToString("C")}";
+            lblSaldoFin.Text = $"Tu saldo al final del mes: {saldoFin.ToString("C")}";
+            lblCuenta.Text = $"Numero de cuenta: {numeroCuenta}";
+            lblTitular.Text = $"Titular de la cuenta: {titular}";
             id_usuarioActual = prm_idUsuario;
+            this.fechaInicio = fechaInicio;
+            this.fechaFin = fechaFin;
+
+            lblNoMovimientos.Visible = false;
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void formMovimientos_Load(object sender, EventArgs e)
+        private void formExtracto_Load(object sender, EventArgs e)
         {
             DataTable tabla = data.fnc_consultarMovimientos(id_usuarioActual);
             dgvMovimientos.DataSource = tabla;
@@ -43,11 +50,8 @@ namespace testForms.pkgInterfaz
                 return;
             }
 
-            DataView dv = new DataView(tabla); 
-            DateTime fechaLimiteSuperior = DateTime.Today.AddDays(1);
-            DateTime fechaLimiteInferior = DateTime.Today.AddDays(-7);
-
-            dv.RowFilter = $"Fecha >= #{fechaLimiteInferior:yyyy-MM-dd}# AND Fecha < #{fechaLimiteSuperior:yyyy-MM-dd}#";
+            DataView dv = new DataView(tabla);
+            dv.RowFilter = $"Fecha >= #{fechaInicio:yyyy-MM-dd}# AND Fecha <= #{fechaFin:yyyy-MM-dd}#";
 
             dgvMovimientos.DataSource = dv;
             if (dv.Count == 0)

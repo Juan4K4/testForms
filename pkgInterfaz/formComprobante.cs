@@ -17,7 +17,7 @@ namespace testForms.pkgInterfaz
             InitializeComponent();
             lblCuentaDestino.Text = $"Cuenta destino: {prm_destino}";
             lblMonto.Text = $"Monto: {prm_monto.ToString("C2")}";
-            lblFecha.Text = $"Fecha: {prm_fecha}";
+            lblFecha.Text = $"Fecha: {prm_fecha.ToString("G")}";
             lblReferencia.Text = $"Referencia: {prm_referencia}";
         }
 

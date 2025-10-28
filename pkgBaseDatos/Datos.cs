@@ -77,7 +77,7 @@ namespace testForms.pkgBaseDatos
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("RETURN_VALUE", OracleDbType.Int32).Direction = ParameterDirection.ReturnValue;
+                    cmd.Parameters.Add("RETURN_VALUE", OracleDbType.Int64).Direction = ParameterDirection.ReturnValue;
 
                     cmd.Parameters.Add("prm_nombre", OracleDbType.Varchar2).Value = prm_nombre;
                     cmd.Parameters.Add("prm_correo", OracleDbType.Varchar2).Value = prm_mail;
@@ -109,16 +109,16 @@ namespace testForms.pkgBaseDatos
             }
 
 
-        public (string outPrm_nombre, int outPrm_numeroCuenta, decimal outPrm_saldoCuenta)? fnc_obtenerInfoCuenta(int prm_idUsuario)
+        public (string outPrm_nombre, int outPrm_numeroCuenta, decimal outPrm_saldoCuenta)? fnc_obtenerInfoCuenta(long prm_idUsuario)
             {
                 using (OracleConnection oracleConexion = new OracleConnection(connectionString))
                 using (OracleCommand cmd = new OracleCommand("prc_infoCuenta", oracleConexion))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("prm_id", OracleDbType.Int32).Value = prm_idUsuario;
+                    cmd.Parameters.Add("prm_id", OracleDbType.Int64).Value = prm_idUsuario;
                     cmd.Parameters.Add("p_nombre", OracleDbType.Varchar2, 50).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("p_cuentaNum", OracleDbType.Int32).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("p_cuentaNum", OracleDbType.Int64).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("p_cuentaSaldo", OracleDbType.Decimal).Direction = ParameterDirection.Output;
 
                     try
@@ -140,14 +140,14 @@ namespace testForms.pkgBaseDatos
                 }
             }
 
-        public (string outPrm_correo, string outPrm_usuario, string outPrm_clave)? fnc_obtenerInfoCliente(int prm_idUsuario)
+        public (string outPrm_correo, string outPrm_usuario, string outPrm_clave)? fnc_obtenerInfoCliente(long prm_idUsuario)
         {
             using (OracleConnection oracleConexion = new OracleConnection(connectionString))
             using (OracleCommand cmd = new OracleCommand("prc_infoCliente", oracleConexion))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("prm_id", OracleDbType.Int32).Value = prm_idUsuario;
+                cmd.Parameters.Add("prm_id", OracleDbType.Int64).Value = prm_idUsuario;
                 cmd.Parameters.Add("p_mail", OracleDbType.Varchar2, 50).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("p_usuario", OracleDbType.Varchar2, 50).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("p_clave", OracleDbType.Varchar2, 50).Direction = ParameterDirection.Output;
@@ -170,18 +170,18 @@ namespace testForms.pkgBaseDatos
                 }
             }
         }
-        public int fnc_actualizarInfoCliente(int prm_idUsuario, string prm_correo, string prm_usuario, string prm_clave)
+        public int fnc_actualizarInfoCliente(long prm_idUsuario, string prm_correo, string prm_usuario, string prm_clave)
         {
             using (OracleConnection oracleConexion = new OracleConnection(connectionString))
             using (OracleCommand cmd = new OracleCommand("prc_actualizar_cliente", oracleConexion))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("prm_id", OracleDbType.Int32).Value = prm_idUsuario;
+                cmd.Parameters.Add("prm_id", OracleDbType.Int64).Value = prm_idUsuario;
                 cmd.Parameters.Add("p_mail", OracleDbType.Varchar2, 50).Value = prm_correo;
                 cmd.Parameters.Add("p_usuario", OracleDbType.Varchar2, 50).Value = prm_usuario;
                 cmd.Parameters.Add("p_clave", OracleDbType.Varchar2, 50).Value = prm_clave;
-                cmd.Parameters.Add("p_resultado", OracleDbType.Int32).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_resultado", OracleDbType.Int64).Direction = ParameterDirection.Output;
 
                 int resultado = Convert.ToInt32(cmd.Parameters["p_resultado"].Value);
 
@@ -220,15 +220,14 @@ namespace testForms.pkgBaseDatos
                 }
             }
         }
-
-        public DataTable fnc_consultarMovimientos(int prm_idUsuario)
+        public DataTable fnc_consultarMovimientos(long prm_idUsuario)
         {
             using (OracleConnection conn = new OracleConnection(connectionString))
             {
                 using (OracleCommand cmd = new OracleCommand("prc_consultarMovimientos", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("prm_idUsuario", OracleDbType.Int32).Value = prm_idUsuario;
+                    cmd.Parameters.Add("prm_idUsuario", OracleDbType.Int64).Value = prm_idUsuario;
                     cmd.Parameters.Add("p_resultado", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
 
                     OracleDataAdapter oracleDataAdapter = new OracleDataAdapter(cmd);
@@ -248,18 +247,18 @@ namespace testForms.pkgBaseDatos
             }
         }
 
-        public (DateTime prmOut_fecha, int prmOut_referencia)? fnc_transferencia(int prm_idUsuario, int prm_destinatario, int prm_monto)
+        public (DateTime prmOut_fecha, int prmOut_referencia)? fnc_transferencia(long prm_idUsuario, int prm_destinatario, int prm_monto)
         {
             using (OracleConnection oracleConexion = new OracleConnection(connectionString))
             using (OracleCommand cmd = new OracleCommand("prc_transferencia", oracleConexion))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("prm_idUsuario", OracleDbType.Int32).Value = prm_idUsuario;
-                cmd.Parameters.Add("prm_cuenta_destinatario", OracleDbType.Int32).Value = prm_destinatario;
-                cmd.Parameters.Add("prm_monto", OracleDbType.Int32).Value = prm_monto;
-                cmd.Parameters.Add("prm_fecha", OracleDbType.Date).Direction = ParameterDirection.Output;
-                cmd.Parameters.Add("prm_referencia", OracleDbType.Int32).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("prm_idUsuario", OracleDbType.Int64).Value = prm_idUsuario;
+                cmd.Parameters.Add("prm_cuenta_destinatario", OracleDbType.Int64).Value = prm_destinatario;
+                cmd.Parameters.Add("prm_monto", OracleDbType.Int64).Value = prm_monto;
+                cmd.Parameters.Add("prm_fecha", OracleDbType.TimeStamp).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("prm_referencia", OracleDbType.Int64).Direction = ParameterDirection.Output;
 
                 try
                 {
@@ -275,6 +274,55 @@ namespace testForms.pkgBaseDatos
                 {
                     MessageBox.Show(ex.Message, "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return null;
+                }
+            }
+        }
+
+        public (
+            decimal  outP_saldoInicio, 
+            decimal  outP_ingresos, 
+            decimal  outP_egresos,
+            decimal  outP_saldoFin, 
+            DateTime outP_fechaInicio, 
+            DateTime outP_fechaFin
+            )? 
+            fnc_generarExtracto (long prm_idUsuario, DateTime prm_periodo)
+        {
+            using (OracleConnection conn = new OracleConnection(connectionString))
+            {
+                using (OracleCommand cmd = new OracleCommand("prc_extracto", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("prm_id", OracleDbType.Int64).Value = prm_idUsuario;
+                    cmd.Parameters.Add("prm_periodo", OracleDbType.Date).Value = prm_periodo;
+
+                    cmd.Parameters.Add("outP_saldoInicio", OracleDbType.Decimal).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("outP_ingresos", OracleDbType.Decimal).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("outP_egresos", OracleDbType.Decimal).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("outP_saldoFin", OracleDbType.Decimal).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("outP_fechaInicio", OracleDbType.Date).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("outP_fechaFin", OracleDbType.Date).Direction = ParameterDirection.Output;
+
+                    try
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+
+                        decimal saldoInicio = decimal.Parse(cmd.Parameters["outP_saldoInicio"].Value.ToString());
+                        decimal ingresos = decimal.Parse(cmd.Parameters["outP_ingresos"].Value.ToString());
+                        decimal egresos = decimal.Parse(cmd.Parameters["outP_egresos"].Value.ToString());
+                        decimal saldoFin = decimal.Parse(cmd.Parameters["outP_saldoFin"].Value.ToString());
+                        DateTime fechaInicio = DateTime.Parse(cmd.Parameters["outP_fechaInicio"].Value.ToString());
+                        DateTime fechaFin = DateTime.Parse(cmd.Parameters["outP_fechaFin"].Value.ToString());
+
+                        return (saldoInicio, ingresos, egresos, saldoFin, fechaInicio, fechaFin);
+                    }
+                    catch (Oracle.ManagedDataAccess.Client.OracleException ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return null;
+                    }
                 }
             }
         }

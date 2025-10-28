@@ -121,7 +121,7 @@
             this.txtNumeroCuenta.BackColor = System.Drawing.Color.RoyalBlue;
             this.txtNumeroCuenta.esClave = false;
             this.txtNumeroCuenta.label = "Cuenta destino";
-            this.txtNumeroCuenta.limiteCaracteres = 6;
+            this.txtNumeroCuenta.limiteCaracteres = 8;
             this.txtNumeroCuenta.Location = new System.Drawing.Point(8, 145);
             this.txtNumeroCuenta.Name = "txtNumeroCuenta";
             this.txtNumeroCuenta.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);

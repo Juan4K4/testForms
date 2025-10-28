@@ -14,10 +14,10 @@ namespace testForms.pkgInterfaz
     public partial class formActualizarCliente : Form
     {
 
-        int id_usuarioActual = 0;
+        long id_usuarioActual = 0;
         string clave;
         Datos data = new Datos();
-        public formActualizarCliente(int prm_usuarioActual)
+        public formActualizarCliente(long prm_usuarioActual)
         {
             InitializeComponent();
             id_usuarioActual = prm_usuarioActual;

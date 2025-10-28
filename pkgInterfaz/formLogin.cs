@@ -76,7 +76,7 @@ namespace testForms
         {
             string usuario = txtUsuario.TextBoxInterno.Text;
             string clave = txtClave.TextBoxInterno.Text;
-            int idUsuario = 0;
+            long idUsuario = 0;
 
             Usuario u = new Usuario();
             idUsuario = u.fnc_loginUsuario(usuario, clave);

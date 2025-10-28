@@ -14,10 +14,10 @@ namespace testForms.pkgInterfaz
 {
     public partial class formHomeCliente : Form
     {
-        int id_usuarioActual = 0;
+        long id_usuarioActual = 0;
         decimal saldo = 0;
 
-        public formHomeCliente(int prm_idUsuarioActual)
+        public formHomeCliente(long prm_idUsuarioActual)
         {
             id_usuarioActual = prm_idUsuarioActual;
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace testForms.pkgInterfaz
             this.Show();
         }
 
-        private void fnc_cargarDatosCuenta (int prm_idUsuarioActual)
+        private void fnc_cargarDatosCuenta (long prm_idUsuarioActual)
         {
             var data = new Datos();
             var infoCuenta = data.fnc_obtenerInfoCuenta(prm_idUsuarioActual);
