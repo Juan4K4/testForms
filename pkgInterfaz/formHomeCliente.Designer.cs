@@ -41,7 +41,6 @@
             this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.pDegradado1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -91,7 +90,7 @@
             this.picFotoCliente.BackColor = System.Drawing.Color.Transparent;
             this.picFotoCliente.Cursor = System.Windows.Forms.Cursors.Default;
             this.picFotoCliente.Image = ((System.Drawing.Image)(resources.GetObject("picFotoCliente.Image")));
-            this.picFotoCliente.Location = new System.Drawing.Point(11, 11);
+            this.picFotoCliente.Location = new System.Drawing.Point(11, 35);
             this.picFotoCliente.Margin = new System.Windows.Forms.Padding(2);
             this.picFotoCliente.Name = "picFotoCliente";
             this.picFotoCliente.Size = new System.Drawing.Size(120, 90);
@@ -104,7 +103,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(658, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(649, 35);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(120, 90);
@@ -180,7 +179,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Codec Pro Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(15, 81);
+            this.label1.Location = new System.Drawing.Point(18, 105);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 20);
@@ -191,15 +190,12 @@
             // pDegradado1
             // 
             this.pDegradado1.Angle = 270F;
-            this.pDegradado1.Controls.Add(this.pictureBox2);
-            this.pDegradado1.Controls.Add(this.label1);
-            this.pDegradado1.Controls.Add(this.picFotoCliente);
             this.pDegradado1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pDegradado1.HexColor1 = "#E6E6E6";
             this.pDegradado1.HexColor2 = "#5C69F5";
             this.pDegradado1.Location = new System.Drawing.Point(0, 0);
             this.pDegradado1.Name = "pDegradado1";
-            this.pDegradado1.Size = new System.Drawing.Size(780, 151);
+            this.pDegradado1.Size = new System.Drawing.Size(780, 30);
             this.pDegradado1.TabIndex = 47;
             // 
             // formHomeCliente
@@ -208,8 +204,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(780, 416);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnSolicitudes);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnMovimientos);
+            this.Controls.Add(this.picFotoCliente);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.lblCuentaNum);
@@ -221,8 +220,6 @@
             this.Text = "formHome";
             ((System.ComponentModel.ISupportInitialize)(this.picFotoCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.pDegradado1.ResumeLayout(false);
-            this.pDegradado1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -18,7 +18,7 @@ namespace testForms.pkgInterfaz
         long id_usuarioActual = 0;
         Usuario user = new Usuario();
         Datos data = new Datos();
-        static Dictionary<string, int> diccionarioMeses = new Dictionary<string, int>();
+        Dictionary<string, int> diccionarioMeses = new Dictionary<string, int>();
         DateTime fechaCreacion;
         DateTime fechaActual;
 
