@@ -144,6 +144,9 @@
     <Compile Include="pkgInterfaz\formSolicitudes.Designer.cs">
       <DependentUpon>formSolicitudes.cs</DependentUpon>
     </Compile>
+    <Compile Include="pkgInterfaz\pBoton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="pkgInterfaz\pDegradado.cs">
       <SubType>Component</SubType>
     </Compile>

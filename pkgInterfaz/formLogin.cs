@@ -18,6 +18,8 @@ namespace testForms
     public partial class formLogin : Form
     {
         Datos data = new Datos();
+        bool usuarioCorrecto = true;
+        bool claveCorrecta = true;
         public formLogin()
         {
             InitializeComponent();
@@ -27,13 +29,14 @@ namespace testForms
         {
             lblErrorClave.Hide();
             lblErrorUsuario.Hide();
+
             txtClave.esClave = true;
 
             foreach (Control ctrl in this.Controls)
             {
-                if (ctrl is placeHolderBox txt)
+                if (ctrl is pLineaTextBox linea)
                 {
-                    txt.TextChanged += fnc_validarCampos;
+                    linea.TextBoxInterno.TextChanged += fnc_validarCampos;
                 }
             }
 
@@ -41,22 +44,34 @@ namespace testForms
         }
         private void fnc_validarCampos(object sender, EventArgs e)
         {
-            if (txtUsuario.TextBoxInterno.Text == "")
-            {
-                lblErrorUsuario.Show();
-            }
-            else
+            usuarioCorrecto = true;
+            claveCorrecta = true;
+            Color colorExito = ColorTranslator.FromHtml("#5C69F5"); // Azul
+            Color colorError = ColorTranslator.FromHtml("#F24822"); // Rojo
+
+            usuarioCorrecto = !string.IsNullOrEmpty(txtUsuario.TextBoxInterno.Text);
+            claveCorrecta = !string.IsNullOrEmpty(txtClave.TextBoxInterno.Text);
+
+            if (usuarioCorrecto)
             {
                 lblErrorUsuario.Hide();
-            }
-
-            if (txtClave.TextBoxInterno.Text == "")
-            {
-                lblErrorClave.Show();
+                txtUsuario.BackColor = colorExito;
             }
             else
             {
+                lblErrorUsuario.Show();
+                txtUsuario.BackColor = colorError;
+            }
+
+            if (claveCorrecta)
+            {
                 lblErrorClave.Hide();
+                txtClave.BackColor = colorExito;
+            }
+            else
+            {
+                lblErrorClave.Show();
+                txtClave.BackColor = colorError;
             }
         }
 
@@ -109,6 +124,8 @@ namespace testForms
                         "Error de autenticación",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
+                txtUsuario.TextBoxInterno.Text = default;
+                txtClave.TextBoxInterno.Text = default;
             }
         }
 

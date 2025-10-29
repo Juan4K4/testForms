@@ -73,7 +73,7 @@
             this.btnLoginBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoginBack.Font = new System.Drawing.Font("Codec Pro Bold", 8F, System.Drawing.FontStyle.Bold);
             this.btnLoginBack.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLoginBack.Location = new System.Drawing.Point(332, 735);
+            this.btnLoginBack.Location = new System.Drawing.Point(377, 714);
             this.btnLoginBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoginBack.Name = "btnLoginBack";
             this.btnLoginBack.Size = new System.Drawing.Size(90, 32);
@@ -89,11 +89,11 @@
             this.dtpFechaNac.CustomFormat = "\'Fecha de nacimiento: \'  dd - MM - yyyy";
             this.dtpFechaNac.Font = new System.Drawing.Font("Codec Pro", 15F);
             this.dtpFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaNac.Location = new System.Drawing.Point(107, 552);
+            this.dtpFechaNac.Location = new System.Drawing.Point(65, 587);
             this.dtpFechaNac.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaNac.MinDate = new System.DateTime(1910, 1, 1, 0, 0, 0, 0);
             this.dtpFechaNac.Name = "dtpFechaNac";
-            this.dtpFechaNac.Size = new System.Drawing.Size(540, 25);
+            this.dtpFechaNac.Size = new System.Drawing.Size(632, 25);
             this.dtpFechaNac.TabIndex = 10;
             this.dtpFechaNac.Value = new System.DateTime(2025, 9, 22, 20, 39, 38, 0);
             // 
@@ -103,7 +103,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Codec Pro Bold", 12F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(292, 713);
+            this.label1.Location = new System.Drawing.Point(337, 692);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 20);
@@ -119,7 +119,7 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Codec Pro Bold", 15F);
             this.btnRegistrar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.Location = new System.Drawing.Point(311, 619);
+            this.btnRegistrar.Location = new System.Drawing.Point(354, 636);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(132, 37);
@@ -145,17 +145,17 @@
             this.lblDatosObligatorios.CausesValidation = false;
             this.lblDatosObligatorios.Font = new System.Drawing.Font("Codec Pro", 10F);
             this.lblDatosObligatorios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblDatosObligatorios.Location = new System.Drawing.Point(237, 658);
+            this.lblDatosObligatorios.Location = new System.Drawing.Point(280, 675);
             this.lblDatosObligatorios.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDatosObligatorios.Name = "lblDatosObligatorios";
-            this.lblDatosObligatorios.Size = new System.Drawing.Size(280, 17);
+            this.lblDatosObligatorios.Size = new System.Drawing.Size(285, 17);
             this.lblDatosObligatorios.TabIndex = 21;
             this.lblDatosObligatorios.Text = "Ingrese todos los campos para continuar";
             // 
             // picMostrarClave
             // 
             this.picMostrarClave.Image = ((System.Drawing.Image)(resources.GetObject("picMostrarClave.Image")));
-            this.picMostrarClave.Location = new System.Drawing.Point(619, 496);
+            this.picMostrarClave.Location = new System.Drawing.Point(669, 530);
             this.picMostrarClave.Margin = new System.Windows.Forms.Padding(2);
             this.picMostrarClave.Name = "picMostrarClave";
             this.picMostrarClave.Size = new System.Drawing.Size(28, 29);
@@ -168,7 +168,7 @@
             // 
             this.picOcultarClave.Enabled = false;
             this.picOcultarClave.Image = ((System.Drawing.Image)(resources.GetObject("picOcultarClave.Image")));
-            this.picOcultarClave.Location = new System.Drawing.Point(619, 496);
+            this.picOcultarClave.Location = new System.Drawing.Point(669, 530);
             this.picOcultarClave.Margin = new System.Windows.Forms.Padding(2);
             this.picOcultarClave.Name = "picOcultarClave";
             this.picOcultarClave.Size = new System.Drawing.Size(28, 29);
@@ -183,7 +183,7 @@
             this.lblClaveUsuario.CausesValidation = false;
             this.lblClaveUsuario.Font = new System.Drawing.Font("Codec Pro", 10F);
             this.lblClaveUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblClaveUsuario.Location = new System.Drawing.Point(104, 527);
+            this.lblClaveUsuario.Location = new System.Drawing.Point(62, 562);
             this.lblClaveUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblClaveUsuario.Name = "lblClaveUsuario";
             this.lblClaveUsuario.Size = new System.Drawing.Size(510, 23);
@@ -199,7 +199,7 @@
             this.pDegradado2.Location = new System.Drawing.Point(0, 785);
             this.pDegradado2.Margin = new System.Windows.Forms.Padding(2);
             this.pDegradado2.Name = "pDegradado2";
-            this.pDegradado2.Size = new System.Drawing.Size(735, 81);
+            this.pDegradado2.Size = new System.Drawing.Size(817, 81);
             this.pDegradado2.TabIndex = 38;
             // 
             // txtClave
@@ -208,11 +208,12 @@
             this.txtClave.esClave = true;
             this.txtClave.label = "Contraseña";
             this.txtClave.limiteCaracteres = 50;
-            this.txtClave.Location = new System.Drawing.Point(107, 477);
+            this.txtClave.Location = new System.Drawing.Point(65, 504);
             this.txtClave.Name = "txtClave";
             this.txtClave.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtClave.placeholder = "Puede contener numeros o @, #";
-            this.txtClave.Size = new System.Drawing.Size(507, 48);
+            this.txtClave.Radius = 8;
+            this.txtClave.Size = new System.Drawing.Size(599, 55);
             this.txtClave.TabIndex = 37;
             this.txtClave.Tipo = testForms.pkgInterfaz.pLineaTextBox.TipoEntrada.Especial;
             // 
@@ -222,11 +223,12 @@
             this.txtUsuario.esClave = false;
             this.txtUsuario.label = "Usuario";
             this.txtUsuario.limiteCaracteres = 50;
-            this.txtUsuario.Location = new System.Drawing.Point(107, 422);
+            this.txtUsuario.Location = new System.Drawing.Point(65, 443);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtUsuario.placeholder = "Ej: usuario123";
-            this.txtUsuario.Size = new System.Drawing.Size(540, 48);
+            this.txtUsuario.Radius = 8;
+            this.txtUsuario.Size = new System.Drawing.Size(632, 55);
             this.txtUsuario.TabIndex = 36;
             this.txtUsuario.Tipo = testForms.pkgInterfaz.pLineaTextBox.TipoEntrada.Especial;
             // 
@@ -236,11 +238,12 @@
             this.txtId.esClave = false;
             this.txtId.label = "Numero de identificacion";
             this.txtId.limiteCaracteres = 15;
-            this.txtId.Location = new System.Drawing.Point(107, 368);
+            this.txtId.Location = new System.Drawing.Point(65, 382);
             this.txtId.Name = "txtId";
             this.txtId.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtId.placeholder = "Maximo 15 digitos";
-            this.txtId.Size = new System.Drawing.Size(540, 48);
+            this.txtId.Radius = 8;
+            this.txtId.Size = new System.Drawing.Size(632, 55);
             this.txtId.TabIndex = 35;
             this.txtId.Tipo = testForms.pkgInterfaz.pLineaTextBox.TipoEntrada.Numerico;
             // 
@@ -250,11 +253,12 @@
             this.txtCorreo.esClave = false;
             this.txtCorreo.label = "Correo electronico";
             this.txtCorreo.limiteCaracteres = 254;
-            this.txtCorreo.Location = new System.Drawing.Point(107, 314);
+            this.txtCorreo.Location = new System.Drawing.Point(65, 321);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtCorreo.placeholder = "Ej: ejemplo@mail.com";
-            this.txtCorreo.Size = new System.Drawing.Size(540, 48);
+            this.txtCorreo.Radius = 8;
+            this.txtCorreo.Size = new System.Drawing.Size(632, 55);
             this.txtCorreo.TabIndex = 34;
             this.txtCorreo.Tipo = testForms.pkgInterfaz.pLineaTextBox.TipoEntrada.Especial;
             // 
@@ -268,7 +272,8 @@
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtPrimerApellido.placeholder = "Primer apellido";
-            this.txtPrimerApellido.Size = new System.Drawing.Size(263, 48);
+            this.txtPrimerApellido.Radius = 8;
+            this.txtPrimerApellido.Size = new System.Drawing.Size(313, 55);
             this.txtPrimerApellido.TabIndex = 33;
             this.txtPrimerApellido.Tipo = testForms.pkgInterfaz.pLineaTextBox.TipoEntrada.Texto;
             // 
@@ -278,11 +283,12 @@
             this.txtPrimerNombre.esClave = false;
             this.txtPrimerNombre.label = "Nombre";
             this.txtPrimerNombre.limiteCaracteres = 30;
-            this.txtPrimerNombre.Location = new System.Drawing.Point(107, 260);
+            this.txtPrimerNombre.Location = new System.Drawing.Point(65, 260);
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtPrimerNombre.placeholder = "Primer nombre";
-            this.txtPrimerNombre.Size = new System.Drawing.Size(263, 48);
+            this.txtPrimerNombre.Radius = 8;
+            this.txtPrimerNombre.Size = new System.Drawing.Size(313, 55);
             this.txtPrimerNombre.TabIndex = 32;
             this.txtPrimerNombre.Tipo = testForms.pkgInterfaz.pLineaTextBox.TipoEntrada.Texto;
             // 
@@ -295,7 +301,7 @@
             this.pDegradado1.Location = new System.Drawing.Point(0, 0);
             this.pDegradado1.Margin = new System.Windows.Forms.Padding(2);
             this.pDegradado1.Name = "pDegradado1";
-            this.pDegradado1.Size = new System.Drawing.Size(735, 81);
+            this.pDegradado1.Size = new System.Drawing.Size(817, 81);
             this.pDegradado1.TabIndex = 17;
             // 
             // formRegistro
@@ -304,7 +310,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(735, 866);
+            this.ClientSize = new System.Drawing.Size(817, 866);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.pDegradado2);
             this.Controls.Add(this.txtClave);

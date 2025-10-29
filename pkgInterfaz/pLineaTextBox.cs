@@ -1,4 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using System.ComponentModel;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace testForms.pkgInterfaz
 {
@@ -15,6 +18,19 @@ namespace testForms.pkgInterfaz
         public string _ph = "placeholder";
         public bool _esClave = false;
         public int _limiteCaracteres = default;
+        private int _radio = 8;
+
+        [Category("Apariencia")]
+        [Description("Define el radio de las esquinas del control.")]
+        public int Radius
+        {
+            get { return _radio; }
+            set
+            {
+                _radio = value;
+                this.Invalidate();
+            }
+        }
 
         public string label
         {
@@ -55,13 +71,6 @@ namespace testForms.pkgInterfaz
             get { return placeHolderBox1; }
         }
 
-        private void pLineaTextBox_Paint(object sender, PaintEventArgs e)
-        {
-            label1.Text = label;
-            placeHolderBox1.PlaceHolder = placeholder;
-            placeHolderBox1.MaxLength = limiteCaracteres;
-        }
-
         private void pLineaTextBox_Load(object sender, System.EventArgs e)
         {
 
@@ -90,9 +99,47 @@ namespace testForms.pkgInterfaz
                                 && !char.IsNumber(e.KeyChar)
                                 && !e.KeyChar.Equals('@')
                                 && !e.KeyChar.Equals('.')
-                                && !e.KeyChar.Equals('#')
+                                && !e.KeyChar.Equals('-')
+                                && !e.KeyChar.Equals('_')
                                 );
                     break;
+            }
+        }
+        private GraphicsPath GetRoundedRect(Rectangle rect, int radius)
+        {
+            int diameter = radius * 2;
+            GraphicsPath path = new GraphicsPath();
+
+            if (diameter > rect.Width) diameter = rect.Width;
+            if (diameter > rect.Height) diameter = rect.Height;
+
+            path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90);           // Superior Izquierda
+            path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90);    // Superior Derecha
+            path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90); // Inferior Derecha
+            path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90);     // Inferior Izquierda
+
+            path.CloseAllFigures();
+            return path;
+        }
+        private void pLineaTextBox_Paint(object sender, PaintEventArgs e)
+        {
+            label1.Text = label;
+            placeHolderBox1.PlaceHolder = placeholder;
+            placeHolderBox1.MaxLength = limiteCaracteres;
+
+            if (_radio > 0)
+            {
+                Rectangle bounds = new Rectangle(0, 0, this.Width - 1, this.Height - 1);
+
+                using (GraphicsPath path = GetRoundedRect(bounds, _radio))
+                {
+                    this.Region = new Region(path);
+
+                    using (Pen pen = new Pen(Color.Gray, 1)) 
+                    {
+                        e.Graphics.DrawPath(pen, path);
+                    }
+                }
             }
         }
     }
