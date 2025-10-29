@@ -19,9 +19,9 @@ namespace testForms.pkgInterfaz
         public formMovimientos(long prm_idUsuario)
         {
             InitializeComponent();
+            FormHelper.HabilitarMovimiento(this);
             dgvMovimientos.Enabled = false;
             dgvMovimientos.Hide();
-            dgvMovimientos.AutoSize = true;
 
             id_usuarioActual = prm_idUsuario;
         }
@@ -41,6 +41,11 @@ namespace testForms.pkgInterfaz
                 dgvMovimientos.Visible = false;
                 lblNoMovimientos.Visible = true;
                 return;
+            }
+
+            foreach (DataGridViewColumn column in dgvMovimientos.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
 
             DataView dv = new DataView(tabla); 

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using testForms.pkgBaseDatos;
@@ -21,6 +22,7 @@ namespace testForms.pkgInterfaz
         {
             id_usuarioActual = prm_idUsuarioActual;
             InitializeComponent();
+            FormHelper.HabilitarMovimiento(this, pDegradado1);
 
             fnc_cargarDatosCuenta(id_usuarioActual);
         }
@@ -42,7 +44,7 @@ namespace testForms.pkgInterfaz
         {
             this.Hide();
 
-            using (formEnviar formEnv = new formEnviar(id_usuarioActual, saldo))
+            using (formEnviar formEnv = new formEnviar(id_usuarioActual, saldo, lblCuentaNum.Text))
             {
                 formEnv.ShowDialog();
             }
@@ -55,10 +57,20 @@ namespace testForms.pkgInterfaz
         {
             var data = new Datos();
             var infoCuenta = data.fnc_obtenerInfoCuenta(prm_idUsuarioActual);
-            lblNombre.Text = $"Bienvenido,  {infoCuenta.Value.outPrm_nombre}";
-            lblCuentaNum.Text = $"Numero de cuenta:     {infoCuenta.Value.outPrm_numeroCuenta}";
+            string nombreCompleto = infoCuenta.Value.outPrm_nombre.ToString();
+            string nombreLimpio = Regex.Replace(nombreCompleto.Trim(), @"\s+", " ");
+            string[] partes = nombreLimpio.Split(' ');
+            if (partes.Length > 0)
+            {
+                string primerNombre = partes[0];
+                if (string.IsNullOrEmpty(primerNombre)) nombreLimpio = string.Empty;
+
+                nombreLimpio =  char.ToUpper(primerNombre[0]) + primerNombre.Substring(1).ToLower();
+            }
+            lblNombre.Text = nombreLimpio;
+            lblCuentaNum.Text = infoCuenta.Value.outPrm_numeroCuenta.ToString();
             saldo = infoCuenta.Value.outPrm_saldoCuenta;
-            lblSaldo.Text = $"Disponible:   {saldo.ToString("C2")}";  
+            lblSaldo.Text = saldo.ToString("C2");  
         }
 
         private void btnMovimientos_Click(object sender, EventArgs e)
@@ -84,6 +96,16 @@ namespace testForms.pkgInterfaz
             }
 
             this.Show();
+        }
+
+        private void pBoton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pBoton2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -18,6 +18,7 @@ namespace testForms
         public formRegistro()
         {
             InitializeComponent();
+            FormHelper.HabilitarMovimiento(this);
         }
 
         public formRegistro(formLogin login)
@@ -52,7 +53,6 @@ namespace testForms
 
             txtClave.esClave = true;
 
-            // 🔁 Conectar validación dinámica
             foreach (Control ctrl in this.Controls)
             {
                 if (ctrl is pLineaTextBox linea)
@@ -67,7 +67,6 @@ namespace testForms
             }
         }
 
-        // ✅ Validación individual con cambio visual
         private bool ValidarCampoEspecifico(pLineaTextBox linea)
         {
             string texto = linea.TextBoxInterno.Text.Trim();
@@ -103,14 +102,11 @@ namespace testForms
                     break;
             }
 
-            // 🎨 Cambiar color de fondo (línea)
             linea.BackColor = valido ? Color.FromArgb(0, 120, 215) : Color.FromArgb(220, 53, 69);
-            // Azul si está bien, rojo si está mal
 
             return valido;
         }
 
-        // ✅ Validación global de todos los campos
         private void fnc_validarCampos(object sender, EventArgs e)
         {
             bool camposValidos = true;
@@ -127,7 +123,6 @@ namespace testForms
                 }
             }
 
-            // Si todo es válido, activar el botón
             if (camposValidos && fechaCompleta)
             {
                 btnRegistrar.Enabled = true;
@@ -215,6 +210,16 @@ namespace testForms
             txtClave.esClave = true;
             picOcultarClave.Hide();
             picMostrarClave.Show();
+        }
+
+        private void pBoton1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pBoton2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
