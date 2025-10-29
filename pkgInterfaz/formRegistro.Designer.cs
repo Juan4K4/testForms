@@ -35,7 +35,6 @@
             this.picMostrarClave = new System.Windows.Forms.PictureBox();
             this.picOcultarClave = new System.Windows.Forms.PictureBox();
             this.lblClaveUsuario = new System.Windows.Forms.Label();
-            this.pDegradado2 = new testForms.pkgInterfaz.pDegradado();
             this.txtClave = new testForms.pkgInterfaz.pLineaTextBox();
             this.txtUsuario = new testForms.pkgInterfaz.pLineaTextBox();
             this.txtId = new testForms.pkgInterfaz.pLineaTextBox();
@@ -50,9 +49,11 @@
             this.cmbDia = new System.Windows.Forms.ComboBox();
             this.cmbAnio = new System.Windows.Forms.ComboBox();
             this.lblFechaIncompleta = new System.Windows.Forms.Label();
+            this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
             ((System.ComponentModel.ISupportInitialize)(this.picMostrarClave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOcultarClave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pDegradado1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblRegistroCliente
@@ -75,7 +76,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Codec Pro Bold", 12F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(310, 775);
+            this.label1.Location = new System.Drawing.Point(310, 69);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 20);
@@ -133,18 +134,6 @@
             this.lblClaveUsuario.Size = new System.Drawing.Size(510, 23);
             this.lblClaveUsuario.TabIndex = 29;
             this.lblClaveUsuario.Text = "La contraseña no puede ser igual al nombre de usuario";
-            // 
-            // pDegradado2
-            // 
-            this.pDegradado2.Angle = 45F;
-            this.pDegradado2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pDegradado2.HexColor1 = "#00000";
-            this.pDegradado2.HexColor2 = "#5C69F5";
-            this.pDegradado2.Location = new System.Drawing.Point(0, 859);
-            this.pDegradado2.Margin = new System.Windows.Forms.Padding(2);
-            this.pDegradado2.Name = "pDegradado2";
-            this.pDegradado2.Size = new System.Drawing.Size(763, 81);
-            this.pDegradado2.TabIndex = 38;
             // 
             // txtClave
             // 
@@ -279,7 +268,7 @@
             this.btnLoginBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoginBack.Font = new System.Drawing.Font("Codec Pro Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoginBack.ForeColor = System.Drawing.Color.White;
-            this.btnLoginBack.Location = new System.Drawing.Point(335, 798);
+            this.btnLoginBack.Location = new System.Drawing.Point(335, 94);
             this.btnLoginBack.Name = "btnLoginBack";
             this.btnLoginBack.Size = new System.Drawing.Size(120, 37);
             this.btnLoginBack.TabIndex = 44;
@@ -386,6 +375,19 @@
             this.lblFechaIncompleta.Text = "La fecha esta incompleta";
             this.lblFechaIncompleta.Visible = false;
             // 
+            // pDegradado1
+            // 
+            this.pDegradado1.Angle = 90F;
+            this.pDegradado1.Controls.Add(this.label1);
+            this.pDegradado1.Controls.Add(this.btnLoginBack);
+            this.pDegradado1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pDegradado1.HexColor1 = "#E6E6E6";
+            this.pDegradado1.HexColor2 = "#5C69F5";
+            this.pDegradado1.Location = new System.Drawing.Point(0, 759);
+            this.pDegradado1.Name = "pDegradado1";
+            this.pDegradado1.Size = new System.Drawing.Size(763, 181);
+            this.pDegradado1.TabIndex = 50;
+            // 
             // formRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,15 +395,14 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(763, 940);
+            this.Controls.Add(this.pDegradado1);
             this.Controls.Add(this.lblFechaIncompleta);
             this.Controls.Add(this.cmbAnio);
             this.Controls.Add(this.cmbDia);
             this.Controls.Add(this.lblFechaNac);
             this.Controls.Add(this.cmbMes);
-            this.Controls.Add(this.btnLoginBack);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pDegradado2);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtId);
@@ -412,7 +413,6 @@
             this.Controls.Add(this.picOcultarClave);
             this.Controls.Add(this.picMostrarClave);
             this.Controls.Add(this.lblDatosObligatorios);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblRegistroCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -422,6 +422,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMostrarClave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOcultarClave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pDegradado1.ResumeLayout(false);
+            this.pDegradado1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,7 +443,6 @@
         private pkgInterfaz.pLineaTextBox txtId;
         private pkgInterfaz.pLineaTextBox txtUsuario;
         private pkgInterfaz.pLineaTextBox txtClave;
-        private pkgInterfaz.pDegradado pDegradado2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private pkgInterfaz.pBoton btnRegistrar;
         private pkgInterfaz.pBoton btnLoginBack;
@@ -450,5 +451,6 @@
         private System.Windows.Forms.ComboBox cmbDia;
         private System.Windows.Forms.ComboBox cmbAnio;
         private System.Windows.Forms.Label lblFechaIncompleta;
+        private pkgInterfaz.pDegradado pDegradado1;
     }
 }

@@ -38,12 +38,13 @@
             this.picOcultarClave = new System.Windows.Forms.PictureBox();
             this.txtClave = new testForms.pkgInterfaz.pLineaTextBox();
             this.txtUsuario = new testForms.pkgInterfaz.pLineaTextBox();
-            this.pDegradado2 = new testForms.pkgInterfaz.pDegradado();
             this.btnIniciarSesion = new testForms.pkgInterfaz.pBoton();
             this.bntRegistrarse = new testForms.pkgInterfaz.pBoton();
+            this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMostrarClave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOcultarClave)).BeginInit();
+            this.pDegradado1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEntrar
@@ -65,7 +66,7 @@
             this.lblNoRegistrado.BackColor = System.Drawing.Color.Transparent;
             this.lblNoRegistrado.Font = new System.Drawing.Font("Codec Pro Bold", 12F, System.Drawing.FontStyle.Bold);
             this.lblNoRegistrado.ForeColor = System.Drawing.Color.Black;
-            this.lblNoRegistrado.Location = new System.Drawing.Point(319, 541);
+            this.lblNoRegistrado.Location = new System.Drawing.Point(319, 22);
             this.lblNoRegistrado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNoRegistrado.Name = "lblNoRegistrado";
             this.lblNoRegistrado.Size = new System.Drawing.Size(159, 20);
@@ -169,17 +170,6 @@
             this.txtUsuario.TabIndex = 38;
             this.txtUsuario.Tipo = testForms.pkgInterfaz.pLineaTextBox.TipoEntrada.Especial;
             // 
-            // pDegradado2
-            // 
-            this.pDegradado2.Angle = 45F;
-            this.pDegradado2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pDegradado2.HexColor1 = "#000000";
-            this.pDegradado2.HexColor2 = "#5C69F5";
-            this.pDegradado2.Location = new System.Drawing.Point(0, 621);
-            this.pDegradado2.Name = "pDegradado2";
-            this.pDegradado2.Size = new System.Drawing.Size(822, 86);
-            this.pDegradado2.TabIndex = 40;
-            // 
             // btnIniciarSesion
             // 
             this.btnIniciarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
@@ -211,7 +201,7 @@
             this.bntRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntRegistrarse.Font = new System.Drawing.Font("Codec Pro Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntRegistrarse.ForeColor = System.Drawing.Color.White;
-            this.bntRegistrarse.Location = new System.Drawing.Point(346, 564);
+            this.bntRegistrarse.Location = new System.Drawing.Point(346, 45);
             this.bntRegistrarse.Name = "bntRegistrarse";
             this.bntRegistrarse.Size = new System.Drawing.Size(104, 37);
             this.bntRegistrarse.TabIndex = 43;
@@ -220,6 +210,19 @@
             this.bntRegistrarse.UseVisualStyleBackColor = false;
             this.bntRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
+            // pDegradado1
+            // 
+            this.pDegradado1.Angle = 90F;
+            this.pDegradado1.Controls.Add(this.lblNoRegistrado);
+            this.pDegradado1.Controls.Add(this.bntRegistrarse);
+            this.pDegradado1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pDegradado1.HexColor1 = "#E6E6E6";
+            this.pDegradado1.HexColor2 = "#5C69F5";
+            this.pDegradado1.Location = new System.Drawing.Point(0, 504);
+            this.pDegradado1.Name = "pDegradado1";
+            this.pDegradado1.Size = new System.Drawing.Size(822, 203);
+            this.pDegradado1.TabIndex = 48;
+            // 
             // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,7 +230,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(822, 707);
-            this.Controls.Add(this.bntRegistrarse);
+            this.Controls.Add(this.pDegradado1);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtUsuario);
@@ -236,9 +239,7 @@
             this.Controls.Add(this.lblErrorClave);
             this.Controls.Add(this.lblErrorUsuario);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.lblNoRegistrado);
             this.Controls.Add(this.lblEntrar);
-            this.Controls.Add(this.pDegradado2);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -248,6 +249,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMostrarClave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOcultarClave)).EndInit();
+            this.pDegradado1.ResumeLayout(false);
+            this.pDegradado1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,9 +267,9 @@
         private System.Windows.Forms.PictureBox picOcultarClave;
         private pkgInterfaz.pLineaTextBox txtClave;
         private pkgInterfaz.pLineaTextBox txtUsuario;
-        private pkgInterfaz.pDegradado pDegradado2;
         private pkgInterfaz.pBoton btnIniciarSesion;
         private pkgInterfaz.pBoton bntRegistrarse;
+        private pkgInterfaz.pDegradado pDegradado1;
     }
 }
 
