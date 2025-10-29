@@ -18,6 +18,9 @@ namespace testForms
     public partial class formRegistro : Form
     {
         formLogin frmLogin = new formLogin();
+        DateTime fechaNacimiento;
+        Datos data = new Datos();
+        static Dictionary<string, int> diccionarioMeses = new Dictionary<string, int>();
         public formRegistro()
         {
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace testForms
         {
             InitializeComponent();
             frmLogin = login;
+            btnRegistrar.BackColor = Color.DimGray;
         }
 
         private void btnLoginBack_Click(object sender, EventArgs e)
@@ -38,11 +42,23 @@ namespace testForms
         {
             lblDatosObligatorios.Hide();
             lblClaveUsuario.Hide();
+            lblFechaIncompleta.Hide();
 
             DateTime fechaMaxima = DateTime.Today.AddYears(-18);
-            DateTime fechaMinima = DateTime.Today.AddYears(-90);
-            dtpFechaNac.MaxDate = fechaMaxima;
-            dtpFechaNac.MinDate = fechaMinima;
+            DateTime fechaMinima = DateTime.Today.AddYears(-100);
+            cmbAnio.Items.Clear();
+
+            for (int anio = fechaMinima.Year; anio <= fechaMaxima.Year; anio++)
+            {
+                cmbAnio.Items.Add(anio.ToString());
+            }
+
+            int aux = 1;
+            foreach (string mes in cmbMes.Items)
+            {
+                diccionarioMeses.Add(mes, aux);
+                aux++;
+            }
 
             txtClave.esClave = true;
 
@@ -52,11 +68,17 @@ namespace testForms
                 {
                     linea.TextBoxInterno.TextChanged += fnc_validarCampos;
                 }
+
+                if (ctrl is ComboBox cmb)
+                {
+                    cmb.SelectedValueChanged += fnc_validarCampos;
+                }
             }
         }
         private void fnc_validarCampos(object sender, EventArgs e)
         {
             bool camposCompletos = true;
+            bool fechaCompleta = true;
 
             lblDatosObligatorios.Show();
 
@@ -70,17 +92,36 @@ namespace testForms
                         break;
                     }
                 }
+                if (ctrl is ComboBox cmb)
+                {
+                    if (string.IsNullOrWhiteSpace(cmb.Text))
+                    {
+                        camposCompletos = false;
+                        fechaCompleta = false;
+                        break;
+                    }
+                    else
+                    {
+                        fechaCompleta = true;
+                    }
+                }
             }
 
             bool claveValida = !string.Equals(txtClave.TextBoxInterno.Text, txtUsuario.TextBoxInterno.Text, StringComparison.OrdinalIgnoreCase);
 
-            if (camposCompletos && claveValida)
+            if (camposCompletos && claveValida && fechaCompleta)
             {
                 btnRegistrar.Enabled = true;
-                btnRegistrar.BackColor = Color.Orange;
+                btnRegistrar.BackColor = ColorTranslator.FromHtml("#5C69F5");
 
                 lblDatosObligatorios.Hide();
                 lblClaveUsuario.Hide();
+                lblFechaIncompleta.Hide();
+
+                int mes = 0;
+                diccionarioMeses.TryGetValue(cmbMes.Text, out mes);
+                string cadenaFecha = $"{cmbDia.SelectedItem.ToString()}/{mes}/{cmbAnio.SelectedItem.ToString()}";
+                fechaNacimiento = Convert.ToDateTime(cadenaFecha);
             }
             else
             {
@@ -89,6 +130,7 @@ namespace testForms
 
                 lblDatosObligatorios.Visible = !camposCompletos;
                 lblClaveUsuario.Visible = !claveValida;
+                lblFechaIncompleta.Visible = !fechaCompleta;
             }
         }
 
@@ -103,9 +145,8 @@ namespace testForms
                 long v_id = long.Parse(txtId.TextBoxInterno.Text);
                 string v_usuario = txtUsuario.TextBoxInterno.Text;
                 string v_clave = txtClave.TextBoxInterno.Text;
-                string v_fechaNac = dtpFechaNac.Value.Date.ToString("dd/MM/yyyy");
+                string v_fechaNac = fechaNacimiento.ToString();
 
-                Datos data = new Datos();
                 int resultadoDml = data.fnc_registrarUsuario(v_nombre, v_mail, v_id, v_usuario, v_clave, v_fechaNac);
 
                 switch (resultadoDml)
