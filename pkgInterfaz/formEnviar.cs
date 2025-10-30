@@ -16,13 +16,17 @@ namespace testForms.pkgInterfaz
     {
         decimal saldo = 0;
         long idUsuario = 0;
-        public formEnviar(long prm_usuarioActual, decimal prm_saldo)
+        string cuentaNum = null;
+        public formEnviar(long prm_usuarioActual, decimal prm_saldo, string prm_cuentaActual)
         {
             InitializeComponent();
-            lblSaldo.Text = $"Tu saldo disponible: {prm_saldo.ToString("C2")}";
+            FormHelper.HabilitarMovimiento(this);
+
+            lblSaldo.Text = prm_saldo.ToString("C2");
 
             saldo = prm_saldo;
             idUsuario = prm_usuarioActual;
+            cuentaNum = prm_cuentaActual;
 
             foreach (Control ctrl in this.Controls)
             {
@@ -80,6 +84,7 @@ namespace testForms.pkgInterfaz
 
             bool montoValido = false;
             bool cuentaValida = false;
+            bool mismaCuenta = false;
 
 
             if (decimal.TryParse(txtMonto.TextBoxInterno.Text, out decimal monto))
@@ -88,8 +93,9 @@ namespace testForms.pkgInterfaz
             }
 
             cuentaValida = (txtNumeroCuenta.TextBoxInterno.Text.Length == txtNumeroCuenta.limiteCaracteres);
+            mismaCuenta = (!string.Equals(txtNumeroCuenta.TextBoxInterno.Text, cuentaNum));
 
-            if (campos && montoValido && cuentaValida)
+            if (campos && montoValido && cuentaValida && mismaCuenta)
             {
                 btnEnviar.Show();
                 btnEnviar.Enabled = true;
@@ -104,7 +110,28 @@ namespace testForms.pkgInterfaz
 
                 lblErrorMonto.Visible = !montoValido;
                 lblErrorCuenta.Visible = !cuentaValida;
+                lblMismaCuenta.Visible = !mismaCuenta;
             }   
+        }
+
+        private void pBoton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pBoton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void formEnviar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pBoton2_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -20,6 +20,7 @@ namespace testForms.pkgInterfaz
         public formActualizarCliente(long prm_usuarioActual)
         {
             InitializeComponent();
+            FormHelper.HabilitarMovimiento(this, pDegradado3);
             id_usuarioActual = prm_usuarioActual;
 
             var infoCliente = data.fnc_obtenerInfoCliente(prm_usuarioActual);
@@ -28,7 +29,18 @@ namespace testForms.pkgInterfaz
             txtUsuario.placeholder = infoCliente.Value.outPrm_usuario;
             clave = infoCliente.Value.outPrm_clave;
 
-            txtClaveActual.TextBoxInterno.TextChanged += fnc_validarClave;
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is pLineaTextBox linea)
+                {
+                    linea.TextBoxInterno.TextChanged += fnc_validarCampos;
+                }
+
+                if (ctrl is ComboBox cmb)
+                {
+                    cmb.SelectedValueChanged += fnc_validarCampos;
+                }
+            }
 
             txtClaveNueva.Hide();
 
@@ -39,22 +51,89 @@ namespace testForms.pkgInterfaz
             picOcultarClaveNueva.Hide();
         }
 
-        private void fnc_validarClave (object sender, EventArgs e)
+        private bool ValidarCampoEspecifico(pLineaTextBox linea)
         {
-            if (txtClaveActual.TextBoxInterno.Text == clave && !string.IsNullOrEmpty(txtClaveActual.TextBoxInterno.Text))
-            {
-                txtClaveNueva.Show();
-                txtClaveNueva.Enabled = true;
+            string texto = linea.TextBoxInterno.Text.Trim();
+            bool valido = false;
 
-                picMostrarClaveNueva.Show();
-                picOcultarClaveNueva.Show();
-            }
-            else
+            if (linea.Name == "txtCorreo") lblCorreoInvalido.Visible = false;
+            if (linea.Name == "txtUsuario") lblUsuarioInvalido.Visible = false;
+            if (linea.Name == "txtClaveNueva") lblClaveInvalida.Visible = false;
+
+            switch (linea.Name)
             {
-                txtClaveNueva.Hide();
-                txtClaveNueva.Enabled = false;
+                case "txtCorreo":
+                    valido = texto.Contains("@") && texto.Contains(".") &&
+                             !string.Equals(texto, txtCorreo.TextBoxInterno.PlaceHolder);
+                    lblCorreoInvalido.Visible = !valido && texto.Length > 0;
+
+                    break;
+
+                case "txtUsuario":
+                    valido = texto.Length >= 4 &&
+                             !string.Equals(texto, txtUsuario.TextBoxInterno.PlaceHolder);
+                    lblUsuarioInvalido.Visible = !valido && texto.Length > 0;
+                    break;
+
+                case "txtClaveNueva":
+                    valido = texto.Length >= 6 &&
+                             !string.Equals(texto, txtClaveActual.TextBoxInterno.Text, StringComparison.OrdinalIgnoreCase);
+                    lblClaveInvalida.Visible = !valido && texto.Length > 0;
+
+                    break;
+
+                case "txtClaveActual":
+                    valido = string.Equals(texto, clave);
+                    txtClaveNueva.Enabled = valido;
+                    txtClaveNueva.Visible = valido;
+                    picMostrarClaveNueva.Visible = valido;
+
+                    break;
+
+                default:
+                    valido = !string.IsNullOrWhiteSpace(texto);
+                    break;
             }
+
+            return valido;
         }
+
+
+        private void fnc_validarCampos(object sender, EventArgs e)
+        {
+            bool algunCambio = false;
+            bool camposValidos = true;
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is pLineaTextBox linea)
+                {
+                    string texto = linea.TextBoxInterno.Text.Trim();
+                    string original = linea.TextBoxInterno.PlaceHolder;
+
+                    bool valido = ValidarCampoEspecifico(linea);
+
+                    if (linea.Name != "txtClaveActual")
+                    {
+                        if (!string.IsNullOrEmpty(texto) && texto != original)
+                        {
+                            algunCambio = true;
+                            if (!valido)
+                                camposValidos = false;
+                        }
+                    }
+                    else
+                    {
+                        if (!valido)
+                            camposValidos = false;
+                    }
+                }
+            }
+
+            btnGuardar.Enabled = algunCambio && camposValidos;
+        }
+
+
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
@@ -107,30 +186,30 @@ namespace testForms.pkgInterfaz
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.TextBoxInterno.Text;
-            string correo = txtCorreo.TextBoxInterno.Text;
-            string clave = txtClaveNueva.TextBoxInterno.Text;
-            int resultado = data.fnc_actualizarInfoCliente(id_usuarioActual, correo, usuario, clave);
+            string nuevoUsuario = txtUsuario.TextBoxInterno.Text.Trim();
+            string nuevoCorreo = txtCorreo.TextBoxInterno.Text.Trim();
+            string nuevaClave = txtClaveNueva.TextBoxInterno.Text.Trim();
+
+            string usuarioFinal = string.IsNullOrEmpty(nuevoUsuario) ? txtUsuario.placeholder : nuevoUsuario;
+            string correoFinal = string.IsNullOrEmpty(nuevoCorreo) ? txtCorreo.placeholder : nuevoCorreo;
+            string claveFinal = string.IsNullOrEmpty(nuevaClave) ? clave : nuevaClave;
+
+            int resultado = data.fnc_actualizarInfoCliente(id_usuarioActual, correoFinal, usuarioFinal, claveFinal);
 
             if (resultado == 0)
             {
-                MessageBox.Show("Los datos ya se encuentran asociados a una cuenta existente",
+                MessageBox.Show("Los datos ingresados ya están asociados a otra cuenta.",
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Se han actualizado correctamente su informacion.",
-                                "Actualizacion correcta",
+                MessageBox.Show("Información actualizada correctamente.",
+                                "Éxito",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
             }
-        }
-
-        private void txtClaveNueva_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

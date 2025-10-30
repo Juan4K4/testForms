@@ -15,12 +15,12 @@ namespace testForms.pkgInterfaz
         public formComprobante(int prm_destino, int prm_monto, DateTime prm_fecha, int prm_referencia)
         {
             InitializeComponent();
-            lblCuentaDestino.Text = $"Cuenta destino: {prm_destino}";
-            lblMonto.Text = $"Monto: {prm_monto.ToString("C2")}";
-            lblFecha.Text = $"Fecha: {prm_fecha.ToString("G")}";
-            lblReferencia.Text = $"Referencia: {prm_referencia}";
+            FormHelper.HabilitarMovimiento(this);
+            lblCuentaDestino.Text = prm_destino.ToString();
+            lblMonto.Text = prm_monto.ToString("C2");
+            lblFecha.Text = prm_fecha.ToString("G");
+            lblReferencia.Text = prm_referencia.ToString();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

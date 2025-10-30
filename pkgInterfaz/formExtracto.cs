@@ -19,13 +19,14 @@ namespace testForms.pkgInterfaz
         public formExtracto(DateTime fechaInicio, DateTime fechaFin, decimal saldoInicio, decimal ingresos, decimal egresos, decimal saldoFin, string titular, int numeroCuenta, long prm_idUsuario)
         {
             InitializeComponent();
-            lblPeriodo.Text = $"Periodo: {fechaInicio.ToString("dd/MM/yyyy")} - {fechaFin.ToString("dd/MM/yyyy")}";
-            lblSaldoInicio.Text = $"Tu saldo al inicio del mes: {saldoInicio.ToString("C")}";
-            lblIngresos.Text = $"Lo que ingreso a tu cuenta: {ingresos.ToString("C")}";
-            lblEgresos.Text = $"Lo que salio de tu cuenta: {egresos.ToString("C")}";
-            lblSaldoFin.Text = $"Tu saldo al final del mes: {saldoFin.ToString("C")}";
-            lblCuenta.Text = $"Numero de cuenta: {numeroCuenta}";
-            lblTitular.Text = $"Titular de la cuenta: {titular}";
+            FormHelper.HabilitarMovimiento(this, pDegradado3);
+            lblPeriodo.Text = $"{fechaInicio.ToString("dd/MM/yyyy")} - {fechaFin.ToString("dd/MM/yyyy")}";
+            lblSaldoInicio.Text = $"{saldoInicio.ToString("C")}";
+            lblIngresos.Text = $"{ingresos.ToString("C")}";
+            lblEgresos.Text = $"{egresos.ToString("C")}";
+            lblSaldoFin.Text = $"{saldoFin.ToString("C")}";
+            lblCuenta.Text = $"{numeroCuenta}";
+            lblTitular.Text = $"{titular}";
             id_usuarioActual = prm_idUsuario;
             this.fechaInicio = fechaInicio;
             this.fechaFin = fechaFin;
@@ -34,6 +35,11 @@ namespace testForms.pkgInterfaz
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -52,6 +58,11 @@ namespace testForms.pkgInterfaz
 
             DataView dv = new DataView(tabla);
             dv.RowFilter = $"Fecha >= #{fechaInicio:yyyy-MM-dd}# AND Fecha <= #{fechaFin:yyyy-MM-dd}#";
+
+            foreach (DataGridViewColumn column in dgvMovimientos.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
 
             dgvMovimientos.DataSource = dv;
             if (dv.Count == 0)
