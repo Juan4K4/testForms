@@ -67,7 +67,7 @@
             this.pDegradado1.HexColor1 = "white";
             this.pDegradado1.HexColor2 = "white";
             this.pDegradado1.Location = new System.Drawing.Point(0, 118);
-            this.pDegradado1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pDegradado1.Margin = new System.Windows.Forms.Padding(4);
             this.pDegradado1.Name = "pDegradado1";
             this.pDegradado1.Size = new System.Drawing.Size(800, 266);
             this.pDegradado1.TabIndex = 51;
@@ -180,7 +180,7 @@
             this.button1.Font = new System.Drawing.Font("Codec Pro Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(300, 414);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 60);
             this.button1.TabIndex = 44;
@@ -193,13 +193,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(800, 492);
             this.Controls.Add(this.pDegradado1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTransferencia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formComprobante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formComprobante";

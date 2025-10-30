@@ -211,7 +211,7 @@
             this.pDegradado1.HexColor2 = "#5C69F5";
             this.pDegradado1.Location = new System.Drawing.Point(0, 0);
             this.pDegradado1.Name = "pDegradado1";
-            this.pDegradado1.Size = new System.Drawing.Size(800, 136);
+            this.pDegradado1.Size = new System.Drawing.Size(834, 136);
             this.pDegradado1.TabIndex = 47;
             // 
             // btnRecargar
@@ -224,6 +224,7 @@
             this.btnRecargar.FlatAppearance.BorderSize = 0;
             this.btnRecargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecargar.Font = new System.Drawing.Font("Codec Pro Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecargar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
             this.btnRecargar.Location = new System.Drawing.Point(704, 8);
             this.btnRecargar.Name = "btnRecargar";
@@ -319,9 +320,10 @@
             // formHomeCliente
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(800, 400);
+            this.ClientSize = new System.Drawing.Size(834, 410);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnEnviar);

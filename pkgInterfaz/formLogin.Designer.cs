@@ -136,7 +136,7 @@
             this.pBoton2.Font = new System.Drawing.Font("Codec Pro Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pBoton2.ForeColor = System.Drawing.Color.White;
             this.pBoton2.Location = new System.Drawing.Point(960, 10);
-            this.pBoton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pBoton2.Margin = new System.Windows.Forms.Padding(4);
             this.pBoton2.Name = "pBoton2";
             this.pBoton2.Size = new System.Drawing.Size(51, 30);
             this.pBoton2.TabIndex = 50;
@@ -157,7 +157,7 @@
             this.pBoton1.Font = new System.Drawing.Font("Codec Pro Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pBoton1.ForeColor = System.Drawing.Color.White;
             this.pBoton1.Location = new System.Drawing.Point(1013, 10);
-            this.pBoton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pBoton1.Margin = new System.Windows.Forms.Padding(4);
             this.pBoton1.Name = "pBoton1";
             this.pBoton1.Size = new System.Drawing.Size(51, 30);
             this.pBoton1.TabIndex = 49;
@@ -171,13 +171,14 @@
             this.pDegradado1.Angle = 90F;
             this.pDegradado1.Controls.Add(this.lblNoRegistrado);
             this.pDegradado1.Controls.Add(this.bntRegistrarse);
+            this.pDegradado1.Controls.Add(this.btnIniciarSesion);
             this.pDegradado1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pDegradado1.HexColor1 = "#E6E6E6";
             this.pDegradado1.HexColor2 = "#5C69F5";
-            this.pDegradado1.Location = new System.Drawing.Point(0, 612);
-            this.pDegradado1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pDegradado1.Location = new System.Drawing.Point(0, 640);
+            this.pDegradado1.Margin = new System.Windows.Forms.Padding(4);
             this.pDegradado1.Name = "pDegradado1";
-            this.pDegradado1.Size = new System.Drawing.Size(1067, 250);
+            this.pDegradado1.Size = new System.Drawing.Size(1067, 222);
             this.pDegradado1.TabIndex = 48;
             // 
             // lblNoRegistrado
@@ -194,6 +195,7 @@
             // 
             // bntRegistrarse
             // 
+            this.bntRegistrarse.AutoSize = true;
             this.bntRegistrarse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(146)))), ((int)(((byte)(36)))));
             this.bntRegistrarse.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(146)))), ((int)(((byte)(36)))));
             this.bntRegistrarse.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -204,7 +206,7 @@
             this.bntRegistrarse.Font = new System.Drawing.Font("Codec Pro Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntRegistrarse.ForeColor = System.Drawing.Color.White;
             this.bntRegistrarse.Location = new System.Drawing.Point(464, 118);
-            this.bntRegistrarse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bntRegistrarse.Margin = new System.Windows.Forms.Padding(4);
             this.bntRegistrarse.Name = "bntRegistrarse";
             this.bntRegistrarse.Size = new System.Drawing.Size(139, 46);
             this.bntRegistrarse.TabIndex = 43;
@@ -215,6 +217,7 @@
             // 
             // btnIniciarSesion
             // 
+            this.btnIniciarSesion.AutoSize = true;
             this.btnIniciarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
             this.btnIniciarSesion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
             this.btnIniciarSesion.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -224,8 +227,8 @@
             this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Codec Pro Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(433, 553);
-            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(432, 12);
+            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(200, 60);
             this.btnIniciarSesion.TabIndex = 42;
@@ -242,7 +245,7 @@
             this.txtClave.label = "Contraseña";
             this.txtClave.limiteCaracteres = 50;
             this.txtClave.Location = new System.Drawing.Point(325, 453);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtClave.Margin = new System.Windows.Forms.Padding(5);
             this.txtClave.Name = "txtClave";
             this.txtClave.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtClave.placeholder = " ";
@@ -259,7 +262,7 @@
             this.txtUsuario.label = "Usuario";
             this.txtUsuario.limiteCaracteres = 50;
             this.txtUsuario.Location = new System.Drawing.Point(325, 354);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(5);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtUsuario.placeholder = " ";
@@ -272,12 +275,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1067, 862);
             this.Controls.Add(this.pBoton2);
             this.Controls.Add(this.pBoton1);
             this.Controls.Add(this.pDegradado1);
-            this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.picOcultarClave);

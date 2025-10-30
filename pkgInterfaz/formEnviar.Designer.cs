@@ -98,7 +98,7 @@
             this.txtMonto.label = "Monto";
             this.txtMonto.limiteCaracteres = 10;
             this.txtMonto.Location = new System.Drawing.Point(373, 305);
-            this.txtMonto.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtMonto.Margin = new System.Windows.Forms.Padding(5);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtMonto.placeholder = "Cantidad a enviar";
@@ -114,7 +114,7 @@
             this.txtNumeroCuenta.label = "Cuenta destino";
             this.txtNumeroCuenta.limiteCaracteres = 8;
             this.txtNumeroCuenta.Location = new System.Drawing.Point(373, 207);
-            this.txtNumeroCuenta.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNumeroCuenta.Margin = new System.Windows.Forms.Padding(5);
             this.txtNumeroCuenta.Name = "txtNumeroCuenta";
             this.txtNumeroCuenta.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtNumeroCuenta.placeholder = "Numero de cuenta";
@@ -148,7 +148,7 @@
             this.btnEnviar.Font = new System.Drawing.Font("Codec Pro Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.White;
             this.btnEnviar.Location = new System.Drawing.Point(469, 414);
-            this.btnEnviar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEnviar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(128, 60);
             this.btnEnviar.TabIndex = 44;
@@ -181,7 +181,7 @@
             this.pBoton2.Font = new System.Drawing.Font("Codec Pro Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pBoton2.ForeColor = System.Drawing.Color.White;
             this.pBoton2.Location = new System.Drawing.Point(949, 10);
-            this.pBoton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pBoton2.Margin = new System.Windows.Forms.Padding(4);
             this.pBoton2.Name = "pBoton2";
             this.pBoton2.Size = new System.Drawing.Size(51, 30);
             this.pBoton2.TabIndex = 54;
@@ -202,7 +202,7 @@
             this.pBoton1.Font = new System.Drawing.Font("Codec Pro", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pBoton1.ForeColor = System.Drawing.Color.White;
             this.pBoton1.Location = new System.Drawing.Point(1003, 10);
-            this.pBoton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pBoton1.Margin = new System.Windows.Forms.Padding(4);
             this.pBoton1.Name = "pBoton1";
             this.pBoton1.Size = new System.Drawing.Size(51, 30);
             this.pBoton1.TabIndex = 53;
@@ -227,6 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1067, 492);
             this.Controls.Add(this.lblMismaCuenta);

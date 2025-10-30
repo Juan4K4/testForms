@@ -100,9 +100,10 @@
             this.placeHolderBox1.Font = new System.Drawing.Font("Codec Pro", 15F);
             this.placeHolderBox1.Location = new System.Drawing.Point(14, 81);
             this.placeHolderBox1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 40);
+            this.placeHolderBox1.MinimumSize = new System.Drawing.Size(250, 10);
             this.placeHolderBox1.Name = "placeHolderBox1";
             this.placeHolderBox1.PlaceHolder = "ID del cliente";
-            this.placeHolderBox1.Size = new System.Drawing.Size(248, 29);
+            this.placeHolderBox1.Size = new System.Drawing.Size(250, 29);
             this.placeHolderBox1.TabIndex = 1;
             // 
             // label1
@@ -140,6 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1198, 722);
             this.Controls.Add(this.tbcAdmin);
             this.Controls.Add(this.pDegradado1);

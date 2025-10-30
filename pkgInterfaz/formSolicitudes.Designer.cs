@@ -30,17 +30,17 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabExtracto = new System.Windows.Forms.TabPage();
+            this.btnGenerarExtracto = new testForms.pkgInterfaz.pBoton();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblErrorAnio = new System.Windows.Forms.Label();
             this.lblErrorMes = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbAnio = new System.Windows.Forms.ComboBox();
             this.cmbMes = new System.Windows.Forms.ComboBox();
             this.lblEntrar = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnVolver = new testForms.pkgInterfaz.pBoton();
             this.pDegradado3 = new testForms.pkgInterfaz.pDegradado();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnGenerarExtracto = new testForms.pkgInterfaz.pBoton();
             this.tabControl1.SuspendLayout();
             this.tabExtracto.SuspendLayout();
             this.pDegradado3.SuspendLayout();
@@ -50,12 +50,12 @@
             // 
             this.tabControl1.Controls.Add(this.tabExtracto);
             this.tabControl1.Font = new System.Drawing.Font("Codec Pro Bold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 120);
+            this.tabControl1.Location = new System.Drawing.Point(16, 148);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(0, 0);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(776, 472);
+            this.tabControl1.Size = new System.Drawing.Size(1035, 581);
             this.tabControl1.TabIndex = 0;
             // 
             // tabExtracto
@@ -72,23 +72,57 @@
             this.tabExtracto.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabExtracto.Font = new System.Drawing.Font("Codec Pro Bold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabExtracto.ForeColor = System.Drawing.Color.Black;
-            this.tabExtracto.Location = new System.Drawing.Point(4, 34);
+            this.tabExtracto.Location = new System.Drawing.Point(4, 40);
             this.tabExtracto.Margin = new System.Windows.Forms.Padding(0);
             this.tabExtracto.Name = "tabExtracto";
-            this.tabExtracto.Size = new System.Drawing.Size(768, 434);
+            this.tabExtracto.Size = new System.Drawing.Size(1027, 537);
             this.tabExtracto.TabIndex = 0;
             this.tabExtracto.Text = "Extracto de cuenta";
             this.tabExtracto.Enter += new System.EventHandler(this.tabExtracto_Enter);
+            // 
+            // btnGenerarExtracto
+            // 
+            this.btnGenerarExtracto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerarExtracto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
+            this.btnGenerarExtracto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
+            this.btnGenerarExtracto.BorderColor = System.Drawing.Color.Empty;
+            this.btnGenerarExtracto.BorderRadius = 8;
+            this.btnGenerarExtracto.BorderSize = 2;
+            this.btnGenerarExtracto.Enabled = false;
+            this.btnGenerarExtracto.FlatAppearance.BorderSize = 0;
+            this.btnGenerarExtracto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarExtracto.Font = new System.Drawing.Font("Codec Pro Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarExtracto.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarExtracto.Location = new System.Drawing.Point(199, 282);
+            this.btnGenerarExtracto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGenerarExtracto.Name = "btnGenerarExtracto";
+            this.btnGenerarExtracto.Size = new System.Drawing.Size(171, 69);
+            this.btnGenerarExtracto.TabIndex = 55;
+            this.btnGenerarExtracto.Text = "Generar extracto";
+            this.btnGenerarExtracto.TextColor = System.Drawing.Color.White;
+            this.btnGenerarExtracto.UseVisualStyleBackColor = false;
+            this.btnGenerarExtracto.Click += new System.EventHandler(this.btnGenerarExtracto_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Codec Pro Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(71, 193);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 33);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Año";
             // 
             // lblErrorAnio
             // 
             this.lblErrorAnio.CausesValidation = false;
             this.lblErrorAnio.Font = new System.Drawing.Font("Codec Pro", 10F);
             this.lblErrorAnio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblErrorAnio.Location = new System.Drawing.Point(143, 193);
-            this.lblErrorAnio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblErrorAnio.Location = new System.Drawing.Point(191, 238);
             this.lblErrorAnio.Name = "lblErrorAnio";
-            this.lblErrorAnio.Size = new System.Drawing.Size(134, 23);
+            this.lblErrorAnio.Size = new System.Drawing.Size(179, 28);
             this.lblErrorAnio.TabIndex = 31;
             this.lblErrorAnio.Text = "Seleccione un año";
             this.lblErrorAnio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -98,10 +132,9 @@
             this.lblErrorMes.CausesValidation = false;
             this.lblErrorMes.Font = new System.Drawing.Font("Codec Pro", 10F);
             this.lblErrorMes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblErrorMes.Location = new System.Drawing.Point(143, 128);
-            this.lblErrorMes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblErrorMes.Location = new System.Drawing.Point(191, 158);
             this.lblErrorMes.Name = "lblErrorMes";
-            this.lblErrorMes.Size = new System.Drawing.Size(134, 23);
+            this.lblErrorMes.Size = new System.Drawing.Size(179, 28);
             this.lblErrorMes.TabIndex = 30;
             this.lblErrorMes.Text = "Seleccione un mes";
             this.lblErrorMes.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -112,19 +145,19 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Codec Pro Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(53, 89);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(71, 110);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 26);
+            this.label1.Size = new System.Drawing.Size(65, 33);
             this.label1.TabIndex = 4;
             this.label1.Text = "Mes";
             // 
             // cmbAnio
             // 
             this.cmbAnio.FormattingEnabled = true;
-            this.cmbAnio.Location = new System.Drawing.Point(117, 157);
+            this.cmbAnio.Location = new System.Drawing.Point(156, 193);
+            this.cmbAnio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbAnio.Name = "cmbAnio";
-            this.cmbAnio.Size = new System.Drawing.Size(187, 33);
+            this.cmbAnio.Size = new System.Drawing.Size(248, 39);
             this.cmbAnio.TabIndex = 3;
             this.cmbAnio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbAnio_KeyPress);
             // 
@@ -144,9 +177,10 @@
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.cmbMes.Location = new System.Drawing.Point(117, 89);
+            this.cmbMes.Location = new System.Drawing.Point(156, 110);
+            this.cmbMes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbMes.Name = "cmbMes";
-            this.cmbMes.Size = new System.Drawing.Size(187, 33);
+            this.cmbMes.Size = new System.Drawing.Size(248, 39);
             this.cmbMes.TabIndex = 2;
             this.cmbMes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMes_KeyPress);
             // 
@@ -156,24 +190,10 @@
             this.lblEntrar.Font = new System.Drawing.Font("Codec Pro Bold", 30F);
             this.lblEntrar.ForeColor = System.Drawing.Color.Black;
             this.lblEntrar.Location = new System.Drawing.Point(0, 0);
-            this.lblEntrar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEntrar.Name = "lblEntrar";
-            this.lblEntrar.Size = new System.Drawing.Size(574, 72);
+            this.lblEntrar.Size = new System.Drawing.Size(765, 89);
             this.lblEntrar.TabIndex = 1;
             this.lblEntrar.Text = "Generar extracto de cuenta";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Codec Pro Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(53, 157);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 26);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Año";
             // 
             // btnVolver
             // 
@@ -187,9 +207,10 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Codec Pro Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(664, 8);
+            this.btnVolver.Location = new System.Drawing.Point(885, 10);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(128, 32);
+            this.btnVolver.Size = new System.Drawing.Size(171, 39);
             this.btnVolver.TabIndex = 53;
             this.btnVolver.Text = "Volver al inicio";
             this.btnVolver.TextColor = System.Drawing.Color.White;
@@ -209,7 +230,7 @@
             this.pDegradado3.Location = new System.Drawing.Point(0, 0);
             this.pDegradado3.Margin = new System.Windows.Forms.Padding(0);
             this.pDegradado3.Name = "pDegradado3";
-            this.pDegradado3.Size = new System.Drawing.Size(800, 116);
+            this.pDegradado3.Size = new System.Drawing.Size(1067, 143);
             this.pDegradado3.TabIndex = 57;
             // 
             // label4
@@ -218,44 +239,23 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Codec Pro Bold", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(16, 16);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(21, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(306, 65);
+            this.label4.Size = new System.Drawing.Size(388, 82);
             this.label4.TabIndex = 54;
             this.label4.Text = "Solicitudes";
             // 
-            // btnGenerarExtracto
-            // 
-            this.btnGenerarExtracto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenerarExtracto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
-            this.btnGenerarExtracto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
-            this.btnGenerarExtracto.BorderColor = System.Drawing.Color.Empty;
-            this.btnGenerarExtracto.BorderRadius = 8;
-            this.btnGenerarExtracto.BorderSize = 2;
-            this.btnGenerarExtracto.Enabled = false;
-            this.btnGenerarExtracto.FlatAppearance.BorderSize = 0;
-            this.btnGenerarExtracto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarExtracto.Font = new System.Drawing.Font("Codec Pro Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarExtracto.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarExtracto.Location = new System.Drawing.Point(149, 229);
-            this.btnGenerarExtracto.Name = "btnGenerarExtracto";
-            this.btnGenerarExtracto.Size = new System.Drawing.Size(128, 56);
-            this.btnGenerarExtracto.TabIndex = 55;
-            this.btnGenerarExtracto.Text = "Generar extracto";
-            this.btnGenerarExtracto.TextColor = System.Drawing.Color.White;
-            this.btnGenerarExtracto.UseVisualStyleBackColor = false;
-            this.btnGenerarExtracto.Click += new System.EventHandler(this.btnGenerarExtracto_Click);
-            // 
             // formSolicitudes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(1067, 738);
             this.Controls.Add(this.pDegradado3);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "formSolicitudes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formSolicitudes";

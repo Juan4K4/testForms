@@ -278,6 +278,7 @@
             // 
             // btnLoginBack
             // 
+            this.btnLoginBack.AutoSize = true;
             this.btnLoginBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(146)))), ((int)(((byte)(36)))));
             this.btnLoginBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(146)))), ((int)(((byte)(36)))));
             this.btnLoginBack.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -299,6 +300,7 @@
             // 
             // btnRegistrar
             // 
+            this.btnRegistrar.AutoSize = true;
             this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
             this.btnRegistrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
             this.btnRegistrar.BorderColor = System.Drawing.Color.PaleVioletRed;
