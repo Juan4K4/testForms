@@ -25,9 +25,9 @@ namespace testForms.pkgInterfaz
 
             var infoCliente = data.fnc_obtenerInfoCliente(prm_usuarioActual);
 
-            txtCorreo.placeholder = infoCliente.Value.outPrm_correo;
-            txtUsuario.placeholder = infoCliente.Value.outPrm_usuario;
-            clave = infoCliente.Value.outPrm_clave;
+            txtCorreo.placeholder = infoCliente.Value.mail;
+            txtUsuario.placeholder = infoCliente.Value.usuario;
+            clave = infoCliente.Value.clave;
 
             foreach (Control ctrl in this.Controls)
             {

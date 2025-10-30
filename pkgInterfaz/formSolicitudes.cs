@@ -116,19 +116,19 @@ namespace testForms.pkgInterfaz
             var resultado = data.fnc_generarExtracto(id_usuarioActual, periodo);
             var infoCuenta = data.fnc_obtenerInfoCuenta(id_usuarioActual);
 
-            decimal saldoInicio = resultado.Value.outP_saldoInicio;
-            decimal ingresos = resultado.Value.outP_ingresos;
-            decimal egresos = resultado.Value.outP_egresos;
-            decimal saldoFin = resultado.Value.outP_saldoFin;
-            DateTime fechaInicio = resultado.Value.outP_fechaInicio;
-            DateTime fechaFin = resultado.Value.outP_fechaFin;
+            decimal saldoInicio = resultado.Value.saldoInicio;
+            decimal ingresos = resultado.Value.ingresos;
+            decimal egresos = resultado.Value.egresos;
+            decimal saldoFin = resultado.Value.saldoFin;
+            DateTime fechaInicio = resultado.Value.fechaInicio;
+            DateTime fechaFin = resultado.Value.fechaFin;
 
-            string titular = infoCuenta.Value.outPrm_nombre.ToString();
+            string titular = infoCuenta.Value.nombre.ToString();
             string nombreLimpio = Regex.Replace(titular.Trim(), @"\s+", " ");
             TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
             titular = ti.ToTitleCase(nombreLimpio.ToLower());
 
-            int numeroCuenta = int.Parse(infoCuenta.Value.outPrm_numeroCuenta.ToString());
+            int numeroCuenta = int.Parse(infoCuenta.Value.cuentaNum.ToString());
             formExtracto frmExtracto = new formExtracto (
                 fechaInicio,
                 fechaFin,

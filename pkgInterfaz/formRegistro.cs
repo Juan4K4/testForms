@@ -18,12 +18,13 @@ namespace testForms
         public formRegistro()
         {
             InitializeComponent();
-            FormHelper.HabilitarMovimiento(this);
+            FormHelper.HabilitarMovimiento(this, pDegradado1);
         }
 
         public formRegistro(formLogin login)
         {
             InitializeComponent();
+            FormHelper.HabilitarMovimiento(this, pDegradado1);
             frmLogin = login;
             btnRegistrar.BackColor = Color.DimGray;
         }
@@ -123,17 +124,34 @@ namespace testForms
                 }
             }
 
-            if (camposValidos && fechaCompleta)
+            int mes = 0;
+            diccionarioMeses.TryGetValue(cmbMes.Text, out mes);
+            string cadenaFecha = $"{cmbDia.Text}/{mes}/{cmbAnio.Text}";
+
+            bool fechaValida = DateTime.TryParseExact(
+                cadenaFecha,
+                "d/M/yyyy",
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None,
+                out fechaNacimiento);
+
+            if (!fechaValida)
+            {
+                camposValidos = false;
+
+                lblFechaIncompleta.Text = "La fecha no es válida (e.g., día no existe en el mes).";
+            }
+            else
+            {
+                lblFechaIncompleta.Text = "Fecha incompleta";
+            }
+
+            if (camposValidos && fechaCompleta && fechaValida)
             {
                 btnRegistrar.Enabled = true;
                 btnRegistrar.BackColor = ColorTranslator.FromHtml("#5C69F5");
                 lblDatosObligatorios.Hide();
                 lblFechaIncompleta.Hide();
-
-                int mes = 0;
-                diccionarioMeses.TryGetValue(cmbMes.Text, out mes);
-                string cadenaFecha = $"{cmbDia.SelectedItem}/{mes}/{cmbAnio.SelectedItem}";
-                fechaNacimiento = Convert.ToDateTime(cadenaFecha);
             }
             else
             {

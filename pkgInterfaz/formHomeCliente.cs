@@ -57,7 +57,7 @@ namespace testForms.pkgInterfaz
         {
             var data = new Datos();
             var infoCuenta = data.fnc_obtenerInfoCuenta(prm_idUsuarioActual);
-            string nombreCompleto = infoCuenta.Value.outPrm_nombre.ToString();
+            string nombreCompleto = infoCuenta.Value.nombre.ToString();
             string nombreLimpio = Regex.Replace(nombreCompleto.Trim(), @"\s+", " ");
             string[] partes = nombreLimpio.Split(' ');
             if (partes.Length > 0)
@@ -68,8 +68,8 @@ namespace testForms.pkgInterfaz
                 nombreLimpio =  char.ToUpper(primerNombre[0]) + primerNombre.Substring(1).ToLower();
             }
             lblNombre.Text = nombreLimpio;
-            lblCuentaNum.Text = infoCuenta.Value.outPrm_numeroCuenta.ToString();
-            saldo = infoCuenta.Value.outPrm_saldoCuenta;
+            lblCuentaNum.Text = infoCuenta.Value.cuentaNum.ToString();
+            saldo = infoCuenta.Value.saldoCuenta;
             lblSaldo.Text = saldo.ToString("C2");  
         }
 

@@ -52,8 +52,8 @@ namespace testForms.pkgInterfaz
             }
             else
             {
-                DateTime fecha = Convert.ToDateTime(transferencia.Value.prmOut_fecha.ToString("G"));
-                int referencia = int.Parse(transferencia.Value.prmOut_referencia.ToString());
+                DateTime fecha = Convert.ToDateTime(transferencia.Value.fecha.ToString("G"));
+                int referencia = int.Parse(transferencia.Value.referencia.ToString());
 
                 formComprobante comprobante = new formComprobante(
                     int.Parse(txtNumeroCuenta.TextBoxInterno.Text),

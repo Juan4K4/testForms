@@ -62,7 +62,7 @@ namespace testForms.pkgLogica
         public DateTime fnc_verificarFechaCreacion(long prm_idUsuario)
         {
             string consultaFecha =
-                $"SELECT usu_fechacreacion FROM usuarios WHERE usu_id = {prm_idUsuario}";
+                $"SELECT usu_fechacreacion FROM Usuarios WHERE usu_id = {prm_idUsuario}";
             object resultado = data.fnc_escalar(consultaFecha);
 
             if (resultado != null)
