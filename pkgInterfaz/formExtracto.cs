@@ -80,20 +80,20 @@ namespace testForms.pkgInterfaz
                 {
                     this.dgvMovimientos.Columns["Monto"].DefaultCellStyle.Format = "C";
                 }
-                if (dgvMovimientos.Columns.Contains("Saldo anterior"))
+                if (dgvMovimientos.Columns.Contains("SaldoAnterior"))
                 {
-                    this.dgvMovimientos.Columns["Saldo anterior"].DefaultCellStyle.Format = "C";
+                    this.dgvMovimientos.Columns["SaldoAnterior"].DefaultCellStyle.Format = "C";
                 }
-                if (dgvMovimientos.Columns.Contains("Saldo posterior"))
+                if (dgvMovimientos.Columns.Contains("SaldoPosterior"))
                 {
-                    this.dgvMovimientos.Columns["Saldo posterior"].DefaultCellStyle.Format = "C";
+                    this.dgvMovimientos.Columns["SaldoPosterior"].DefaultCellStyle.Format = "C";
                 }
 
-                if (dgvMovimientos.Columns.Contains("Tipo de Movimiento") && dgvMovimientos.Columns.Contains("Monto"))
+                if (dgvMovimientos.Columns.Contains("TipoMovimiento") && dgvMovimientos.Columns.Contains("Monto"))
                 {
                     foreach (DataGridViewRow row in dgvMovimientos.Rows)
                     {
-                        object tipoMovimientoValue = row.Cells["Tipo de Movimiento"].Value;
+                        object tipoMovimientoValue = row.Cells["TipoMovimiento"].Value;
                         if (tipoMovimientoValue == null) continue;
 
                         string estado = tipoMovimientoValue.ToString().ToUpperInvariant();

@@ -39,9 +39,10 @@
             this.btnSolicitudes = new testForms.pkgInterfaz.pBoton();
             this.label1 = new System.Windows.Forms.Label();
             this.pDegradado1 = new testForms.pkgInterfaz.pDegradado();
+            this.btnRecargar = new testForms.pkgInterfaz.pBoton();
+            this.label2 = new System.Windows.Forms.Label();
             this.pBoton2 = new testForms.pkgInterfaz.pBoton();
             this.pBoton1 = new testForms.pkgInterfaz.pBoton();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picFotoCliente)).BeginInit();
@@ -58,7 +59,7 @@
             this.lblNombre.Location = new System.Drawing.Point(136, 96);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(122, 35);
+            this.lblNombre.Size = new System.Drawing.Size(158, 45);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "nombre";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -72,7 +73,7 @@
             this.lblCuentaNum.Location = new System.Drawing.Point(160, 161);
             this.lblCuentaNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCuentaNum.Name = "lblCuentaNum";
-            this.lblCuentaNum.Size = new System.Drawing.Size(87, 25);
+            this.lblCuentaNum.Size = new System.Drawing.Size(110, 32);
             this.lblCuentaNum.TabIndex = 4;
             this.lblCuentaNum.Text = "Cuenta";
             this.lblCuentaNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -86,7 +87,7 @@
             this.lblSaldo.Location = new System.Drawing.Point(160, 201);
             this.lblSaldo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(121, 25);
+            this.lblSaldo.Size = new System.Drawing.Size(149, 32);
             this.lblSaldo.TabIndex = 5;
             this.lblSaldo.Text = "Disponible";
             this.lblSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -188,7 +189,7 @@
             this.label1.Location = new System.Drawing.Point(19, 104);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.Size = new System.Drawing.Size(103, 25);
             this.label1.TabIndex = 46;
             this.label1.Text = "Mis datos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -198,6 +199,7 @@
             // 
             this.pDegradado1.Angle = 180F;
             this.pDegradado1.BackColor = System.Drawing.Color.Transparent;
+            this.pDegradado1.Controls.Add(this.btnRecargar);
             this.pDegradado1.Controls.Add(this.label2);
             this.pDegradado1.Controls.Add(this.lblNombre);
             this.pDegradado1.Controls.Add(this.label1);
@@ -211,6 +213,39 @@
             this.pDegradado1.Name = "pDegradado1";
             this.pDegradado1.Size = new System.Drawing.Size(800, 136);
             this.pDegradado1.TabIndex = 47;
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRecargar.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRecargar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(80)))), ((int)(((byte)(201)))));
+            this.btnRecargar.BorderRadius = 5;
+            this.btnRecargar.BorderSize = 0;
+            this.btnRecargar.FlatAppearance.BorderSize = 0;
+            this.btnRecargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecargar.Font = new System.Drawing.Font("Codec Pro Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
+            this.btnRecargar.Location = new System.Drawing.Point(704, 8);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(38, 26);
+            this.btnRecargar.TabIndex = 56;
+            this.btnRecargar.TextColor = System.Drawing.SystemColors.ControlText;
+            this.btnRecargar.UseVisualStyleBackColor = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Codec Pro Bold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(136, 48);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(143, 58);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Hola,";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pBoton2
             // 
@@ -246,26 +281,12 @@
             this.pBoton1.ForeColor = System.Drawing.Color.White;
             this.pBoton1.Location = new System.Drawing.Point(688, 352);
             this.pBoton1.Name = "pBoton1";
-            this.pBoton1.Size = new System.Drawing.Size(101, 26);
+            this.pBoton1.Size = new System.Drawing.Size(124, 30);
             this.pBoton1.TabIndex = 53;
             this.pBoton1.Text = "Cerrar sesion";
             this.pBoton1.TextColor = System.Drawing.Color.White;
             this.pBoton1.UseVisualStyleBackColor = false;
             this.pBoton1.Click += new System.EventHandler(this.pBoton1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Codec Pro Bold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(136, 48);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 45);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Hola,";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -276,7 +297,7 @@
             this.label3.Location = new System.Drawing.Point(16, 160);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 26);
+            this.label3.Size = new System.Drawing.Size(118, 33);
             this.label3.TabIndex = 56;
             this.label3.Text = "Cuenta:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -290,7 +311,7 @@
             this.label4.Location = new System.Drawing.Point(16, 200);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 26);
+            this.label4.Size = new System.Drawing.Size(155, 33);
             this.label4.TabIndex = 57;
             this.label4.Text = "Disponible:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -340,5 +361,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private pBoton btnRecargar;
     }
 }

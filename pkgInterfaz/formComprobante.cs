@@ -15,7 +15,7 @@ namespace testForms.pkgInterfaz
         public formComprobante(int prm_destino, int prm_monto, DateTime prm_fecha, int prm_referencia)
         {
             InitializeComponent();
-            FormHelper.HabilitarMovimiento(this);
+            FormHelper.HabilitarMovimiento(this, pDegradado1);
             lblCuentaDestino.Text = prm_destino.ToString();
             lblMonto.Text = prm_monto.ToString("C2");
             lblFecha.Text = prm_fecha.ToString("G");

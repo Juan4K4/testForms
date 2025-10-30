@@ -219,15 +219,23 @@ namespace testForms
         private void picMostrarClave_Click(object sender, EventArgs e)
         {
             txtClave.esClave = false;
+
             picMostrarClave.Hide();
+            picMostrarClave.Enabled = false;
+
             picOcultarClave.Show();
+            picOcultarClave.Enabled = true;
         }
 
         private void picOcultarClave_Click(object sender, EventArgs e)
         {
             txtClave.esClave = true;
+
             picOcultarClave.Hide();
+            picOcultarClave.Enabled = false;
+
             picMostrarClave.Show();
+            picMostrarClave.Enabled = true;
         }
 
         private void pBoton1_Click_1(object sender, EventArgs e)
@@ -238,6 +246,21 @@ namespace testForms
         private void pBoton2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void cmbDia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmbMes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmbAnio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

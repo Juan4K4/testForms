@@ -107,5 +107,10 @@ namespace testForms.pkgInterfaz
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnRecargar_Click(object sender, EventArgs e)
+        {
+            fnc_cargarDatosCuenta(id_usuarioActual);
+        }
     }
 }
