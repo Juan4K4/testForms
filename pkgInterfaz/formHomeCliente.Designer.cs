@@ -121,7 +121,7 @@
             // 
             this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
             this.btnEnviar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
-            this.btnEnviar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(176)))));
+            this.btnEnviar.BorderColor = System.Drawing.Color.Empty;
             this.btnEnviar.BorderRadius = 8;
             this.btnEnviar.BorderSize = 2;
             this.btnEnviar.FlatAppearance.BorderSize = 0;
@@ -141,7 +141,7 @@
             // 
             this.btnMovimientos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
             this.btnMovimientos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
-            this.btnMovimientos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(176)))));
+            this.btnMovimientos.BorderColor = System.Drawing.Color.Empty;
             this.btnMovimientos.BorderRadius = 8;
             this.btnMovimientos.BorderSize = 2;
             this.btnMovimientos.FlatAppearance.BorderSize = 0;
@@ -161,7 +161,7 @@
             // 
             this.btnSolicitudes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
             this.btnSolicitudes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(105)))), ((int)(((byte)(245)))));
-            this.btnSolicitudes.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(176)))));
+            this.btnSolicitudes.BorderColor = System.Drawing.Color.Empty;
             this.btnSolicitudes.BorderRadius = 8;
             this.btnSolicitudes.BorderSize = 2;
             this.btnSolicitudes.FlatAppearance.BorderSize = 0;
@@ -197,6 +197,7 @@
             // pDegradado1
             // 
             this.pDegradado1.Angle = 180F;
+            this.pDegradado1.BackColor = System.Drawing.Color.Transparent;
             this.pDegradado1.Controls.Add(this.label2);
             this.pDegradado1.Controls.Add(this.lblNombre);
             this.pDegradado1.Controls.Add(this.label1);
@@ -213,8 +214,8 @@
             // 
             // pBoton2
             // 
-            this.pBoton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(80)))), ((int)(((byte)(201)))));
-            this.pBoton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(80)))), ((int)(((byte)(201)))));
+            this.pBoton2.BackColor = System.Drawing.Color.DimGray;
+            this.pBoton2.BackgroundColor = System.Drawing.Color.DimGray;
             this.pBoton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(80)))), ((int)(((byte)(201)))));
             this.pBoton2.BorderRadius = 5;
             this.pBoton2.BorderSize = 0;

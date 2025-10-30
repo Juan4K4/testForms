@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using testForms.pkgBaseDatos;
@@ -25,6 +27,7 @@ namespace testForms.pkgInterfaz
         public formSolicitudes(long prm_idUsuarioActual)
         {
             InitializeComponent();
+            FormHelper.HabilitarMovimiento(this, pDegradado3);
             id_usuarioActual = prm_idUsuarioActual;
 
             int aux = 1;
@@ -84,8 +87,20 @@ namespace testForms.pkgInterfaz
 
         private void btnGenerarExtracto_Click(object sender, EventArgs e)
         {
-            int anio = int.Parse(cmbAnio.SelectedItem.ToString());
-            string mesTexto = cmbMes.Text;
+            int anio = 0;
+            string mesTexto = "";
+            try
+            {
+                anio = int.Parse(cmbAnio.Text);
+                mesTexto = cmbMes.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El periodo es invalido, por favor revise los datos seleccionados" + ex);
+                return;
+            }
+
+
             int mesNumero = 0;
 
             diccionarioMeses.TryGetValue(mesTexto, out mesNumero);
@@ -109,8 +124,11 @@ namespace testForms.pkgInterfaz
             DateTime fechaFin = resultado.Value.outP_fechaFin;
 
             string titular = infoCuenta.Value.outPrm_nombre.ToString();
-            int numeroCuenta = int.Parse(infoCuenta.Value.outPrm_numeroCuenta.ToString());
+            string nombreLimpio = Regex.Replace(titular.Trim(), @"\s+", " ");
+            TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
+            titular = ti.ToTitleCase(nombreLimpio.ToLower());
 
+            int numeroCuenta = int.Parse(infoCuenta.Value.outPrm_numeroCuenta.ToString());
             formExtracto frmExtracto = new formExtracto (
                 fechaInicio,
                 fechaFin,
@@ -126,6 +144,21 @@ namespace testForms.pkgInterfaz
             this.Close();
             frmExtracto.ShowDialog();
 
+        }
+
+        private void cmbAnio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmbMes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
