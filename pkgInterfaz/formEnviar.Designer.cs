@@ -48,10 +48,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Codec Pro Bold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(0, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(0, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(435, 79);
+            this.label1.Size = new System.Drawing.Size(544, 99);
             this.label1.TabIndex = 24;
             this.label1.Text = "Enviar dinero";
             // 
@@ -61,10 +60,9 @@
             this.lblSaldo.BackColor = System.Drawing.Color.Transparent;
             this.lblSaldo.Font = new System.Drawing.Font("Codec Pro", 15F);
             this.lblSaldo.ForeColor = System.Drawing.Color.Black;
-            this.lblSaldo.Location = new System.Drawing.Point(216, 112);
-            this.lblSaldo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSaldo.Location = new System.Drawing.Point(288, 138);
             this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(66, 24);
+            this.lblSaldo.Size = new System.Drawing.Size(81, 30);
             this.lblSaldo.TabIndex = 28;
             this.lblSaldo.Text = "Saldo";
             // 
@@ -74,10 +72,9 @@
             this.lblErrorMonto.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorMonto.Font = new System.Drawing.Font("Codec Pro", 10F);
             this.lblErrorMonto.ForeColor = System.Drawing.Color.Brown;
-            this.lblErrorMonto.Location = new System.Drawing.Point(288, 304);
-            this.lblErrorMonto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblErrorMonto.Location = new System.Drawing.Point(384, 374);
             this.lblErrorMonto.Name = "lblErrorMonto";
-            this.lblErrorMonto.Size = new System.Drawing.Size(170, 17);
+            this.lblErrorMonto.Size = new System.Drawing.Size(198, 20);
             this.lblErrorMonto.TabIndex = 29;
             this.lblErrorMonto.Text = "Ingrese un monto valido";
             this.lblErrorMonto.Visible = false;
@@ -87,10 +84,9 @@
             this.lblErrorCuenta.AutoSize = true;
             this.lblErrorCuenta.Font = new System.Drawing.Font("Codec Pro", 10F);
             this.lblErrorCuenta.ForeColor = System.Drawing.Color.Brown;
-            this.lblErrorCuenta.Location = new System.Drawing.Point(288, 224);
-            this.lblErrorCuenta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblErrorCuenta.Location = new System.Drawing.Point(384, 276);
             this.lblErrorCuenta.Name = "lblErrorCuenta";
-            this.lblErrorCuenta.Size = new System.Drawing.Size(247, 17);
+            this.lblErrorCuenta.Size = new System.Drawing.Size(290, 20);
             this.lblErrorCuenta.TabIndex = 32;
             this.lblErrorCuenta.Text = "Ingrese un numero de cuenta valido";
             this.lblErrorCuenta.Visible = false;
@@ -101,12 +97,13 @@
             this.txtMonto.esClave = false;
             this.txtMonto.label = "Monto";
             this.txtMonto.limiteCaracteres = 10;
-            this.txtMonto.Location = new System.Drawing.Point(280, 248);
+            this.txtMonto.Location = new System.Drawing.Point(373, 305);
+            this.txtMonto.Margin = new System.Windows.Forms.Padding(5);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtMonto.placeholder = "Cantidad a enviar";
             this.txtMonto.Radius = 8;
-            this.txtMonto.Size = new System.Drawing.Size(250, 55);
+            this.txtMonto.Size = new System.Drawing.Size(333, 68);
             this.txtMonto.TabIndex = 31;
             this.txtMonto.Tipo = testForms.pkgInterfaz.pLineaTextBox.TipoEntrada.Numerico;
             // 
@@ -116,12 +113,13 @@
             this.txtNumeroCuenta.esClave = false;
             this.txtNumeroCuenta.label = "Cuenta destino";
             this.txtNumeroCuenta.limiteCaracteres = 8;
-            this.txtNumeroCuenta.Location = new System.Drawing.Point(280, 168);
+            this.txtNumeroCuenta.Location = new System.Drawing.Point(373, 207);
+            this.txtNumeroCuenta.Margin = new System.Windows.Forms.Padding(5);
             this.txtNumeroCuenta.Name = "txtNumeroCuenta";
             this.txtNumeroCuenta.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.txtNumeroCuenta.placeholder = "Numero de cuenta";
             this.txtNumeroCuenta.Radius = 8;
-            this.txtNumeroCuenta.Size = new System.Drawing.Size(250, 55);
+            this.txtNumeroCuenta.Size = new System.Drawing.Size(333, 68);
             this.txtNumeroCuenta.TabIndex = 30;
             this.txtNumeroCuenta.Tipo = testForms.pkgInterfaz.pLineaTextBox.TipoEntrada.Numerico;
             // 
@@ -130,10 +128,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Codec Pro Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(248, 264);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(331, 325);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 26);
+            this.label2.Size = new System.Drawing.Size(31, 33);
             this.label2.TabIndex = 33;
             this.label2.Text = "$";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -145,13 +142,15 @@
             this.btnEnviar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(76)))), ((int)(((byte)(176)))));
             this.btnEnviar.BorderRadius = 8;
             this.btnEnviar.BorderSize = 2;
+            this.btnEnviar.Enabled = false;
             this.btnEnviar.FlatAppearance.BorderSize = 0;
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Codec Pro Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.White;
-            this.btnEnviar.Location = new System.Drawing.Point(352, 336);
+            this.btnEnviar.Location = new System.Drawing.Point(469, 414);
+            this.btnEnviar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(96, 49);
+            this.btnEnviar.Size = new System.Drawing.Size(128, 60);
             this.btnEnviar.TabIndex = 44;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.TextColor = System.Drawing.Color.White;
@@ -164,10 +163,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Codec Pro Bold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(16, 112);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(21, 138);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 26);
+            this.label3.Size = new System.Drawing.Size(267, 33);
             this.label3.TabIndex = 45;
             this.label3.Text = "Tu saldo disponible:";
             // 
@@ -182,9 +180,10 @@
             this.pBoton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pBoton2.Font = new System.Drawing.Font("Codec Pro Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pBoton2.ForeColor = System.Drawing.Color.White;
-            this.pBoton2.Location = new System.Drawing.Point(712, 8);
+            this.pBoton2.Location = new System.Drawing.Point(949, 10);
+            this.pBoton2.Margin = new System.Windows.Forms.Padding(4);
             this.pBoton2.Name = "pBoton2";
-            this.pBoton2.Size = new System.Drawing.Size(38, 24);
+            this.pBoton2.Size = new System.Drawing.Size(51, 30);
             this.pBoton2.TabIndex = 54;
             this.pBoton2.Text = "-";
             this.pBoton2.TextColor = System.Drawing.Color.White;
@@ -202,9 +201,10 @@
             this.pBoton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pBoton1.Font = new System.Drawing.Font("Codec Pro", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pBoton1.ForeColor = System.Drawing.Color.White;
-            this.pBoton1.Location = new System.Drawing.Point(752, 8);
+            this.pBoton1.Location = new System.Drawing.Point(1003, 10);
+            this.pBoton1.Margin = new System.Windows.Forms.Padding(4);
             this.pBoton1.Name = "pBoton1";
-            this.pBoton1.Size = new System.Drawing.Size(38, 24);
+            this.pBoton1.Size = new System.Drawing.Size(51, 30);
             this.pBoton1.TabIndex = 53;
             this.pBoton1.Text = "X";
             this.pBoton1.TextColor = System.Drawing.Color.White;
@@ -216,20 +216,20 @@
             this.lblMismaCuenta.AutoSize = true;
             this.lblMismaCuenta.Font = new System.Drawing.Font("Codec Pro", 10F);
             this.lblMismaCuenta.ForeColor = System.Drawing.Color.Brown;
-            this.lblMismaCuenta.Location = new System.Drawing.Point(288, 224);
-            this.lblMismaCuenta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMismaCuenta.Location = new System.Drawing.Point(384, 276);
             this.lblMismaCuenta.Name = "lblMismaCuenta";
-            this.lblMismaCuenta.Size = new System.Drawing.Size(297, 17);
+            this.lblMismaCuenta.Size = new System.Drawing.Size(351, 20);
             this.lblMismaCuenta.TabIndex = 55;
             this.lblMismaCuenta.Text = "No puedes enviar dinero a tu misma cuenta";
             this.lblMismaCuenta.Visible = false;
             // 
             // formEnviar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(800, 400);
+            this.ClientSize = new System.Drawing.Size(1067, 492);
             this.Controls.Add(this.lblMismaCuenta);
             this.Controls.Add(this.pBoton2);
             this.Controls.Add(this.pBoton1);
@@ -243,7 +243,7 @@
             this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.txtNumeroCuenta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "formEnviar";
             this.Text = "formEnviar";
             this.Load += new System.EventHandler(this.formEnviar_Load);
