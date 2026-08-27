@@ -1,4 +1,4 @@
-# 🏦 Banco de los Andes - Billetera Virtual
+# Banco de los Andes - Billetera Virtual
 
 ![Version App](https://img.shields.io/badge/Versión%20App-Release%203%20(Dic%202025)-blue)
 ![Version Manual](https://img.shields.io/badge/Versión%20Manual-v1.0-lightgrey)
